@@ -5,18 +5,20 @@ import uvicorn
 from app import db, ml, viz
 
 description = """
-Edit your app's title and description. See [https://fastapi.tiangolo.com/tutorial/metadata/](https://fastapi.tiangolo.com/tutorial/metadata/)
+MISSION: Be a one-stop resource for users to receive the most accurate city information.
 
-To use these interactive docs:
-- Click on an endpoint below
-- Click the **Try it out** button
-- Edit the Request body or any parameters
-- Click the **Execute** button
-- Scroll down to see the Server response Code & Details
+
+CITYSPIRE APP:
+An app that analyzes data from cities such as populations, cost of living,\n
+rental rates, crime rates, park (walk score), and many other social \n
+and economic factors that are important in deciding where someone would like to live.\n
+This app will present such important data in an intuitive and easy to understand interface.\n
+
+Use data to find a place right for you to live.
 """
 
 app = FastAPI(
-    title='DS API',
+    title='CITYSPIRE API',
     description=description,
     docs_url='/',
 )
