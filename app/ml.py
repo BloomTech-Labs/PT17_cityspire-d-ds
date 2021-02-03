@@ -3,6 +3,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 
+
 router = APIRouter()
 
 
@@ -13,6 +14,8 @@ class City(BaseModel):
 
 class CityData(BaseModel):
     city: City
+    latitude: str
+    longitude: str
     rental_price: float
     crime: str
     pollution: str
@@ -21,9 +24,11 @@ class CityData(BaseModel):
 
 
 @router.post("/api/get_data", response_model=CityData)
-async def get_data(city: City) -> CityData:
+async def get_data(city: City):
     data = {
         "city": {"city": "San Francisco", "state": "CA"},
+        "latitude": "37.7749° N",
+        "longitude": "122.4194° W",
         "rental_price": 2000,
         "pollution": "medium",
         "walkability": 60.0,
@@ -32,6 +37,15 @@ async def get_data(city: City) -> CityData:
     }
 
     return data
+
+
+@router.post("/api/coordinates")
+async def get_coordinates(city: City):
+    return {"latitude": "37.7749° N", "longitude": "122.4194° W"}
+
+
+async def get_crime(city: City):
+    return {"crime": "High"}
 
 
 @router.post("/api/crime")
