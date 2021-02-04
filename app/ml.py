@@ -30,7 +30,7 @@ async def get_data(city: City):
         "latitude": 37.7749,
         "longitude": -122.4194,
         "rental_price": 2000,
-        "pollution": "medium",
+        "pollution": "good",
         "walkability": 60.0,
         "crime": "High",
         "livability": 49.0,
@@ -60,7 +60,7 @@ async def get_rental_price(city: City):
 
 @router.post("/api/pollution")
 async def get_pollution(city: City):
-    return {"pollution": "Medium"}
+    return {"pollution": "Good"}
 
 
 @router.post("/api/walkability")
