@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
+from app.state_abbr import us_state_abbrev as abbr
 
 
 router = APIRouter()
@@ -24,8 +25,24 @@ class CityData(BaseModel):
     livability: float
 
 
+def validate_city(city: City) -> City:
+    city.city = city.city.title()
+
+    try:
+        if len(city.state) > 2:
+            city.state = city.state.title()
+            city.state = abbr[city.state]
+        else:
+            city.state = city.state.upper()
+    except KeyError:
+        raise HTTPException(status_code=422, detail=f"Unknown state: '{city.state}'")
+
+    return city
+
+
 @router.post("/api/get_data", response_model=CityData)
 async def get_data(city: City):
+    city = validate_city(city)
     data = {
         "city": city,
         "latitude": 37.7749,
@@ -68,10 +85,13 @@ async def get_pollution(city: City):
 
 @router.post("/api/walkability")
 async def get_walkability(city: City):
+    city = validate_city(city)
     try:
         score = (await get_walkscore(**city.dict()))[0]
     except IndexError:
-        raise HTTPException(status_code=422, detail="Walkscore not found")
+        raise HTTPException(
+            status_code=422, detail=f"Walkscore not found for {city.city}, {city.state}"
+        )
 
     return {"walkability": score}
 
@@ -80,7 +100,6 @@ async def get_walkscore(city: str, state: str):
     """ Input: City, 2 letter abbreviation for state
     Returns a list containing WalkScore, BusScore, and BikeScore in that order"""
 
-    city, state = city.title(), state.upper()
     r = requests.get(f"https://www.walkscore.com/{state}/{city}")
     images = bs(r.text, features="lxml").select("#hood-badges img")
     return [int(str(x)[10:12]) for x in images]
