@@ -12,6 +12,9 @@ fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 sqlalchemy = "*"
 psycopg2-binary = "*"
+requests = "*"
+bs4 = "*"
+lxml = "*"
 
 [requires]
 python_version = "3"
