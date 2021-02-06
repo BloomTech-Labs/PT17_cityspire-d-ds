@@ -1,6 +1,7 @@
 """Machine learning functions"""
-
-from fastapi import APIRouter
+import requests
+from bs4 import BeautifulSoup as bs
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 
@@ -26,15 +27,17 @@ class CityData(BaseModel):
 @router.post("/api/get_data", response_model=CityData)
 async def get_data(city: City):
     data = {
-        "city": {"city": "San Francisco", "state": "CA"},
+        "city": city,
         "latitude": 37.7749,
         "longitude": -122.4194,
         "rental_price": 2000,
         "pollution": "good",
-        "walkability": 60.0,
         "crime": "High",
         "livability": 49.0,
     }
+
+    walkscore = await get_walkability(city)
+    data.update(walkscore)
 
     return data
 
@@ -65,7 +68,22 @@ async def get_pollution(city: City):
 
 @router.post("/api/walkability")
 async def get_walkability(city: City):
-    return {"walkability": 60.0}
+    try:
+        score = (await get_walkscore(**city.dict()))[0]
+    except IndexError:
+        raise HTTPException(status_code=422, detail="Walkscore not found")
+
+    return {"walkability": score}
+
+
+async def get_walkscore(city: str, state: str):
+    """ Input: City, 2 letter abbreviation for state
+    Returns a list containing WalkScore, BusScore, and BikeScore in that order"""
+
+    city, state = city.title(), state.upper()
+    r = requests.get(f"https://www.walkscore.com/{state}/{city}")
+    images = bs(r.text, features="lxml").select("#hood-badges img")
+    return [int(str(x)[10:12]) for x in images]
 
 
 @router.post("/api/livability")
