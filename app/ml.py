@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup as bs
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from app.state_abbr import us_state_abbrev as abbr
+from pathlib import Path
+import pandas as pd
 
 
 router = APIRouter()
@@ -54,7 +56,11 @@ async def get_data(city: City):
     }
 
     walkscore = await get_walkability(city)
-    data.update(walkscore)
+    rent_price = await get_rental_price(city)
+    data.update({
+        **walkscore, 
+        **rent_price,
+        })
 
     return data
 
@@ -75,7 +81,12 @@ async def get_crime(city: City):
 
 @router.post("/api/rental_price")
 async def get_rental_price(city: City):
-    return {"rental_price": 1500}
+    path = Path('rent_cleaned.csv')
+    df = pd.read_csv(path)
+    rent = int(df.loc[df['City'] == city.city, 'Rent'].to_numpy()[0])
+    print(rent)
+
+    return {"rental_price": rent}
 
 
 @router.post("/api/pollution")
