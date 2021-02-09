@@ -1,0 +1,174 @@
+,Unnamed: 0,State,City,County,NO2 AQI,O3 AQI,SO2 AQI,CO AQI,Index,Level of Concern
+0,0,AL,Birmingham,Jefferson,21.23,36.83,7.01,3.85,36.83,Good
+1,1,AK,Fairbanks,Fairbanks North Star ,19.58,17.71,14.51,6.53,19.58,Good
+2,2,AZ,Phoenix,Maricopa,40.96,40.32,5.44,11.79,40.96,Good
+3,3,AZ,Scottsdale,Maricopa,41.99,31.46,4.53,11.45,41.99,Good
+4,4,AZ,Tucson,Pima,27.81,38.5,2.96,5.33,38.5,Good
+5,5,AR,North Little Rock,Pulaski,21.06,34.36,3.41,6.04,34.36,Good
+6,6,CA,Arden-Arcade,Sacramento,20.51,40.59,2.65,7.32,40.59,Good
+7,7,CA,Bakersfield,Kern,51.83,30.36,8.63,16.07,51.83,Moderate
+8,8,CA,Benicia,Solano,13.75,32.51,6.78,3.62,32.51,Good
+9,9,CA,Berkeley,Alameda,22.68,21.64,3.25,5.34,22.68,Good
+10,10,CA,Bethel Island,Contra Costa,13.07,33.65,3.86,4.22,33.65,Good
+11,11,CA,Burbank,Los Angeles,44.43,39.98,2.65,12.62,44.43,Good
+12,12,CA,Calexico,Imperial,31.39,39.72,2.34,14.7,39.72,Good
+13,13,CA,Capitan,Santa Barbara,4.84,41.29,2.4,2.47,41.29,Good
+14,14,CA,Chula Vista,San Diego,29.54,37.6,6.71,10.62,37.6,Good
+15,15,CA,Concord,Contra Costa,18.8,31.42,3.11,6.1,31.42,Good
+16,16,CA,Costa Mesa,Orange,25.12,36.49,2.92,6.91,36.49,Good
+17,17,CA,Crockett,Contra Costa,22.06,29.73,9.01,6.36,29.73,Good
+18,18,CA,Cupertino,Santa Clara,16.9,28.17,2.32,5.26,28.17,Good
+19,19,CA,Davenport,Santa Cruz,9.5,28.06,3.3,4.74,28.06,Good
+20,20,CA,El Cajon,San Diego,20.49,38.65,0.01,5.16,38.65,Good
+21,21,CA,Eureka,Humboldt,7.36,24.78,0.45,4.23,24.78,Good
+22,22,CA,Fontana,San Bernardino,34.66,55.98,1.41,5.2,55.98,Moderate
+23,23,CA,Fresno,Fresno,24.37,52.34,1.89,6.22,52.34,Moderate
+24,24,CA,Goleta,Santa Barbara,17.97,33.12,1.56,3.78,33.12,Good
+25,25,CA,Hawthorne,Los Angeles,44.98,32.35,8.28,17.13,44.98,Good
+26,26,CA,Lompoc,Santa Barbara,10.69,31.79,1.76,3.97,31.79,Good
+27,27,CA,Long Beach,Los Angeles,38.02,28.12,8.37,10.44,38.02,Good
+28,28,CA,Los Angeles,Los Angeles,39.37,34.27,4.16,10.37,39.37,Good
+29,29,CA,Not in a city,Humboldt,1.82,26.22,0.03,3.56,26.22,Good
+30,30,CA,Not in a city,Sacramento,25.9,36.94,3.06,7.95,36.94,Good
+31,31,CA,Not in a city,Ventura,21.79,32.91,4.4,4.98,32.91,Good
+32,32,CA,Oakland,Alameda,25.37,23.53,3.32,8.9,25.37,Good
+33,33,CA,Pittsburg,Contra Costa,20.47,31.38,9.01,6.88,31.38,Good
+34,34,CA,Rubidoux,Riverside,32.25,55.72,2.87,9.66,55.72,Moderate
+35,35,CA,San Diego,San Diego,35.13,31.7,8.21,12.83,35.13,Good
+36,36,CA,San Francisco,San Francisco,27.56,22.54,5.25,8.48,27.56,Good
+37,37,CA,San Jose,Santa Clara,23.39,28.15,0.47,6.0,28.15,Good
+38,38,CA,San Pablo,Contra Costa,20.98,25.84,4.64,6.18,25.84,Good
+39,39,CA,Vallejo,Solano,19.31,27.46,2.65,7.77,27.46,Good
+40,40,CA,Vandenberg Air Force Base,Santa Barbara,2.05,35.5,1.36,1.6,35.5,Good
+41,41,CA,Victorville,San Bernardino,34.84,51.25,3.18,5.75,51.25,Moderate
+42,42,CA,West Los Angeles,Los Angeles,40.88,30.57,18.01,10.65,40.88,Good
+43,43,CO,Denver,Denver,41.26,29.56,10.81,8.3,41.26,Good
+44,44,CO,Not in a city,Denver,35.64,36.17,5.08,6.54,36.17,Good
+45,45,CO,Not in a city,Jackson,2.27,40.27,0.02,1.72,40.27,Good
+46,46,CO,Welby,Adams,37.41,35.84,12.34,8.29,37.41,Good
+47,47,CT,Cornwall,Litchfield,4.74,37.49,1.05,1.98,37.49,Good
+48,48,CT,East Hartford,Hartford,15.16,41.08,1.01,4.04,41.08,Good
+49,49,CT,New Haven,New Haven,27.26,32.41,6.24,4.52,32.41,Good
+50,50,CT,Westport,Fairfield,22.21,44.16,1.73,3.04,44.16,Good
+51,51,DE,Wilmington,New Castle,21.56,35.41,2.83,3.84,35.41,Good
+52,52,FL,Valrico,Hillsborough,11.65,37.81,6.76,2.49,37.81,Good
+53,53,FL,Winter Park,Orange,16.91,35.73,2.45,6.3,35.73,Good
+54,54,GA,Not in a city,DeKalb,24.14,34.49,1.79,5.27,34.49,Good
+55,55,HI,Not in a city,Honolulu,8.49,26.29,2.26,4.58,26.29,Good
+56,56,ID,Not in a city,Ada,23.34,34.96,0.82,2.88,34.96,Good
+57,57,IL,Calumet City (PU RR name Calumet Park (sta.)),Cook,38.24,30.63,21.09,9.34,38.24,Good
+58,58,IL,Chicago,Cook,46.87,17.52,17.76,10.22,46.87,Good
+59,59,IL,Cicero,Cook,37.6,32.34,16.91,7.88,37.6,Good
+60,60,IL,East Saint Louis,Saint Clair,25.09,33.13,15.64,6.78,33.13,Good
+61,61,IL,Northbrook,Cook,22.48,32.26,4.84,3.55,32.26,Good
+62,62,IN,Indianapolis (Remainder),Marion,24.4,41.47,14.85,5.48,41.47,Good
+63,63,IA,Davenport,Scott,13.99,33.2,2.4,2.89,33.2,Good
+64,64,IA,Des Moines,Polk,15.64,34.58,0.1,3.48,34.58,Good
+65,65,KS,Kansas City,Wyandotte,27.63,32.62,12.16,8.0,32.62,Good
+66,66,KS,Not in a city,Linn,6.99,38.56,3.11,3.3,38.56,Good
+67,67,KS,Not in a city,Sumner,11.23,37.49,1.27,1.58,37.49,Good
+68,68,KY,Ashland,Boyd,25.67,51.1,22.03,2.79,51.1,Moderate
+69,69,KY,Henderson,Henderson,32.54,37.59,26.66,4.05,37.59,Good
+70,70,KY,Lexington-Fayette (corporate name for Lexington),Fayette,25.72,40.36,15.39,2.03,40.36,Good
+71,71,KY,Louisville,Jefferson,23.27,38.6,17.84,5.36,38.6,Good
+72,72,KY,Not in a city,Daviess,20.71,41.68,22.33,0.44,41.68,Good
+73,73,KY,Paducah,McCracken,24.5,47.49,7.4,2.5,47.49,Good
+74,74,LA,Baton Rouge,East Baton Rouge,26.82,33.93,11.4,6.23,33.93,Good
+75,75,LA,Kenner,Jefferson,23.47,37.79,7.49,9.68,37.79,Good
+76,76,ME,Portland,Cumberland,19.4,28.17,5.15,4.63,28.17,Good
+77,77,ME,Presque Isle,Aroostook,5.17,28.0,1.36,1.92,28.0,Good
+78,78,MD,Beltsville,Prince George's,17.32,36.46,3.86,3.24,36.46,Good
+79,79,MD,Essex,Baltimore,24.65,36.58,9.69,5.54,36.58,Good
+80,80,MD,Grantsville,Garrett,4.35,39.14,3.4,1.98,39.14,Good
+81,81,MA,Boston,Suffolk,29.31,25.66,7.64,5.14,29.31,Good
+82,82,MI,Detroit,Wayne,35.14,39.78,26.88,7.07,39.78,Good
+83,83,MI,Grand Rapids,Kent,27.5,40.34,6.18,5.68,40.34,Good
+84,84,MN,Blaine,Anoka,15.81,33.77,1.15,3.46,33.77,Good
+85,85,MO,Breckenridge Hills,Saint Louis,28.21,43.12,17.93,8.77,43.12,Good
+86,86,MO,Ferguson,Saint Louis,30.1,43.85,21.34,6.37,43.85,Good
+87,87,MO,Ladue,Saint Louis,36.15,38.73,19.57,8.73,38.73,Good
+88,88,MO,Not in a city,Saint Louis,22.05,42.03,10.53,6.65,42.03,Good
+89,89,MO,St. Ann,Saint Louis,33.73,41.36,23.02,9.2,41.36,Good
+90,90,MO,St. Louis,St. Louis City,29.41,40.72,18.02,6.89,40.72,Good
+91,91,MO,Sunset Hills,Saint Louis,26.81,48.01,20.44,7.47,48.01,Good
+92,92,NV,Boulder City,Clark,12.34,42.43,1.32,0.9,42.43,Good
+93,93,NV,Reno,Washoe,27.82,39.64,1.04,4.58,39.64,Good
+94,94,NH,Manchester,Hillsborough,16.8,34.5,9.48,5.85,34.5,Good
+95,95,NH,Not in a city,Rockingham,6.94,34.72,1.03,2.26,34.72,Good
+96,96,NJ,Camden,Camden,29.7,36.34,13.41,6.27,36.34,Good
+97,97,NJ,Newark,Essex,35.28,30.2,7.03,6.76,35.28,Good
+98,98,NM,Albuquerque,Bernalillo,24.46,41.33,1.18,3.48,41.33,Good
+99,99,NY,Holtsville,Suffolk,24.98,38.29,16.04,3.23,38.29,Good
+100,100,NY,New York,Bronx,35.71,28.09,17.41,7.93,35.71,Good
+101,101,NY,New York,Queens,35.89,29.78,12.84,6.3,35.89,Good
+102,102,NY,Not in a city,Steuben,3.39,32.64,2.75,1.7,32.64,Good
+103,103,NY,Rochester,Monroe,16.4,30.44,5.37,2.67,30.44,Good
+104,104,NC,Charlotte,Mecklenburg,23.11,44.36,8.59,5.8,44.36,Good
+105,105,NC,Raleigh,Wake,13.95,36.71,0.78,4.17,36.71,Good
+106,106,NC,Winston-Salem,Forsyth,24.04,56.85,21.75,6.83,56.85,Moderate
+107,107,ND,Not in a city,Cass,12.43,29.98,0.41,2.05,29.98,Good
+108,108,OH,Athens,Athens,8.71,37.81,16.9,3.72,37.81,Good
+109,109,OH,Cincinnati,Hamilton,21.39,35.21,12.84,3.51,35.21,Good
+110,110,OH,Cleveland,Cuyahoga,24.14,29.62,16.65,4.16,29.62,Good
+111,111,OH,Not in a city,Medina,13.44,38.14,9.07,4.61,38.14,Good
+112,112,OK,Cherry Tree,Adair,5.44,38.81,1.8,2.0,38.81,Good
+113,113,OK,Miami,Ottawa,16.56,44.86,3.14,0.73,44.86,Good
+114,114,OK,Oklahoma City,Oklahoma,13.75,43.86,1.0,2.39,43.86,Good
+115,115,OK,Park Hill,Cherokee,15.17,42.16,3.29,0.69,42.16,Good
+116,116,OK,Ponca City,Kay,11.17,45.43,16.12,1.49,45.43,Good
+117,117,OK,Tulsa,Tulsa,18.73,37.12,3.04,4.63,37.12,Good
+118,118,OR,Portland,Multnomah,17.24,25.17,2.04,5.32,25.17,Good
+119,119,PA,Altoona,Blair,20.69,41.87,18.29,2.38,41.87,Good
+120,120,PA,Beaver Falls,Beaver,26.71,40.64,28.96,3.42,40.64,Good
+121,121,PA,Bristol,Bucks,23.57,43.69,10.12,3.46,43.69,Good
+122,122,PA,Charleroi,Washington,19.78,40.48,17.59,3.23,40.48,Good
+123,123,PA,Erie,Erie,18.02,39.23,10.94,3.27,39.23,Good
+124,124,PA,Freemansburg,Northampton,23.3,45.29,13.12,3.52,45.29,Good
+125,125,PA,Greensburg,Westmoreland,22.73,42.21,26.36,2.32,42.21,Good
+126,126,PA,Johnstown,Cambria,18.32,38.08,17.74,4.52,38.08,Good
+127,127,PA,Lancaster,Lancaster,22.41,48.51,15.86,4.51,48.51,Good
+128,128,PA,New Castle,Lawrence,24.83,38.19,26.21,5.04,38.19,Good
+129,129,PA,Norristown,Montgomery,25.9,47.76,12.4,3.54,47.76,Good
+130,130,PA,Not in a city,Adams,4.94,37.42,1.99,1.34,37.42,Good
+131,131,PA,Not in a city,Berks,16.92,38.12,8.38,1.17,38.12,Good
+132,132,PA,Not in a city,Dauphin,23.04,43.11,14.21,3.05,43.11,Good
+133,133,PA,Philadelphia,Philadelphia,32.91,24.67,11.22,6.46,32.91,Good
+134,134,PA,Pittsburgh,Allegheny,29.02,40.31,18.35,5.13,40.31,Good
+135,135,PA,Reading,Berks,29.97,43.07,30.04,6.38,43.07,Good
+136,136,PA,Scranton,Lackawanna,24.7,41.17,9.64,3.55,41.17,Good
+137,137,PA,Wilkes-Barre,Luzerne,20.82,40.16,11.42,3.14,40.16,Good
+138,138,PA,York,York,24.99,41.68,14.82,3.66,41.68,Good
+139,139,RI,East Providence,Providence,14.37,37.64,1.67,3.16,37.64,Good
+140,140,SC,Dentsville (Dents),Richland,18.66,36.76,0.52,2.48,36.76,Good
+141,141,SC,Not in a city,Charleston,4.69,37.27,4.84,1.58,37.27,Good
+142,142,SD,Not in a city,Union,5.58,31.77,0.53,1.65,31.77,Good
+143,143,SD,Sioux Falls,Minnehaha,12.18,34.84,0.7,2.54,34.84,Good
+144,144,TN,Not in a city,Blount,1.54,41.26,1.77,2.0,41.26,Good
+145,145,TN,Not in a city,Haywood,4.83,47.64,3.06,11.0,47.64,Good
+146,146,TN,Not in a city,Meigs,10.64,60.12,3.95,11.0,60.12,Moderate
+147,147,TX,Austin,Travis,12.48,36.98,1.01,1.67,36.98,Good
+148,148,TX,Dallas,Dallas,27.09,37.08,2.47,5.15,37.08,Good
+149,149,TX,Deer Park,Harris,14.45,34.07,2.6,2.38,34.07,Good
+150,150,TX,El Paso,El Paso,29.27,39.55,2.51,5.88,39.55,Good
+151,151,TX,Houston,Harris,26.04,31.77,12.73,4.6,31.77,Good
+152,152,TX,Not in a city,Bexar,12.79,31.14,7.13,2.77,31.14,Good
+153,153,TX,San Antonio,Bexar,19.61,33.07,2.61,4.96,33.07,Good
+154,154,TX,Waco,McLennan,7.33,36.56,0.74,1.49,36.56,Good
+155,155,UT,Not in a city,Uintah,3.07,47.54,0.1,4.75,47.54,Good
+156,156,UT,Roosevelt,Duchesne,5.81,54.5,0.54,1.19,54.5,Moderate
+157,157,UT,Salt Lake City,Salt Lake,29.94,40.31,1.48,5.68,40.31,Good
+158,158,VA,Alexandria,Alexandria City,27.14,41.18,10.46,4.07,41.18,Good
+159,159,VA,Annandale,Fairfax,25.21,38.14,13.99,5.93,38.14,Good
+160,160,VA,East Highland Park,Henrico,17.0,36.51,2.1,3.85,36.51,Good
+161,161,VA,Hampton,Hampton City,7.54,42.34,4.64,3.55,42.34,Good
+162,162,VA,McLean,Fairfax,28.7,36.63,17.6,8.54,36.63,Good
+163,163,VA,Not in a city,Alexandria City,22.6,35.23,1.35,3.99,35.23,Good
+164,164,VA,Not in a city,Fairfax,15.64,35.58,11.85,5.83,35.58,Good
+165,165,VA,Seven Corners,Fairfax,33.14,32.02,27.3,11.13,33.14,Good
+166,166,VA,Vinton,Roanoke,9.36,39.75,0.62,3.3,39.75,Good
+167,167,WA,Seattle,King,21.72,27.71,1.95,2.73,27.71,Good
+168,168,WI,Milwaukee,Milwaukee,26.17,27.32,8.28,5.25,27.32,Good
+169,169,WY,Not in a city,Laramie,11.13,43.04,1.04,0.88,43.04,Good
+170,170,WY,Not in a city,Sweetwater,12.78,36.67,7.05,4.45,36.67,Good
+171,171,WY,Not in a city,Uinta,6.4,40.62,0.96,1.81,40.62,Good
+172,172,WY,Riverton,Fremont,5.59,41.26,0.57,0.0,41.26,Good

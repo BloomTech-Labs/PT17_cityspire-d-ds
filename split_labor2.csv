@@ -1,0 +1,722 @@
+,Unnamed: 0,Unnamed: 0.1,State,City,occ_title,jobs_1000,loc_quotient,avg_hourly_salary,avg_annual_salary
+0,0,0, TX,Abilene,All Occupations,1000.0,1.0,20.08,41760.0
+1,286,286, PR,Aguadilla,All Occupations,1000.0,1.0,12.48,25960.0
+2,286,286, PR,Isabela,All Occupations,1000.0,1.0,12.48,25960.0
+3,467,467, OH,Akron,All Occupations,1000.0,1.0,23.75,49400.0
+4,979,979, GA,Albany,All Occupations,1000.0,1.0,20.5,42640.0
+5,1217,1217, OR,Albany,All Occupations,1000.0,1.0,22.8,47410.0
+6,1472,1472, NY,Albany,All Occupations,1000.0,1.0,26.86,55860.0
+7,1472,1472, NY,Schenectady,All Occupations,1000.0,1.0,26.86,55860.0
+8,1472,1472, NY,Troy,All Occupations,1000.0,1.0,26.86,55860.0
+9,2030,2030, NM,Albuquerque,All Occupations,1000.0,1.0,23.4,48660.0
+10,2542,2542, LA,Alexandria,All Occupations,1000.0,1.0,19.43,40410.0
+11,2793,2793, PA,Allentown,All Occupations,1000.0,1.0,23.23,48320.0
+12,2793,2793, PA,Bethlehem,All Occupations,1000.0,1.0,23.23,48320.0
+13,2793,2793, PA,Easton,All Occupations,1000.0,1.0,23.23,48320.0
+14,2793,2793,NJ,Allentown,All Occupations,1000.0,1.0,23.23,48320.0
+15,2793,2793,NJ,Bethlehem,All Occupations,1000.0,1.0,23.23,48320.0
+16,2793,2793,NJ,Easton,All Occupations,1000.0,1.0,23.23,48320.0
+17,3319,3319, PA,Altoona,All Occupations,1000.0,1.0,20.08,41770.0
+18,3566,3566, TX,Amarillo,All Occupations,1000.0,1.0,21.22,44130.0
+19,3913,3913, IA,Ames,All Occupations,1000.0,1.0,24.63,51220.0
+20,4147,4147, AK,Anchorage,All Occupations,1000.0,1.0,28.85,60020.0
+21,4583,4583, MI,Ann Arbor,All Occupations,1000.0,1.0,27.1,56370.0
+22,5017,5017, AL,Anniston,All Occupations,1000.0,1.0,19.39,40330.0
+23,5017,5017, AL,Oxford,All Occupations,1000.0,1.0,19.39,40330.0
+24,5017,5017, AL,Jacksonville,All Occupations,1000.0,1.0,19.39,40330.0
+25,5227,5227, WI,Appleton,All Occupations,1000.0,1.0,22.82,47460.0
+26,5585,5585, PR,Arecibo,All Occupations,1000.0,1.0,12.41,25800.0
+27,5734,5734, NC,Asheville,All Occupations,1000.0,1.0,21.55,44830.0
+28,6170,6170, GA,Athens,All Occupations,1000.0,1.0,22.47,46730.0
+29,6170,6170, GA,Clarke County,All Occupations,1000.0,1.0,22.47,46730.0
+30,6459,6459, GA,Atlanta,All Occupations,1000.0,1.0,26.01,54110.0
+31,6459,6459, GA,Sandy Springs,All Occupations,1000.0,1.0,26.01,54110.0
+32,6459,6459, GA,Roswell,All Occupations,1000.0,1.0,26.01,54110.0
+33,7144,7144, NJ,Atlantic City,All Occupations,1000.0,1.0,23.33,48520.0
+34,7144,7144, NJ,Hammonton,All Occupations,1000.0,1.0,23.33,48520.0
+35,7479,7479, AL,Auburn,All Occupations,1000.0,1.0,19.73,41030.0
+36,7479,7479, AL,Opelika,All Occupations,1000.0,1.0,19.73,41030.0
+37,7704,7704, GA,Augusta,All Occupations,1000.0,1.0,22.19,46160.0
+38,7704,7704, GA,Richmond County,All Occupations,1000.0,1.0,22.19,46160.0
+39,7704,7704,SC,Augusta,All Occupations,1000.0,1.0,22.19,46160.0
+40,7704,7704,SC,Richmond County,All Occupations,1000.0,1.0,22.19,46160.0
+41,8131,8131, TX,Austin,All Occupations,1000.0,1.0,26.53,55190.0
+42,8131,8131, TX,Round Rock,All Occupations,1000.0,1.0,26.53,55190.0
+43,8732,8732, CA,Bakersfield,All Occupations,1000.0,1.0,24.17,50270.0
+44,9201,9201, MD,Baltimore,All Occupations,1000.0,1.0,28.49,59250.0
+45,9201,9201, MD,Columbia,All Occupations,1000.0,1.0,28.49,59250.0
+46,9201,9201, MD,Towson,All Occupations,1000.0,1.0,28.49,59250.0
+47,9871,9871, LA,Baton Rouge,All Occupations,1000.0,1.0,22.22,46210.0
+48,10403,10403, MI,Battle Creek,All Occupations,1000.0,1.0,23.32,48500.0
+49,10635,10635, MI,Bay City,All Occupations,1000.0,1.0,21.11,43910.0
+50,10812,10812, TX,Beaumont,All Occupations,1000.0,1.0,23.48,48830.0
+51,10812,10812, TX,Port Arthur,All Occupations,1000.0,1.0,23.48,48830.0
+52,11204,11204, WV,Beckley,All Occupations,1000.0,1.0,19.3,40130.0
+53,11403,11403, WA,Bellingham,All Occupations,1000.0,1.0,24.23,50390.0
+54,11739,11739, OR,Bend,All Occupations,1000.0,1.0,24.01,49940.0
+55,11739,11739, OR,Redmond,All Occupations,1000.0,1.0,24.01,49940.0
+56,12070,12070, MT,Billings,All Occupations,1000.0,1.0,23.11,48080.0
+57,12409,12409, NY,Binghamton,All Occupations,1000.0,1.0,23.95,49810.0
+58,12758,12758, AL,Birmingham,All Occupations,1000.0,1.0,23.41,48680.0
+59,12758,12758, AL,Hoover,All Occupations,1000.0,1.0,23.41,48680.0
+60,13309,13309, ND,Bismarck,All Occupations,1000.0,1.0,24.73,51440.0
+61,13627,13627, VA,Blacksburg,All Occupations,1000.0,1.0,22.03,45820.0
+62,13627,13627, VA,Christiansburg,All Occupations,1000.0,1.0,22.03,45820.0
+63,13627,13627, VA,Radford,All Occupations,1000.0,1.0,22.03,45820.0
+64,13919,13919, IL,Bloomington,All Occupations,1000.0,1.0,26.32,54740.0
+65,14213,14213, IN,Bloomington,All Occupations,1000.0,1.0,22.51,46810.0
+66,14474,14474, PA,Bloomsburg,All Occupations,1000.0,1.0,22.36,46510.0
+67,14474,14474, PA,Berwick,All Occupations,1000.0,1.0,22.36,46510.0
+68,14664,14664, ID,Boise City,All Occupations,1000.0,1.0,22.68,47170.0
+69,15149,15149, CO,Boulder,All Occupations,1000.0,1.0,32.29,67160.0
+70,15572,15572, KY,Bowling Green,All Occupations,1000.0,1.0,19.8,41180.0
+71,15848,15848, WA,Bremerton,All Occupations,1000.0,1.0,27.1,56360.0
+72,15848,15848, WA,Silverdale,All Occupations,1000.0,1.0,27.1,56360.0
+73,16143,16143, TX,Brownsville,All Occupations,1000.0,1.0,16.85,35050.0
+74,16143,16143, TX,Harlingen,All Occupations,1000.0,1.0,16.85,35050.0
+75,16464,16464, GA,Brunswick,All Occupations,1000.0,1.0,20.73,43120.0
+76,16673,16673, NY,Buffalo,All Occupations,1000.0,1.0,24.41,50780.0
+77,16673,16673, NY,Cheektowaga,All Occupations,1000.0,1.0,24.41,50780.0
+78,16673,16673, NY,Niagara Falls,All Occupations,1000.0,1.0,24.41,50780.0
+79,17251,17251, NC,Burlington,All Occupations,1000.0,1.0,19.41,40370.0
+80,17483,17483, MD,California,All Occupations,1000.0,1.0,34.65,72070.0
+81,17483,17483, MD,Lexington Park,All Occupations,1000.0,1.0,34.65,72070.0
+82,17679,17679, OH,Canton,All Occupations,1000.0,1.0,20.91,43500.0
+83,17679,17679, OH,Massillon,All Occupations,1000.0,1.0,20.91,43500.0
+84,18093,18093, FL,Cape Coral,All Occupations,1000.0,1.0,21.78,45300.0
+85,18093,18093, FL,Fort Myers,All Occupations,1000.0,1.0,21.78,45300.0
+86,18523,18523, MO,Cape Girardeau,All Occupations,1000.0,1.0,19.69,40960.0
+87,18523,18523,IL,Cape Girardeau,All Occupations,1000.0,1.0,19.69,40960.0
+88,18749,18749, IL,Carbondale,All Occupations,1000.0,1.0,21.55,44830.0
+89,18749,18749, IL,Marion,All Occupations,1000.0,1.0,21.55,44830.0
+90,18990,18990, NV,Carson City,All Occupations,1000.0,1.0,24.77,51530.0
+91,19178,19178, WY,Casper,All Occupations,1000.0,1.0,24.03,49980.0
+92,19393,19393, IA,Cedar Rapids,All Occupations,1000.0,1.0,24.63,51240.0
+93,19795,19795, PA,Chambersburg,All Occupations,1000.0,1.0,21.75,45240.0
+94,19795,19795, PA,Waynesboro,All Occupations,1000.0,1.0,21.75,45240.0
+95,20045,20045, IL,Champaign,All Occupations,1000.0,1.0,24.79,51560.0
+96,20045,20045, IL,Urbana,All Occupations,1000.0,1.0,24.79,51560.0
+97,20384,20384, WV,Charleston,All Occupations,1000.0,1.0,21.96,45670.0
+98,20741,20741, SC,Charleston,All Occupations,1000.0,1.0,22.98,47800.0
+99,20741,20741, SC,North Charleston,All Occupations,1000.0,1.0,22.98,47800.0
+100,21219,21219, NC,Charlotte,All Occupations,1000.0,1.0,25.07,52150.0
+101,21219,21219, NC,Concord,All Occupations,1000.0,1.0,25.07,52150.0
+102,21219,21219, NC,Gastonia,All Occupations,1000.0,1.0,25.07,52150.0
+103,21219,21219,SC,Charlotte,All Occupations,1000.0,1.0,25.07,52150.0
+104,21219,21219,SC,Concord,All Occupations,1000.0,1.0,25.07,52150.0
+105,21219,21219,SC,Gastonia,All Occupations,1000.0,1.0,25.07,52150.0
+106,21842,21842, VA,Charlottesville,All Occupations,1000.0,1.0,26.54,55200.0
+107,22227,22227, TN,Chattanooga,All Occupations,1000.0,1.0,21.63,44990.0
+108,22227,22227,GA,Chattanooga,All Occupations,1000.0,1.0,21.63,44990.0
+109,22684,22684, WY,Cheyenne,All Occupations,1000.0,1.0,23.73,49360.0
+110,22925,22925, IL,Chicago,All Occupations,1000.0,1.0,27.48,57160.0
+111,22925,22925, IL,Naperville,All Occupations,1000.0,1.0,27.48,57160.0
+112,22925,22925, IL,Elgin,All Occupations,1000.0,1.0,27.48,57160.0
+113,22925,22925,IN,Chicago,All Occupations,1000.0,1.0,27.48,57160.0
+114,22925,22925,IN,Naperville,All Occupations,1000.0,1.0,27.48,57160.0
+115,22925,22925,IN,Elgin,All Occupations,1000.0,1.0,27.48,57160.0
+116,22925,22925,WI,Chicago,All Occupations,1000.0,1.0,27.48,57160.0
+117,22925,22925,WI,Naperville,All Occupations,1000.0,1.0,27.48,57160.0
+118,22925,22925,WI,Elgin,All Occupations,1000.0,1.0,27.48,57160.0
+119,23669,23669, CA,Chico,All Occupations,1000.0,1.0,23.37,48610.0
+120,23978,23978, OH,Cincinnati,All Occupations,1000.0,1.0,24.72,51410.0
+121,23978,23978,KY,Cincinnati,All Occupations,1000.0,1.0,24.72,51410.0
+122,23978,23978,IN,Cincinnati,All Occupations,1000.0,1.0,24.72,51410.0
+123,24627,24627, TN,Clarksville,All Occupations,1000.0,1.0,19.23,39990.0
+124,24627,24627,KY,Clarksville,All Occupations,1000.0,1.0,19.23,39990.0
+125,24930,24930, TN,Cleveland,All Occupations,1000.0,1.0,18.69,38880.0
+126,25132,25132, OH,Cleveland,All Occupations,1000.0,1.0,25.03,52050.0
+127,25132,25132, OH,Elyria,All Occupations,1000.0,1.0,25.03,52050.0
+128,25766,25766, ID,Coeur d'Alene,All Occupations,1000.0,1.0,20.74,43150.0
+129,26034,26034, TX,College Station,All Occupations,1000.0,1.0,22.86,47560.0
+130,26034,26034, TX,Bryan,All Occupations,1000.0,1.0,22.86,47560.0
+131,26402,26402, CO,Colorado Springs,All Occupations,1000.0,1.0,25.17,52360.0
+132,26890,26890, MO,Columbia,All Occupations,1000.0,1.0,22.47,46740.0
+133,27190,27190, SC,Columbia,All Occupations,1000.0,1.0,22.05,45860.0
+134,27676,27676, GA,Columbus,All Occupations,1000.0,1.0,20.87,43400.0
+135,27676,27676,AL,Columbus,All Occupations,1000.0,1.0,20.87,43400.0
+136,28022,28022, IN,Columbus,All Occupations,1000.0,1.0,24.78,51540.0
+137,28237,28237, OH,Columbus,All Occupations,1000.0,1.0,25.07,52130.0
+138,28866,28866, TX,Corpus Christi,All Occupations,1000.0,1.0,21.41,44540.0
+139,29268,29268, OR,Corvallis,All Occupations,1000.0,1.0,27.11,56390.0
+140,29482,29482, FL,Crestview,All Occupations,1000.0,1.0,22.1,45980.0
+141,29482,29482, FL,Fort Walton Beach,All Occupations,1000.0,1.0,22.1,45980.0
+142,29482,29482, FL,Destin,All Occupations,1000.0,1.0,22.1,45980.0
+143,29815,29815, MD,Cumberland,All Occupations,1000.0,1.0,21.63,44990.0
+144,29815,29815,WV,Cumberland,All Occupations,1000.0,1.0,21.63,44990.0
+145,30030,30030, TX,Dallas,All Occupations,1000.0,1.0,25.87,53800.0
+146,30030,30030, TX,Fort Worth,All Occupations,1000.0,1.0,25.87,53800.0
+147,30030,30030, TX,Arlington,All Occupations,1000.0,1.0,25.87,53800.0
+148,30730,30730, GA,Dalton,All Occupations,1000.0,1.0,19.64,40850.0
+149,30957,30957, IL,Danville,All Occupations,1000.0,1.0,21.26,44220.0
+150,31116,31116, AL,Daphne,All Occupations,1000.0,1.0,18.34,38150.0
+151,31116,31116, AL,Fairhope,All Occupations,1000.0,1.0,18.34,38150.0
+152,31116,31116, AL,Foley,All Occupations,1000.0,1.0,18.34,38150.0
+153,31389,31389, IA,Davenport,All Occupations,1000.0,1.0,22.86,47550.0
+154,31389,31389, IA,Moline,All Occupations,1000.0,1.0,22.86,47550.0
+155,31389,31389, IA,Rock Island,All Occupations,1000.0,1.0,22.86,47550.0
+156,31389,31389,IL,Davenport,All Occupations,1000.0,1.0,22.86,47550.0
+157,31389,31389,IL,Moline,All Occupations,1000.0,1.0,22.86,47550.0
+158,31389,31389,IL,Rock Island,All Occupations,1000.0,1.0,22.86,47550.0
+159,31823,31823, OH,Dayton,All Occupations,1000.0,1.0,24.79,51560.0
+160,32356,32356, AL,Decatur,All Occupations,1000.0,1.0,20.63,42910.0
+161,32599,32599, IL,Decatur,All Occupations,1000.0,1.0,22.01,45790.0
+162,32811,32811, FL,Deltona,All Occupations,1000.0,1.0,19.68,40930.0
+163,32811,32811, FL,Daytona Beach,All Occupations,1000.0,1.0,19.68,40930.0
+164,32811,32811, FL,Ormond Beach,All Occupations,1000.0,1.0,19.68,40930.0
+165,33207,33207, CO,Denver,All Occupations,1000.0,1.0,29.58,61540.0
+166,33207,33207, CO,Aurora,All Occupations,1000.0,1.0,29.58,61540.0
+167,33207,33207, CO,Lakewood,All Occupations,1000.0,1.0,29.58,61540.0
+168,33873,33873, IA,Des Moines,All Occupations,1000.0,1.0,25.43,52890.0
+169,33873,33873, IA,West Des Moines,All Occupations,1000.0,1.0,25.43,52890.0
+170,34389,34389, MI,Detroit,All Occupations,1000.0,1.0,26.41,54940.0
+171,34389,34389, MI,Warren,All Occupations,1000.0,1.0,26.41,54940.0
+172,34389,34389, MI,Dearborn,All Occupations,1000.0,1.0,26.41,54940.0
+173,35061,35061, AL,Dothan,All Occupations,1000.0,1.0,19.56,40690.0
+174,35299,35299, DE,Dover,All Occupations,1000.0,1.0,22.33,46440.0
+175,35542,35542, IA,Dubuque,All Occupations,1000.0,1.0,22.47,46740.0
+176,35810,35810, MN,Duluth,All Occupations,1000.0,1.0,23.27,48390.0
+177,35810,35810,WI,Duluth,All Occupations,1000.0,1.0,23.27,48390.0
+178,36220,36220, NC,Durham,All Occupations,1000.0,1.0,29.43,61220.0
+179,36220,36220, NC,Chapel Hill,All Occupations,1000.0,1.0,29.43,61220.0
+180,36694,36694, PA,East Stroudsburg,All Occupations,1000.0,1.0,20.72,43100.0
+181,36926,36926, WI,Eau Claire,All Occupations,1000.0,1.0,21.63,44980.0
+182,37237,37237, CA,El Centro,All Occupations,1000.0,1.0,22.61,47030.0
+183,37470,37470, KY,Elizabethtown,All Occupations,1000.0,1.0,21.13,43950.0
+184,37470,37470, KY,Fort Knox,All Occupations,1000.0,1.0,21.13,43950.0
+185,37717,37717, IN,Elkhart,All Occupations,1000.0,1.0,21.48,44680.0
+186,37717,37717, IN,Goshen,All Occupations,1000.0,1.0,21.48,44680.0
+187,38018,38018, NY,Elmira,All Occupations,1000.0,1.0,22.68,47170.0
+188,38212,38212, TX,El Paso,All Occupations,1000.0,1.0,19.45,40460.0
+189,38660,38660, OK,Enid,All Occupations,1000.0,1.0,20.96,43600.0
+190,38824,38824, PA,Erie,All Occupations,1000.0,1.0,20.52,42670.0
+191,39190,39190, OR,Eugene,All Occupations,1000.0,1.0,23.47,48820.0
+192,39626,39626, IN,Evansville,All Occupations,1000.0,1.0,21.46,44640.0
+193,39626,39626,KY,Evansville,All Occupations,1000.0,1.0,21.46,44640.0
+194,40016,40016, AK,Fairbanks,All Occupations,1000.0,1.0,27.47,57150.0
+195,40238,40238, ND,Fargo,All Occupations,1000.0,1.0,24.21,50360.0
+196,40238,40238,MN,Fargo,All Occupations,1000.0,1.0,24.21,50360.0
+197,40649,40649, NM,Farmington,All Occupations,1000.0,1.0,21.93,45610.0
+198,40873,40873, NC,Fayetteville,All Occupations,1000.0,1.0,20.92,43520.0
+199,41220,41220, AR,Fayetteville,All Occupations,1000.0,1.0,22.88,47600.0
+200,41220,41220, AR,Springdale,All Occupations,1000.0,1.0,22.88,47600.0
+201,41220,41220, AR,Rogers,All Occupations,1000.0,1.0,22.88,47600.0
+202,41220,41220,MO,Fayetteville,All Occupations,1000.0,1.0,22.88,47600.0
+203,41220,41220,MO,Springdale,All Occupations,1000.0,1.0,22.88,47600.0
+204,41220,41220,MO,Rogers,All Occupations,1000.0,1.0,22.88,47600.0
+205,41661,41661, AZ,Flagstaff,All Occupations,1000.0,1.0,21.76,45270.0
+206,41930,41930, MI,Flint,All Occupations,1000.0,1.0,22.74,47300.0
+207,42262,42262, SC,Florence,All Occupations,1000.0,1.0,20.74,43140.0
+208,42563,42563, AL,Florence,All Occupations,1000.0,1.0,18.92,39350.0
+209,42563,42563, AL,Muscle Shoals,All Occupations,1000.0,1.0,18.92,39350.0
+210,42796,42796, WI,Fond du Lac,All Occupations,1000.0,1.0,23.66,49210.0
+211,43023,43023, CO,Fort Collins,All Occupations,1000.0,1.0,25.59,53230.0
+212,43457,43457, AR,Fort Smith,All Occupations,1000.0,1.0,19.09,39700.0
+213,43457,43457,OK,Fort Smith,All Occupations,1000.0,1.0,19.09,39700.0
+214,43804,43804, IN,Fort Wayne,All Occupations,1000.0,1.0,22.51,46810.0
+215,44259,44259, CA,Fresno,All Occupations,1000.0,1.0,23.48,48840.0
+216,44766,44766, AL,Gadsden,All Occupations,1000.0,1.0,18.22,37890.0
+217,44938,44938, FL,Gainesville,All Occupations,1000.0,1.0,23.82,49540.0
+218,45298,45298, GA,Gainesville,All Occupations,1000.0,1.0,21.27,44240.0
+219,45581,45581, PA,Gettysburg,All Occupations,1000.0,1.0,20.59,42820.0
+220,45766,45766, NY,Glens Falls,All Occupations,1000.0,1.0,22.71,47230.0
+221,46008,46008, NC,Goldsboro,All Occupations,1000.0,1.0,19.3,40140.0
+222,46208,46208, ND,Grand Forks,All Occupations,1000.0,1.0,22.57,46940.0
+223,46208,46208,MN,Grand Forks,All Occupations,1000.0,1.0,22.57,46940.0
+224,46451,46451, NE,Grand Island,All Occupations,1000.0,1.0,21.08,43840.0
+225,46669,46669, CO,Grand Junction,All Occupations,1000.0,1.0,22.52,46840.0
+226,46948,46948, MI,Grand Rapids,All Occupations,1000.0,1.0,22.6,47010.0
+227,46948,46948, MI,Wyoming,All Occupations,1000.0,1.0,22.6,47010.0
+228,47497,47497, OR,Grants Pass,All Occupations,1000.0,1.0,20.56,42770.0
+229,47676,47676, MT,Great Falls,All Occupations,1000.0,1.0,20.71,43080.0
+230,47897,47897, CO,Greeley,All Occupations,1000.0,1.0,23.91,49730.0
+231,48234,48234, WI,Green Bay,All Occupations,1000.0,1.0,22.79,47400.0
+232,48651,48651, NC,Greensboro,All Occupations,1000.0,1.0,21.99,45740.0
+233,48651,48651, NC,High Point,All Occupations,1000.0,1.0,21.99,45740.0
+234,49150,49150, NC,Greenville,All Occupations,1000.0,1.0,22.43,46650.0
+235,49423,49423, SC,Greenville,All Occupations,1000.0,1.0,21.57,44860.0
+236,49423,49423, SC,Anderson,All Occupations,1000.0,1.0,21.57,44860.0
+237,49423,49423, SC,Mauldin,All Occupations,1000.0,1.0,21.57,44860.0
+238,49904,49904, PR,Guayama,All Occupations,1000.0,1.0,13.44,27950.0
+239,49976,49976, MS,Gulfport,All Occupations,1000.0,1.0,21.09,43870.0
+240,49976,49976, MS,Biloxi,All Occupations,1000.0,1.0,21.09,43870.0
+241,49976,49976, MS,Pascagoula,All Occupations,1000.0,1.0,21.09,43870.0
+242,50360,50360, MD,Hagerstown,All Occupations,1000.0,1.0,22.31,46400.0
+243,50360,50360, MD,Martinsburg,All Occupations,1000.0,1.0,22.31,46400.0
+244,50360,50360,WV,Hagerstown,All Occupations,1000.0,1.0,22.31,46400.0
+245,50360,50360,WV,Martinsburg,All Occupations,1000.0,1.0,22.31,46400.0
+246,50704,50704, LA,Hammond,All Occupations,1000.0,1.0,18.97,39460.0
+247,50909,50909, CA,Hanford,All Occupations,1000.0,1.0,24.03,49970.0
+248,50909,50909, CA,Corcoran,All Occupations,1000.0,1.0,24.03,49970.0
+249,51105,51105, PA,Harrisburg,All Occupations,1000.0,1.0,24.26,50450.0
+250,51105,51105, PA,Carlisle,All Occupations,1000.0,1.0,24.26,50450.0
+251,51598,51598, VA,Harrisonburg,All Occupations,1000.0,1.0,21.38,44460.0
+252,51863,51863, MS,Hattiesburg,All Occupations,1000.0,1.0,18.95,39420.0
+253,52100,52100, NC,Hickory,All Occupations,1000.0,1.0,20.11,41840.0
+254,52100,52100, NC,Lenoir,All Occupations,1000.0,1.0,20.11,41840.0
+255,52100,52100, NC,Morganton,All Occupations,1000.0,1.0,20.11,41840.0
+256,52477,52477, SC,Hilton Head Island,All Occupations,1000.0,1.0,20.51,42670.0
+257,52477,52477, SC,Bluffton,All Occupations,1000.0,1.0,20.51,42670.0
+258,52477,52477, SC,Beaufort,All Occupations,1000.0,1.0,20.51,42670.0
+259,52751,52751, GA,Hinesville,All Occupations,1000.0,1.0,20.66,42970.0
+260,52866,52866, FL,Homosassa Springs,All Occupations,1000.0,1.0,19.94,41470.0
+261,53034,53034, AR,Hot Springs,All Occupations,1000.0,1.0,17.97,37380.0
+262,53235,53235, LA,Houma,All Occupations,1000.0,1.0,23.59,49070.0
+263,53235,53235, LA,Thibodaux,All Occupations,1000.0,1.0,23.59,49070.0
+264,53520,53520, TX,Houston,All Occupations,1000.0,1.0,26.2,54490.0
+265,53520,53520, TX,The Woodlands,All Occupations,1000.0,1.0,26.2,54490.0
+266,53520,53520, TX,Sugar Land,All Occupations,1000.0,1.0,26.2,54490.0
+267,54191,54191, WV,Huntington,All Occupations,1000.0,1.0,20.66,42970.0
+268,54191,54191, WV,Ashland,All Occupations,1000.0,1.0,20.66,42970.0
+269,54191,54191,KY,Huntington,All Occupations,1000.0,1.0,20.66,42970.0
+270,54191,54191,KY,Ashland,All Occupations,1000.0,1.0,20.66,42970.0
+271,54191,54191,OH,Huntington,All Occupations,1000.0,1.0,20.66,42970.0
+272,54191,54191,OH,Ashland,All Occupations,1000.0,1.0,20.66,42970.0
+273,54568,54568, AL,Huntsville,All Occupations,1000.0,1.0,26.91,55980.0
+274,54995,54995, ID,Idaho Falls,All Occupations,1000.0,1.0,22.42,46620.0
+275,55274,55274, IN,Indianapolis,All Occupations,1000.0,1.0,24.55,51060.0
+276,55274,55274, IN,Carmel,All Occupations,1000.0,1.0,24.55,51060.0
+277,55274,55274, IN,Anderson,All Occupations,1000.0,1.0,24.55,51060.0
+278,55890,55890, IA,Iowa City,All Occupations,1000.0,1.0,24.88,51760.0
+279,56196,56196, NY,Ithaca,All Occupations,1000.0,1.0,29.14,60600.0
+280,56431,56431, MI,Jackson,All Occupations,1000.0,1.0,24.44,50840.0
+281,56677,56677, MS,Jackson,All Occupations,1000.0,1.0,20.81,43290.0
+282,57132,57132, TN,Jackson,All Occupations,1000.0,1.0,20.16,41930.0
+283,57413,57413, FL,Jacksonville,All Occupations,1000.0,1.0,23.21,48270.0
+284,57963,57963, NC,Jacksonville,All Occupations,1000.0,1.0,18.59,38670.0
+285,58182,58182, WI,Janesville,All Occupations,1000.0,1.0,22.69,47200.0
+286,58182,58182, WI,Beloit,All Occupations,1000.0,1.0,22.69,47200.0
+287,58456,58456, MO,Jefferson City,All Occupations,1000.0,1.0,20.61,42860.0
+288,58737,58737, TN,Johnson City,All Occupations,1000.0,1.0,20.36,42340.0
+289,59040,59040, PA,Johnstown,All Occupations,1000.0,1.0,20.52,42680.0
+290,59279,59279, AR,Jonesboro,All Occupations,1000.0,1.0,19.0,39510.0
+291,59531,59531, MO,Joplin,All Occupations,1000.0,1.0,18.91,39340.0
+292,59819,59819, HI,Kahului,All Occupations,1000.0,1.0,24.16,50250.0
+293,59819,59819, HI,Wailuku,All Occupations,1000.0,1.0,24.16,50250.0
+294,59819,59819, HI,Lahaina,All Occupations,1000.0,1.0,24.16,50250.0
+295,60080,60080, MI,Kalamazoo,All Occupations,1000.0,1.0,23.19,48230.0
+296,60080,60080, MI,Portage,All Occupations,1000.0,1.0,23.19,48230.0
+297,60461,60461, IL,Kankakee,All Occupations,1000.0,1.0,22.43,46650.0
+298,60670,60670, MO,Kansas City,All Occupations,1000.0,1.0,24.82,51630.0
+299,60670,60670,KS,Kansas City,All Occupations,1000.0,1.0,24.82,51630.0
+300,61318,61318, WA,Kennewick,All Occupations,1000.0,1.0,26.71,55560.0
+301,61318,61318, WA,Richland,All Occupations,1000.0,1.0,26.71,55560.0
+302,61659,61659, TX,Killeen,All Occupations,1000.0,1.0,21.73,45190.0
+303,61659,61659, TX,Temple,All Occupations,1000.0,1.0,21.73,45190.0
+304,62033,62033, TN,Kingsport,All Occupations,1000.0,1.0,21.02,43710.0
+305,62033,62033, TN,Bristol,All Occupations,1000.0,1.0,21.02,43710.0
+306,62033,62033, TN,Bristol,All Occupations,1000.0,1.0,21.02,43710.0
+307,62033,62033,VA,Kingsport,All Occupations,1000.0,1.0,21.02,43710.0
+308,62033,62033,VA,Bristol,All Occupations,1000.0,1.0,21.02,43710.0
+309,62033,62033,VA,Bristol,All Occupations,1000.0,1.0,21.02,43710.0
+310,62392,62392, NY,Kingston,All Occupations,1000.0,1.0,23.88,49660.0
+311,62644,62644, TN,Knoxville,All Occupations,1000.0,1.0,21.85,45450.0
+312,63201,63201, IN,Kokomo,All Occupations,1000.0,1.0,22.1,45970.0
+313,63370,63370, WI,La Crosse,All Occupations,1000.0,1.0,22.16,46100.0
+314,63370,63370, WI,Onalaska,All Occupations,1000.0,1.0,22.16,46100.0
+315,63370,63370,MN,La Crosse,All Occupations,1000.0,1.0,22.16,46100.0
+316,63370,63370,MN,Onalaska,All Occupations,1000.0,1.0,22.16,46100.0
+317,63674,63674, LA,Lafayette,All Occupations,1000.0,1.0,20.01,41620.0
+318,64078,64078, IN,Lafayette,All Occupations,1000.0,1.0,22.64,47090.0
+319,64078,64078, IN,West Lafayette,All Occupations,1000.0,1.0,22.64,47090.0
+320,64390,64390, LA,Lake Charles,All Occupations,1000.0,1.0,22.74,47300.0
+321,64688,64688, AZ,Lake Havasu City,All Occupations,1000.0,1.0,19.9,41400.0
+322,64688,64688, AZ,Kingman,All Occupations,1000.0,1.0,19.9,41400.0
+323,64933,64933, FL,Lakeland,All Occupations,1000.0,1.0,20.75,43150.0
+324,64933,64933, FL,Winter Haven,All Occupations,1000.0,1.0,20.75,43150.0
+325,65366,65366, PA,Lancaster,All Occupations,1000.0,1.0,22.19,46150.0
+326,65817,65817, MI,Lansing,All Occupations,1000.0,1.0,24.54,51040.0
+327,65817,65817, MI,East Lansing,All Occupations,1000.0,1.0,24.54,51040.0
+328,66245,66245, TX,Laredo,All Occupations,1000.0,1.0,18.45,38370.0
+329,66507,66507, NM,Las Cruces,All Occupations,1000.0,1.0,20.44,42510.0
+330,66792,66792, NV,Las Vegas,All Occupations,1000.0,1.0,22.43,46650.0
+331,66792,66792, NV,Henderson,All Occupations,1000.0,1.0,22.43,46650.0
+332,66792,66792, NV,Paradise,All Occupations,1000.0,1.0,22.43,46650.0
+333,67375,67375, KS,Lawrence,All Occupations,1000.0,1.0,20.93,43530.0
+334,67599,67599, OK,Lawton,All Occupations,1000.0,1.0,19.43,40410.0
+335,67819,67819, PA,Lebanon,All Occupations,1000.0,1.0,20.97,43610.0
+336,68036,68036, ID,Lewiston,All Occupations,1000.0,1.0,21.92,45590.0
+337,68036,68036,WA,Lewiston,All Occupations,1000.0,1.0,21.92,45590.0
+338,68205,68205, KY,Lexington,All Occupations,1000.0,1.0,21.84,45430.0
+339,68205,68205, KY,Fayette,All Occupations,1000.0,1.0,21.84,45430.0
+340,68665,68665, OH,Lima,All Occupations,1000.0,1.0,21.78,45300.0
+341,68914,68914, NE,Lincoln,All Occupations,1000.0,1.0,23.18,48210.0
+342,69357,69357, AR,Little Rock,All Occupations,1000.0,1.0,22.23,46240.0
+343,69357,69357, AR,North Little Rock,All Occupations,1000.0,1.0,22.23,46240.0
+344,69357,69357, AR,Conway,All Occupations,1000.0,1.0,22.23,46240.0
+345,69870,69870, UT,Logan,All Occupations,1000.0,1.0,20.19,42000.0
+346,69870,69870,ID,Logan,All Occupations,1000.0,1.0,20.19,42000.0
+347,70134,70134, TX,Longview,All Occupations,1000.0,1.0,21.12,43920.0
+348,70462,70462, WA,Longview,All Occupations,1000.0,1.0,24.37,50680.0
+349,70670,70670, CA,Los Angeles,All Occupations,1000.0,1.0,28.74,59770.0
+350,70670,70670, CA,Long Beach,All Occupations,1000.0,1.0,28.74,59770.0
+351,70670,70670, CA,Anaheim,All Occupations,1000.0,1.0,28.74,59770.0
+352,71427,71427, KY,Louisville/Jefferson County,All Occupations,1000.0,1.0,22.6,47010.0
+353,71427,71427,IN,Louisville/Jefferson County,All Occupations,1000.0,1.0,22.6,47010.0
+354,71983,71983, TX,Lubbock,All Occupations,1000.0,1.0,20.83,43320.0
+355,72373,72373, VA,Lynchburg,All Occupations,1000.0,1.0,21.54,44790.0
+356,72727,72727, GA,Macon,All Occupations,1000.0,1.0,20.46,42570.0
+357,73042,73042, CA,Madera,All Occupations,1000.0,1.0,23.94,49790.0
+358,73242,73242, WI,Madison,All Occupations,1000.0,1.0,26.11,54300.0
+359,73768,73768, KS,Manhattan,All Occupations,1000.0,1.0,20.96,43600.0
+360,73969,73969, MN,Mankato,All Occupations,1000.0,1.0,22.99,47810.0
+361,73969,73969, MN,North Mankato,All Occupations,1000.0,1.0,22.99,47810.0
+362,74231,74231, OH,Mansfield,All Occupations,1000.0,1.0,19.79,41170.0
+363,74468,74468, PR,Mayaguez,All Occupations,1000.0,1.0,13.01,27070.0
+364,74621,74621, TX,McAllen,All Occupations,1000.0,1.0,18.04,37530.0
+365,74621,74621, TX,Edinburg,All Occupations,1000.0,1.0,18.04,37530.0
+366,74621,74621, TX,Mission,All Occupations,1000.0,1.0,18.04,37530.0
+367,75010,75010, OR,Medford,All Occupations,1000.0,1.0,23.04,47930.0
+368,75348,75348, TN,Memphis,All Occupations,1000.0,1.0,21.81,45360.0
+369,75348,75348,MS,Memphis,All Occupations,1000.0,1.0,21.81,45360.0
+370,75348,75348,AR,Memphis,All Occupations,1000.0,1.0,21.81,45360.0
+371,75938,75938, CA,Merced,All Occupations,1000.0,1.0,23.08,48000.0
+372,76189,76189, FL,Miami,All Occupations,1000.0,1.0,24.07,50060.0
+373,76189,76189, FL,Fort Lauderdale,All Occupations,1000.0,1.0,24.07,50060.0
+374,76189,76189, FL,West Palm Beach,All Occupations,1000.0,1.0,24.07,50060.0
+375,76896,76896, IN,Michigan City,All Occupations,1000.0,1.0,19.49,40550.0
+376,76896,76896, IN,La Porte,All Occupations,1000.0,1.0,19.49,40550.0
+377,77093,77093, MI,Midland,All Occupations,1000.0,1.0,26.51,55150.0
+378,77251,77251, TX,Midland,All Occupations,1000.0,1.0,28.13,58500.0
+379,77555,77555, WI,Milwaukee,All Occupations,1000.0,1.0,25.22,52450.0
+380,77555,77555, WI,Waukesha,All Occupations,1000.0,1.0,25.22,52450.0
+381,77555,77555, WI,West Allis,All Occupations,1000.0,1.0,25.22,52450.0
+382,78164,78164, MN,Minneapolis,All Occupations,1000.0,1.0,28.52,59310.0
+383,78164,78164, MN,St. Paul,All Occupations,1000.0,1.0,28.52,59310.0
+384,78164,78164, MN,Bloomington,All Occupations,1000.0,1.0,28.52,59310.0
+385,78164,78164,WI,Minneapolis,All Occupations,1000.0,1.0,28.52,59310.0
+386,78164,78164,WI,St. Paul,All Occupations,1000.0,1.0,28.52,59310.0
+387,78164,78164,WI,Bloomington,All Occupations,1000.0,1.0,28.52,59310.0
+388,78861,78861, MT,Missoula,All Occupations,1000.0,1.0,20.93,43530.0
+389,79149,79149, AL,Mobile,All Occupations,1000.0,1.0,21.67,45080.0
+390,79561,79561, CA,Modesto,All Occupations,1000.0,1.0,23.67,49230.0
+391,79953,79953, LA,Monroe,All Occupations,1000.0,1.0,18.54,38560.0
+392,80225,80225, MI,Monroe,All Occupations,1000.0,1.0,22.43,46640.0
+393,80419,80419, AL,Montgomery,All Occupations,1000.0,1.0,20.92,43510.0
+394,80820,80820, WV,Morgantown,All Occupations,1000.0,1.0,23.19,48230.0
+395,81084,81084, TN,Morristown,All Occupations,1000.0,1.0,18.22,37890.0
+396,81304,81304, WA,Mount Vernon,All Occupations,1000.0,1.0,25.6,53250.0
+397,81304,81304, WA,Anacortes,All Occupations,1000.0,1.0,25.6,53250.0
+398,81556,81556, IN,Muncie,All Occupations,1000.0,1.0,21.58,44890.0
+399,81765,81765, MI,Muskegon,All Occupations,1000.0,1.0,21.36,44430.0
+400,82006,82006, SC,Myrtle Beach,All Occupations,1000.0,1.0,18.14,37740.0
+401,82006,82006, SC,Conway,All Occupations,1000.0,1.0,18.14,37740.0
+402,82006,82006, SC,North Myrtle Beach,All Occupations,1000.0,1.0,18.14,37740.0
+403,82006,82006,NC,Myrtle Beach,All Occupations,1000.0,1.0,18.14,37740.0
+404,82006,82006,NC,Conway,All Occupations,1000.0,1.0,18.14,37740.0
+405,82006,82006,NC,North Myrtle Beach,All Occupations,1000.0,1.0,18.14,37740.0
+406,82348,82348, CA,Napa,All Occupations,1000.0,1.0,27.13,56430.0
+407,82631,82631, FL,Naples,All Occupations,1000.0,1.0,23.07,47980.0
+408,82631,82631, FL,Immokalee,All Occupations,1000.0,1.0,23.07,47980.0
+409,82631,82631, FL,Marco Island,All Occupations,1000.0,1.0,23.07,47980.0
+410,82987,82987, TN,Nashville,All Occupations,1000.0,1.0,23.98,49890.0
+411,82987,82987, TN,Davidson,All Occupations,1000.0,1.0,23.98,49890.0
+412,82987,82987, TN,,All Occupations,1000.0,1.0,23.98,49890.0
+413,82987,82987, TN,Murfreesboro,All Occupations,1000.0,1.0,23.98,49890.0
+414,82987,82987, TN,,All Occupations,1000.0,1.0,23.98,49890.0
+415,82987,82987, TN,Franklin,All Occupations,1000.0,1.0,23.98,49890.0
+416,83632,83632, NC,New Bern,All Occupations,1000.0,1.0,21.62,44970.0
+417,83856,83856, LA,New Orleans,All Occupations,1000.0,1.0,22.45,46700.0
+418,83856,83856, LA,Metairie,All Occupations,1000.0,1.0,22.45,46700.0
+419,84438,84438, NY,New York,All Occupations,1000.0,1.0,32.11,66790.0
+420,84438,84438, NY,Newark,All Occupations,1000.0,1.0,32.11,66790.0
+421,84438,84438, NY,Jersey City,All Occupations,1000.0,1.0,32.11,66790.0
+422,84438,84438,NJ,New York,All Occupations,1000.0,1.0,32.11,66790.0
+423,84438,84438,NJ,Newark,All Occupations,1000.0,1.0,32.11,66790.0
+424,84438,84438,NJ,Jersey City,All Occupations,1000.0,1.0,32.11,66790.0
+425,84438,84438,PA,New York,All Occupations,1000.0,1.0,32.11,66790.0
+426,84438,84438,PA,Newark,All Occupations,1000.0,1.0,32.11,66790.0
+427,84438,84438,PA,Jersey City,All Occupations,1000.0,1.0,32.11,66790.0
+428,85197,85197, MI,Niles,All Occupations,1000.0,1.0,21.84,45430.0
+429,85197,85197, MI,Benton Harbor,All Occupations,1000.0,1.0,21.84,45430.0
+430,85447,85447, FL,North Port,All Occupations,1000.0,1.0,22.13,46040.0
+431,85447,85447, FL,Sarasota,All Occupations,1000.0,1.0,22.13,46040.0
+432,85447,85447, FL,Bradenton,All Occupations,1000.0,1.0,22.13,46040.0
+433,85912,85912, FL,Ocala,All Occupations,1000.0,1.0,19.06,39640.0
+434,86218,86218, NJ,Ocean City,All Occupations,1000.0,1.0,21.4,44510.0
+435,86412,86412, TX,Odessa,All Occupations,1000.0,1.0,23.56,49010.0
+436,86688,86688, UT,Ogden,All Occupations,1000.0,1.0,22.34,46470.0
+437,86688,86688, UT,Clearfield,All Occupations,1000.0,1.0,22.34,46470.0
+438,87145,87145, OK,Oklahoma City,All Occupations,1000.0,1.0,23.26,48380.0
+439,87754,87754, WA,Olympia,All Occupations,1000.0,1.0,27.16,56490.0
+440,87754,87754, WA,Tumwater,All Occupations,1000.0,1.0,27.16,56490.0
+441,88091,88091, NE,Omaha,All Occupations,1000.0,1.0,24.3,50550.0
+442,88091,88091, NE,Council Bluffs,All Occupations,1000.0,1.0,24.3,50550.0
+443,88091,88091,IA,Omaha,All Occupations,1000.0,1.0,24.3,50550.0
+444,88091,88091,IA,Council Bluffs,All Occupations,1000.0,1.0,24.3,50550.0
+445,88653,88653, FL,Orlando,All Occupations,1000.0,1.0,22.18,46140.0
+446,88653,88653, FL,Kissimmee,All Occupations,1000.0,1.0,22.18,46140.0
+447,88653,88653, FL,Sanford,All Occupations,1000.0,1.0,22.18,46140.0
+448,89271,89271, WI,Oshkosh,All Occupations,1000.0,1.0,23.27,48410.0
+449,89271,89271, WI,Neenah,All Occupations,1000.0,1.0,23.27,48410.0
+450,89581,89581, KY,Owensboro,All Occupations,1000.0,1.0,20.21,42030.0
+451,89812,89812, CA,Oxnard,All Occupations,1000.0,1.0,26.83,55810.0
+452,89812,89812, CA,Thousand Oaks,All Occupations,1000.0,1.0,26.83,55810.0
+453,89812,89812, CA,Ventura,All Occupations,1000.0,1.0,26.83,55810.0
+454,90299,90299, FL,Palm Bay,All Occupations,1000.0,1.0,24.6,51180.0
+455,90299,90299, FL,Melbourne,All Occupations,1000.0,1.0,24.6,51180.0
+456,90299,90299, FL,Titusville,All Occupations,1000.0,1.0,24.6,51180.0
+457,90728,90728, FL,Panama City,All Occupations,1000.0,1.0,21.05,43780.0
+458,91010,91010, WV,Parkersburg,All Occupations,1000.0,1.0,20.26,42150.0
+459,91010,91010, WV,Vienna,All Occupations,1000.0,1.0,20.26,42150.0
+460,91188,91188, FL,Pensacola,All Occupations,1000.0,1.0,21.11,43920.0
+461,91188,91188, FL,Ferry Pass,All Occupations,1000.0,1.0,21.11,43920.0
+462,91188,91188, FL,Brent,All Occupations,1000.0,1.0,21.11,43920.0
+463,91584,91584, IL,Peoria,All Occupations,1000.0,1.0,25.38,52790.0
+464,91969,91969, PA,Philadelphia,All Occupations,1000.0,1.0,27.69,57580.0
+465,91969,91969, PA,Camden,All Occupations,1000.0,1.0,27.69,57580.0
+466,91969,91969, PA,Wilmington,All Occupations,1000.0,1.0,27.69,57580.0
+467,91969,91969,NJ,Philadelphia,All Occupations,1000.0,1.0,27.69,57580.0
+468,91969,91969,NJ,Camden,All Occupations,1000.0,1.0,27.69,57580.0
+469,91969,91969,NJ,Wilmington,All Occupations,1000.0,1.0,27.69,57580.0
+470,91969,91969,DE,Philadelphia,All Occupations,1000.0,1.0,27.69,57580.0
+471,91969,91969,DE,Camden,All Occupations,1000.0,1.0,27.69,57580.0
+472,91969,91969,DE,Wilmington,All Occupations,1000.0,1.0,27.69,57580.0
+473,91969,91969,MD,Philadelphia,All Occupations,1000.0,1.0,27.69,57580.0
+474,91969,91969,MD,Camden,All Occupations,1000.0,1.0,27.69,57580.0
+475,91969,91969,MD,Wilmington,All Occupations,1000.0,1.0,27.69,57580.0
+476,92699,92699, AZ,Phoenix,All Occupations,1000.0,1.0,25.16,52330.0
+477,92699,92699, AZ,Mesa,All Occupations,1000.0,1.0,25.16,52330.0
+478,92699,92699, AZ,Scottsdale,All Occupations,1000.0,1.0,25.16,52330.0
+479,93389,93389, AR,Pine Bluff,All Occupations,1000.0,1.0,19.5,40550.0
+480,93561,93561, PA,Pittsburgh,All Occupations,1000.0,1.0,24.79,51550.0
+481,94216,94216, ID,Pocatello,All Occupations,1000.0,1.0,20.36,42350.0
+482,94406,94406, PR,Ponce,All Occupations,1000.0,1.0,12.98,26990.0
+483,94635,94635, OR,Portland,All Occupations,1000.0,1.0,28.0,58240.0
+484,94635,94635, OR,Vancouver,All Occupations,1000.0,1.0,28.0,58240.0
+485,94635,94635, OR,Hillsboro,All Occupations,1000.0,1.0,28.0,58240.0
+486,94635,94635,WA,Portland,All Occupations,1000.0,1.0,28.0,58240.0
+487,94635,94635,WA,Vancouver,All Occupations,1000.0,1.0,28.0,58240.0
+488,94635,94635,WA,Hillsboro,All Occupations,1000.0,1.0,28.0,58240.0
+489,95333,95333, FL,Port St. Lucie,All Occupations,1000.0,1.0,21.94,45630.0
+490,95705,95705, AZ,Prescott,All Occupations,1000.0,1.0,20.98,43650.0
+491,95980,95980, UT,Provo,All Occupations,1000.0,1.0,23.54,48970.0
+492,95980,95980, UT,Orem,All Occupations,1000.0,1.0,23.54,48970.0
+493,96422,96422, CO,Pueblo,All Occupations,1000.0,1.0,22.33,46450.0
+494,96688,96688, FL,Punta Gorda,All Occupations,1000.0,1.0,20.4,42440.0
+495,96902,96902, WI,Racine,All Occupations,1000.0,1.0,22.56,46930.0
+496,97186,97186, NC,Raleigh,All Occupations,1000.0,1.0,26.37,54850.0
+497,97733,97733, SD,Rapid City,All Occupations,1000.0,1.0,20.32,42260.0
+498,98031,98031, PA,Reading,All Occupations,1000.0,1.0,23.91,49730.0
+499,98438,98438, CA,Redding,All Occupations,1000.0,1.0,24.16,50260.0
+500,98729,98729, NV,Reno,All Occupations,1000.0,1.0,23.3,48460.0
+501,99191,99191, VA,Richmond,All Occupations,1000.0,1.0,25.3,52620.0
+502,99784,99784, CA,Riverside,All Occupations,1000.0,1.0,24.37,50700.0
+503,99784,99784, CA,San Bernardino,All Occupations,1000.0,1.0,24.37,50700.0
+504,99784,99784, CA,Ontario,All Occupations,1000.0,1.0,24.37,50700.0
+505,100439,100439, VA,Roanoke,All Occupations,1000.0,1.0,22.0,45750.0
+506,100849,100849, MN,Rochester,All Occupations,1000.0,1.0,28.71,59710.0
+507,101166,101166, NY,Rochester,All Occupations,1000.0,1.0,25.08,52170.0
+508,101734,101734, IL,Rockford,All Occupations,1000.0,1.0,22.62,47060.0
+509,102103,102103, NC,Rocky Mount,All Occupations,1000.0,1.0,18.94,39400.0
+510,102352,102352, GA,Rome,All Occupations,1000.0,1.0,20.62,42890.0
+511,102542,102542, CA,Sacramento,All Occupations,1000.0,1.0,28.07,58390.0
+512,102542,102542, CA,,All Occupations,1000.0,1.0,28.07,58390.0
+513,102542,102542, CA,Roseville,All Occupations,1000.0,1.0,28.07,58390.0
+514,102542,102542, CA,,All Occupations,1000.0,1.0,28.07,58390.0
+515,102542,102542, CA,Arden,All Occupations,1000.0,1.0,28.07,58390.0
+516,102542,102542, CA,Arcade,All Occupations,1000.0,1.0,28.07,58390.0
+517,103184,103184, MI,Saginaw,All Occupations,1000.0,1.0,21.54,44810.0
+518,103466,103466, MN,St. Cloud,All Occupations,1000.0,1.0,23.2,48250.0
+519,103833,103833, UT,St. George,All Occupations,1000.0,1.0,20.16,41920.0
+520,104093,104093, MO,St. Joseph,All Occupations,1000.0,1.0,20.96,43600.0
+521,104093,104093,KS,St. Joseph,All Occupations,1000.0,1.0,20.96,43600.0
+522,104334,104334, MO,St. Louis,All Occupations,1000.0,1.0,24.88,51750.0
+523,104334,104334,IL,St. Louis,All Occupations,1000.0,1.0,24.88,51750.0
+524,105005,105005, OR,Salem,All Occupations,1000.0,1.0,24.18,50290.0
+525,105445,105445, CA,Salinas,All Occupations,1000.0,1.0,25.03,52060.0
+526,105831,105831, MD,Salisbury,All Occupations,1000.0,1.0,21.16,44020.0
+527,105831,105831,DE,Salisbury,All Occupations,1000.0,1.0,21.16,44020.0
+528,106247,106247, UT,Salt Lake City,All Occupations,1000.0,1.0,25.33,52690.0
+529,106853,106853, TX,San Angelo,All Occupations,1000.0,1.0,19.57,40700.0
+530,107092,107092, TX,San Antonio,All Occupations,1000.0,1.0,22.7,47220.0
+531,107092,107092, TX,New Braunfels,All Occupations,1000.0,1.0,22.7,47220.0
+532,107700,107700, CA,San Diego,All Occupations,1000.0,1.0,28.96,60230.0
+533,107700,107700, CA,Carlsbad,All Occupations,1000.0,1.0,28.96,60230.0
+534,108364,108364, CA,San Francisco,All Occupations,1000.0,1.0,36.49,75890.0
+535,108364,108364, CA,Oakland,All Occupations,1000.0,1.0,36.49,75890.0
+536,108364,108364, CA,Hayward,All Occupations,1000.0,1.0,36.49,75890.0
+537,109074,109074, PR,San German,All Occupations,1000.0,1.0,10.95,22780.0
+538,109174,109174, CA,San Jose,All Occupations,1000.0,1.0,40.37,83960.0
+539,109174,109174, CA,Sunnyvale,All Occupations,1000.0,1.0,40.37,83960.0
+540,109174,109174, CA,Santa Clara,All Occupations,1000.0,1.0,40.37,83960.0
+541,109746,109746, PR,San Juan,All Occupations,1000.0,1.0,14.75,30690.0
+542,109746,109746, PR,Carolina,All Occupations,1000.0,1.0,14.75,30690.0
+543,109746,109746, PR,Caguas,All Occupations,1000.0,1.0,14.75,30690.0
+544,110288,110288, CA,San Luis Obispo,All Occupations,1000.0,1.0,24.99,51970.0
+545,110288,110288, CA,Paso Robles,All Occupations,1000.0,1.0,24.99,51970.0
+546,110288,110288, CA,Arroyo Grande,All Occupations,1000.0,1.0,24.99,51970.0
+547,110644,110644, CA,Santa Cruz,All Occupations,1000.0,1.0,27.43,57040.0
+548,110644,110644, CA,Watsonville,All Occupations,1000.0,1.0,27.43,57040.0
+549,110971,110971, NM,Santa Fe,All Occupations,1000.0,1.0,23.36,48580.0
+550,111236,111236, CA,Santa Maria,All Occupations,1000.0,1.0,27.18,56540.0
+551,111236,111236, CA,Santa Barbara,All Occupations,1000.0,1.0,27.18,56540.0
+552,111660,111660, CA,Santa Rosa,All Occupations,1000.0,1.0,27.44,57080.0
+553,112082,112082, GA,Savannah,All Occupations,1000.0,1.0,21.92,45600.0
+554,112485,112485, PA,Scranton,All Occupations,1000.0,1.0,21.24,44170.0
+555,112485,112485, PA,,All Occupations,1000.0,1.0,21.24,44170.0
+556,112485,112485, PA,Wilkes,All Occupations,1000.0,1.0,21.24,44170.0
+557,112485,112485, PA,Barre,All Occupations,1000.0,1.0,21.24,44170.0
+558,112485,112485, PA,,All Occupations,1000.0,1.0,21.24,44170.0
+559,112485,112485, PA,Hazleton,All Occupations,1000.0,1.0,21.24,44170.0
+560,112932,112932, WA,Seattle,All Occupations,1000.0,1.0,32.91,68460.0
+561,112932,112932, WA,Tacoma,All Occupations,1000.0,1.0,32.91,68460.0
+562,112932,112932, WA,Bellevue,All Occupations,1000.0,1.0,32.91,68460.0
+563,113639,113639, FL,Sebastian,All Occupations,1000.0,1.0,20.73,43120.0
+564,113639,113639, FL,Vero Beach,All Occupations,1000.0,1.0,20.73,43120.0
+565,113883,113883, FL,Sebring,All Occupations,1000.0,1.0,17.81,37050.0
+566,114029,114029, WI,Sheboygan,All Occupations,1000.0,1.0,22.38,46550.0
+567,114279,114279, TX,Sherman,All Occupations,1000.0,1.0,19.94,41480.0
+568,114279,114279, TX,Denison,All Occupations,1000.0,1.0,19.94,41480.0
+569,114514,114514, LA,Shreveport,All Occupations,1000.0,1.0,19.79,41170.0
+570,114514,114514, LA,Bossier City,All Occupations,1000.0,1.0,19.79,41170.0
+571,114902,114902, AZ,Sierra Vista,All Occupations,1000.0,1.0,23.92,49750.0
+572,114902,114902, AZ,Douglas,All Occupations,1000.0,1.0,23.92,49750.0
+573,115089,115089, IA,Sioux City,All Occupations,1000.0,1.0,21.26,44230.0
+574,115089,115089,NE,Sioux City,All Occupations,1000.0,1.0,21.26,44230.0
+575,115089,115089,SD,Sioux City,All Occupations,1000.0,1.0,21.26,44230.0
+576,115414,115414, SD,Sioux Falls,All Occupations,1000.0,1.0,22.07,45900.0
+577,115813,115813, IN,South Bend,All Occupations,1000.0,1.0,22.35,46480.0
+578,115813,115813, IN,Mishawaka,All Occupations,1000.0,1.0,22.35,46480.0
+579,115813,115813,MI,South Bend,All Occupations,1000.0,1.0,22.35,46480.0
+580,115813,115813,MI,Mishawaka,All Occupations,1000.0,1.0,22.35,46480.0
+581,116216,116216, SC,Spartanburg,All Occupations,1000.0,1.0,21.6,44920.0
+582,116564,116564, WA,Spokane,All Occupations,1000.0,1.0,24.58,51120.0
+583,116564,116564, WA,Spokane Valley,All Occupations,1000.0,1.0,24.58,51120.0
+584,117025,117025, IL,Springfield,All Occupations,1000.0,1.0,24.53,51020.0
+585,117342,117342, MO,Springfield,All Occupations,1000.0,1.0,20.51,42660.0
+586,117771,117771, OH,Springfield,All Occupations,1000.0,1.0,21.75,45240.0
+587,117997,117997, PA,State College,All Occupations,1000.0,1.0,24.27,50490.0
+588,118265,118265, VA,Staunton,All Occupations,1000.0,1.0,21.08,43840.0
+589,118265,118265, VA,Waynesboro,All Occupations,1000.0,1.0,21.08,43840.0
+590,118509,118509, CA,Stockton,All Occupations,1000.0,1.0,23.98,49880.0
+591,118509,118509, CA,Lodi,All Occupations,1000.0,1.0,23.98,49880.0
+592,118929,118929, SC,Sumter,All Occupations,1000.0,1.0,19.17,39880.0
+593,119117,119117, NY,Syracuse,All Occupations,1000.0,1.0,25.07,52140.0
+594,119634,119634, FL,Tallahassee,All Occupations,1000.0,1.0,22.36,46500.0
+595,120019,120019, FL,Tampa,All Occupations,1000.0,1.0,23.84,49590.0
+596,120019,120019, FL,St. Petersburg,All Occupations,1000.0,1.0,23.84,49590.0
+597,120019,120019, FL,Clearwater,All Occupations,1000.0,1.0,23.84,49590.0
+598,120650,120650, IN,Terre Haute,All Occupations,1000.0,1.0,20.27,42150.0
+599,120932,120932, TX,Texarkana,All Occupations,1000.0,1.0,19.74,41060.0
+600,120932,120932,AR,Texarkana,All Occupations,1000.0,1.0,19.74,41060.0
+601,121180,121180, FL,The Villages,All Occupations,1000.0,1.0,20.21,42040.0
+602,121340,121340, OH,Toledo,All Occupations,1000.0,1.0,22.39,46560.0
+603,121832,121832, KS,Topeka,All Occupations,1000.0,1.0,21.68,45090.0
+604,122175,122175, NJ,Trenton,All Occupations,1000.0,1.0,31.33,65160.0
+605,122618,122618, AZ,Tucson,All Occupations,1000.0,1.0,23.61,49110.0
+606,123134,123134, OK,Tulsa,All Occupations,1000.0,1.0,23.03,47910.0
+607,123693,123693, AL,Tuscaloosa,All Occupations,1000.0,1.0,20.82,43310.0
+608,124026,124026, ID,Twin Falls,All Occupations,1000.0,1.0,19.31,40160.0
+609,124233,124233, TX,Tyler,All Occupations,1000.0,1.0,20.62,42900.0
+610,124580,124580, HI,Honolulu,All Occupations,1000.0,1.0,27.43,57060.0
+611,125113,125113, NY,Utica,All Occupations,1000.0,1.0,22.87,47580.0
+612,125113,125113, NY,Rome,All Occupations,1000.0,1.0,22.87,47580.0
+613,125487,125487, GA,Valdosta,All Occupations,1000.0,1.0,18.61,38700.0
+614,125717,125717, CA,Vallejo,All Occupations,1000.0,1.0,27.71,57640.0
+615,125717,125717, CA,Fairfield,All Occupations,1000.0,1.0,27.71,57640.0
+616,126088,126088, TX,Victoria,All Occupations,1000.0,1.0,21.02,43720.0
+617,126287,126287, NJ,Vineland,All Occupations,1000.0,1.0,23.51,48890.0
+618,126287,126287, NJ,Bridgeton,All Occupations,1000.0,1.0,23.51,48890.0
+619,126536,126536, VA,Virginia Beach,All Occupations,1000.0,1.0,23.86,49620.0
+620,126536,126536, VA,Norfolk,All Occupations,1000.0,1.0,23.86,49620.0
+621,126536,126536, VA,Newport News,All Occupations,1000.0,1.0,23.86,49620.0
+622,126536,126536,NC,Virginia Beach,All Occupations,1000.0,1.0,23.86,49620.0
+623,126536,126536,NC,Norfolk,All Occupations,1000.0,1.0,23.86,49620.0
+624,126536,126536,NC,Newport News,All Occupations,1000.0,1.0,23.86,49620.0
+625,127145,127145, CA,Visalia,All Occupations,1000.0,1.0,21.24,44180.0
+626,127145,127145, CA,Porterville,All Occupations,1000.0,1.0,21.24,44180.0
+627,127492,127492, TX,Waco,All Occupations,1000.0,1.0,20.96,43590.0
+628,127848,127848, WA,Walla Walla,All Occupations,1000.0,1.0,23.8,49500.0
+629,128018,128018, GA,Warner Robins,All Occupations,1000.0,1.0,22.43,46660.0
+630,128276,128276, DC,Washington,All Occupations,1000.0,1.0,34.9,72600.0
+631,128276,128276, DC,Arlington,All Occupations,1000.0,1.0,34.9,72600.0
+632,128276,128276, DC,Alexandria,All Occupations,1000.0,1.0,34.9,72600.0
+633,128276,128276,VA,Washington,All Occupations,1000.0,1.0,34.9,72600.0
+634,128276,128276,VA,Arlington,All Occupations,1000.0,1.0,34.9,72600.0
+635,128276,128276,VA,Alexandria,All Occupations,1000.0,1.0,34.9,72600.0
+636,128276,128276,MD,Washington,All Occupations,1000.0,1.0,34.9,72600.0
+637,128276,128276,MD,Arlington,All Occupations,1000.0,1.0,34.9,72600.0
+638,128276,128276,MD,Alexandria,All Occupations,1000.0,1.0,34.9,72600.0
+639,128276,128276,WV,Washington,All Occupations,1000.0,1.0,34.9,72600.0
+640,128276,128276,WV,Arlington,All Occupations,1000.0,1.0,34.9,72600.0
+641,128276,128276,WV,Alexandria,All Occupations,1000.0,1.0,34.9,72600.0
+642,129000,129000, IA,Waterloo,All Occupations,1000.0,1.0,21.71,45160.0
+643,129000,129000, IA,Cedar Falls,All Occupations,1000.0,1.0,21.71,45160.0
+644,129339,129339, NY,Watertown,All Occupations,1000.0,1.0,22.71,47250.0
+645,129339,129339, NY,Fort Drum,All Occupations,1000.0,1.0,22.71,47250.0
+646,129558,129558, WI,Wausau,All Occupations,1000.0,1.0,22.88,47580.0
+647,129851,129851, WV,Weirton,All Occupations,1000.0,1.0,20.91,43490.0
+648,129851,129851, WV,Steubenville,All Occupations,1000.0,1.0,20.91,43490.0
+649,129851,129851,OH,Weirton,All Occupations,1000.0,1.0,20.91,43490.0
+650,129851,129851,OH,Steubenville,All Occupations,1000.0,1.0,20.91,43490.0
+651,130052,130052, WA,Wenatchee,All Occupations,1000.0,1.0,23.0,47840.0
+652,130296,130296, WV,Wheeling,All Occupations,1000.0,1.0,21.42,44550.0
+653,130296,130296,OH,Wheeling,All Occupations,1000.0,1.0,21.42,44550.0
+654,130583,130583, KS,Wichita,All Occupations,1000.0,1.0,22.15,46080.0
+655,131066,131066, TX,Wichita Falls,All Occupations,1000.0,1.0,19.77,41130.0
+656,131320,131320, PA,Williamsport,All Occupations,1000.0,1.0,20.73,43130.0
+657,131553,131553, NC,Wilmington,All Occupations,1000.0,1.0,21.53,44770.0
+658,131914,131914, VA,Winchester,All Occupations,1000.0,1.0,23.0,47850.0
+659,131914,131914,WV,Winchester,All Occupations,1000.0,1.0,23.0,47850.0
+660,132183,132183, NC,Winston,All Occupations,1000.0,1.0,22.83,47480.0
+661,132183,132183, NC,Salem,All Occupations,1000.0,1.0,22.83,47480.0
+662,132630,132630, WA,Yakima,All Occupations,1000.0,1.0,22.3,46380.0
+663,132943,132943, PA,York,All Occupations,1000.0,1.0,23.21,48280.0
+664,132943,132943, PA,Hanover,All Occupations,1000.0,1.0,23.21,48280.0
+665,133333,133333, OH,Youngstown,All Occupations,1000.0,1.0,20.32,42260.0
+666,133333,133333, OH,Warren,All Occupations,1000.0,1.0,20.32,42260.0
+667,133333,133333, OH,Boardman,All Occupations,1000.0,1.0,20.32,42260.0
+668,133333,133333,PA,Youngstown,All Occupations,1000.0,1.0,20.32,42260.0
+669,133333,133333,PA,Warren,All Occupations,1000.0,1.0,20.32,42260.0
+670,133333,133333,PA,Boardman,All Occupations,1000.0,1.0,20.32,42260.0
+671,133758,133758, CA,Yuba City,All Occupations,1000.0,1.0,25.06,52110.0
+672,133980,133980, AZ,Yuma,All Occupations,1000.0,1.0,19.54,40640.0
+673,134229,134229, ME,Bangor,All Occupations,1000.0,1.0,22.55,46900.0
+674,134521,134521, MA,Barnstable Town,All Occupations,1000.0,1.0,26.18,54450.0
+675,134845,134845, MA,Boston,All Occupations,1000.0,1.0,33.29,69240.0
+676,134845,134845, MA,Cambridge,All Occupations,1000.0,1.0,33.29,69240.0
+677,134845,134845, MA,Nashua,All Occupations,1000.0,1.0,33.29,69240.0
+678,134845,134845,NH,Boston,All Occupations,1000.0,1.0,33.29,69240.0
+679,134845,134845,NH,Cambridge,All Occupations,1000.0,1.0,33.29,69240.0
+680,134845,134845,NH,Nashua,All Occupations,1000.0,1.0,33.29,69240.0
+681,135564,135564, CT,Bridgeport,All Occupations,1000.0,1.0,34.1,70930.0
+682,135564,135564, CT,Stamford,All Occupations,1000.0,1.0,34.1,70930.0
+683,135564,135564, CT,Norwalk,All Occupations,1000.0,1.0,34.1,70930.0
+684,136051,136051, VT,Burlington,All Occupations,1000.0,1.0,25.96,53990.0
+685,136051,136051, VT,South Burlington,All Occupations,1000.0,1.0,25.96,53990.0
+686,136441,136441, CT,Danbury,All Occupations,1000.0,1.0,27.13,56440.0
+687,136737,136737, NH,Dover,All Occupations,1000.0,1.0,25.73,53520.0
+688,136737,136737, NH,Durham,All Occupations,1000.0,1.0,25.73,53520.0
+689,136737,136737,ME,Dover,All Occupations,1000.0,1.0,25.73,53520.0
+690,136737,136737,ME,Durham,All Occupations,1000.0,1.0,25.73,53520.0
+691,136989,136989, CT,Hartford,All Occupations,1000.0,1.0,30.24,62900.0
+692,136989,136989, CT,West Hartford,All Occupations,1000.0,1.0,30.24,62900.0
+693,136989,136989, CT,East Hartford,All Occupations,1000.0,1.0,30.24,62900.0
+694,137533,137533, MA,Leominster,All Occupations,1000.0,1.0,24.64,51250.0
+695,137533,137533, MA,Gardner,All Occupations,1000.0,1.0,24.64,51250.0
+696,137773,137773, ME,Lewiston,All Occupations,1000.0,1.0,21.92,45600.0
+697,137773,137773, ME,Auburn,All Occupations,1000.0,1.0,21.92,45600.0
+698,138030,138030, NH,Manchester,All Occupations,1000.0,1.0,26.62,55370.0
+699,138397,138397, MA,New Bedford,All Occupations,1000.0,1.0,24.33,50610.0
+700,138653,138653, CT,New Haven,All Occupations,1000.0,1.0,28.04,58330.0
+701,139121,139121, CT,Norwich,All Occupations,1000.0,1.0,26.45,55020.0
+702,139121,139121, CT,New London,All Occupations,1000.0,1.0,26.45,55020.0
+703,139121,139121, CT,Westerly,All Occupations,1000.0,1.0,26.45,55020.0
+704,139121,139121,RI,Norwich,All Occupations,1000.0,1.0,26.45,55020.0
+705,139121,139121,RI,New London,All Occupations,1000.0,1.0,26.45,55020.0
+706,139121,139121,RI,Westerly,All Occupations,1000.0,1.0,26.45,55020.0
+707,139472,139472, MA,Pittsfield,All Occupations,1000.0,1.0,25.68,53420.0
+708,139693,139693, ME,Portland,All Occupations,1000.0,1.0,25.39,52820.0
+709,139693,139693, ME,South Portland,All Occupations,1000.0,1.0,25.39,52820.0
+710,140165,140165, NH,Portsmouth,All Occupations,1000.0,1.0,28.46,59200.0
+711,140165,140165,ME,Portsmouth,All Occupations,1000.0,1.0,28.46,59200.0
+712,140505,140505, RI,Providence,All Occupations,1000.0,1.0,26.89,55930.0
+713,140505,140505, RI,Warwick,All Occupations,1000.0,1.0,26.89,55930.0
+714,140505,140505,MA,Providence,All Occupations,1000.0,1.0,26.89,55930.0
+715,140505,140505,MA,Warwick,All Occupations,1000.0,1.0,26.89,55930.0
+716,141113,141113, MA,Springfield,All Occupations,1000.0,1.0,25.74,53550.0
+717,141113,141113,CT,Springfield,All Occupations,1000.0,1.0,25.74,53550.0
+718,141642,141642, CT,Waterbury,All Occupations,1000.0,1.0,25.65,53350.0
+719,141921,141921, MA,Worcester,All Occupations,1000.0,1.0,26.98,56110.0
+720,141921,141921,CT,Worcester,All Occupations,1000.0,1.0,26.98,56110.0
