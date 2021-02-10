@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "53db5c975268d6b7598118ae0d96fc4d597c99ec0e8a621627451c71ef6bdd3d"
+            "sha256": "e5de101c6ae8b279d05c8304462252fbda09d075e730665fbfabe04596d0b8aa"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -207,6 +207,13 @@
             "markers": "python_version >= '3.6'",
             "version": "==1.7.3"
         },
+        "pypika": {
+            "hashes": [
+                "sha256:c22aeaa38f662c446d3661576fbe93defbad9743aa63f4d99d5cee9325268163"
+            ],
+            "index": "pypi",
+            "version": "==0.47.4"
+        },
         "python-dotenv": {
             "hashes": [
                 "sha256:0c8d1b80d1a1e91717ea7d526178e3882732420b03f08afea0406db6402e220e",
@@ -250,11 +257,11 @@
         },
         "soupsieve": {
             "hashes": [
-                "sha256:4bb21a6ee4707bf43b61230e80740e71bfe56e55d1f1f50924b087bb2975c851",
-                "sha256:6dc52924dc0bc710a5d16794e6b3480b2c7c08b07729505feab2b2c16661ff6e"
+                "sha256:407fa1e8eb3458d1b5614df51d9651a1180ea5fedf07feb46e45d7e25e6d6cdd",
+                "sha256:d3a5ea5b350423f47d07639f74475afedad48cf41c0ad7a82ca13a3928af34f6"
             ],
             "markers": "python_version >= '3.0'",
-            "version": "==2.1"
+            "version": "==2.2"
         },
         "sqlalchemy": {
             "hashes": [
@@ -671,11 +678,11 @@
         },
         "nbclient": {
             "hashes": [
-                "sha256:01e2d726d16eaf2cde6db74a87e2451453547e8832d142f73f72fddcd4fe0250",
-                "sha256:4d6b116187c795c99b9dba13d46e764d596574b14c296d60670c8dfe454db364"
+                "sha256:0ed6e5700ad18818030a3a5f0f201408c5972d8e38793840cd9339488fd9f7c4",
+                "sha256:1e0375490cd33fda6c23e61084476298a87f34d02607a038aa8ecc6e8901615f"
             ],
-            "markers": "python_version >= '3.6'",
-            "version": "==0.5.1"
+            "markers": "python_full_version >= '3.6.1'",
+            "version": "==0.5.2"
         },
         "nbconvert": {
             "hashes": [

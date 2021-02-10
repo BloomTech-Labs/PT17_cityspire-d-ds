@@ -1,11 +1,15 @@
 """Machine learning functions"""
 import requests
 from bs4 import BeautifulSoup as bs
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from app.state_abbr import us_state_abbrev as abbr
 from pathlib import Path
 import pandas as pd
+from pypika import Query, Table
+from app.db import get_db
+
+conn = get_db()
 
 
 router = APIRouter()
@@ -27,7 +31,7 @@ class CityData(BaseModel):
     livability: float
 
 
-def validate_city(city: City) -> City:
+def validate_city(city: City, ) -> City:
     city.city = city.city.title()
 
     try:
@@ -43,7 +47,7 @@ def validate_city(city: City) -> City:
 
 
 @router.post("/api/get_data", response_model=CityData)
-async def get_data(city: City):
+async def get_data(city: City, conn = Depends(get_db)):
     city = validate_city(city)
     data = {
         "city": city,
@@ -56,7 +60,7 @@ async def get_data(city: City):
     }
 
     walkscore = await get_walkability(city)
-    rent_price = await get_rental_price(city)
+    rent_price = await get_rental_price(city, conn)
     data.update({
         **walkscore, 
         **rent_price,
@@ -80,10 +84,16 @@ async def get_crime(city: City):
 
 
 @router.post("/api/rental_price")
-async def get_rental_price(city: City):
-    path = Path('rent_cleaned.csv')
-    df = pd.read_csv(path)
-    rent = int(df.loc[df['City'] == city.city, 'Rent'].to_numpy()[0])
+async def get_rental_price(city: City, conn = Depends(get_db)):
+    city = validate_city(city)
+    rental_data = Table('rental_data')
+    q=(Query
+        .from_(rental_data)
+        .select(rental_data.Rent)
+        .where(rental_data.City == city.city)
+        .where(rental_data.State == city.state))
+
+    rent = conn.execute(str(q)).fetchone()[0]
     print(rent)
 
     return {"rental_price": rent}

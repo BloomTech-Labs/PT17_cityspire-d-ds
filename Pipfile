@@ -15,6 +15,7 @@ psycopg2-binary = "*"
 requests = "*"
 bs4 = "*"
 lxml = "*"
+pypika = "*"
 
 [requires]
 python_version = "3"
