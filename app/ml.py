@@ -122,7 +122,8 @@ async def get_walkscore(city: str, state: str):
     Returns a list containing WalkScore, BusScore, and BikeScore in that order"""
 
     r = requests.get(f"https://www.walkscore.com/{state}/{city}")
-    images = bs(r.text, features="lxml").select("#hood-badges img")
+    images = bs(r.text, features="lxml").select(".block-header-badge img")
+    print(images)
     return [int(str(x)[10:12]) for x in images]
 
 
