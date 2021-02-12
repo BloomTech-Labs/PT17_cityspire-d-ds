@@ -72,37 +72,59 @@ async def get_data(city: City):
 
 @router.post("/api/coordinates")
 async def get_coordinates(city: City):
-    return {"latitude": 37.7749, "longitude": -122.4194}
-
-
-async def get_crime(city: City):
-    return {"crime": "High"}
+    city = validate_city(city)
+    data = Table("data")
+    q = (
+        Query.from_(data)
+        .select(data['lat'], data['lon'])
+        .where(data.City == city.city)
+        .where(data.State == city.state)
+    )
+    value = await database.fetch_one(str(q))
+    return {"latitude": value[0], "longitude": value[1]}
 
 
 @router.post("/api/crime")
 async def get_crime(city: City):
-    return {"crime": "High"}
+    city = validate_city(city)
+    data = Table("data")
+    q = (
+        Query.from_(data)
+        .select(data['Crime Rating'])
+        .where(data.City == city.city)
+        .where(data.State == city.state)
+    )
+    value = await database.fetch_one(str(q))
+    return {"crime": value[0]}
 
 
 @router.post("/api/rental_price")
 async def get_rental_price(city: City):
     city = validate_city(city)
-    rental_data = Table("rental_data")
+    data = Table("data")
     q = (
-        Query.from_(rental_data)
-        .select(rental_data.Rent)
-        .where(rental_data.City == city.city)
-        .where(rental_data.State == city.state)
+        Query.from_(data)
+        .select(data['Rent'])
+        .where(data.City == city.city)
+        .where(data.State == city.state)
     )
-    rent = await database.fetch_one(str(q))
-    print(rent)
+    value = await database.fetch_one(str(q))
 
-    return {"rental_price": rent}
+    return {"rental_price": value[0]}
 
 
 @router.post("/api/pollution")
 async def get_pollution(city: City):
-    return {"pollution": "Good"}
+    city = validate_city(city)
+    data = Table("data")
+    q = (
+        Query.from_(data)
+        .select(data['Level of Concern'])
+        .where(data.City == city.city)
+        .where(data.State == city.state)
+    )
+    value = await database.fetch_one(str(q))
+    return {"pollution": value[0]}
 
 
 @router.post("/api/walkability")
@@ -124,7 +146,6 @@ async def get_walkscore(city: str, state: str):
 
     r = requests.get(f"https://www.walkscore.com/{state}/{city}")
     images = bs(r.text, features="lxml").select(".block-header-badge img")
-    print(images)
     return [int(str(x)[10:12]) for x in images]
 
 
