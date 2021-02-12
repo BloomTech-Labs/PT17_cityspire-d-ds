@@ -7,6 +7,7 @@ from app.state_abbr import us_state_abbrev as abbr
 from pathlib import Path
 import pandas as pd
 from pypika import Query, Table
+import asyncio
 from app.db import get_db
 
 conn = get_db()
@@ -31,7 +32,9 @@ class CityData(BaseModel):
     livability: float
 
 
-def validate_city(city: City, ) -> City:
+def validate_city(
+    city: City,
+) -> City:
     city.city = city.city.title()
 
     try:
@@ -47,24 +50,22 @@ def validate_city(city: City, ) -> City:
 
 
 @router.post("/api/get_data", response_model=CityData)
-async def get_data(city: City, conn = Depends(get_db)):
+async def get_data(city: City, conn=Depends(get_db)):
     city = validate_city(city)
-    data = {
-        "city": city,
-        "latitude": 37.7749,
-        "longitude": -122.4194,
-        "rental_price": 2000,
-        "pollution": "good",
-        "crime": "High",
-        "livability": 49.0,
-    }
 
-    walkscore = await get_walkability(city)
-    rent_price = await get_rental_price(city, conn)
-    data.update({
-        **walkscore, 
-        **rent_price,
-        })
+    tasks = await asyncio.gather(
+        get_coordinates(city),
+        get_crime(city),
+        get_walkability(city),
+        get_pollution(city),
+        get_rental_price(city, await get_db()),
+        get_livability(city),
+    )
+
+    data = {"city": city}
+
+    for t in tasks:
+        data.update(t)
 
     return data
 
@@ -84,16 +85,17 @@ async def get_crime(city: City):
 
 
 @router.post("/api/rental_price")
-async def get_rental_price(city: City, conn = Depends(get_db)):
+async def get_rental_price(city: City, conn=Depends(get_db)):
     city = validate_city(city)
-    rental_data = Table('rental_data')
-    q=(Query
-        .from_(rental_data)
+    rental_data = Table("rental_data")
+    q = (
+        Query.from_(rental_data)
         .select(rental_data.Rent)
         .where(rental_data.City == city.city)
-        .where(rental_data.State == city.state))
-
-    rent = conn.execute(str(q)).fetchone()[0]
+        .where(rental_data.State == city.state)
+    )
+    with conn as c:
+        rent = conn.execute(str(q)).fetchone()[0]
     print(rent)
 
     return {"rental_price": rent}
@@ -118,7 +120,7 @@ async def get_walkability(city: City):
 
 
 async def get_walkscore(city: str, state: str):
-    """ Input: City, 2 letter abbreviation for state
+    """Input: City, 2 letter abbreviation for state
     Returns a list containing WalkScore, BusScore, and BikeScore in that order"""
 
     r = requests.get(f"https://www.walkscore.com/{state}/{city}")
