@@ -4,28 +4,18 @@ import os
 from fastapi import APIRouter, Depends
 import sqlalchemy
 from dotenv import load_dotenv
+import databases
+import asyncio
 
 load_dotenv()
+database_url = os.getenv("DATABASE_URL")
+database = databases.Database(database_url)
 
 router = APIRouter()
 
-async def get_db() -> sqlalchemy.engine.base.Connection:
-    """Get a SQLAlchemy database connection.
 
-    Uses this environment variable if it exists:
-    DATABASE_URL=dialect://user:password@host/dbname
-
-    Otherwise uses a SQLite database for initial local development.
-    """
-
-    database_url = os.getenv('DATABASE_URL', default='sqlite:///temporary.db')
-    engine = sqlalchemy.create_engine(database_url)
-    connection = engine.connect()
-    return connection
-
-
-@router.get('/info')
-async def get_url(connection=Depends(get_db)):
+@router.get("/info")
+async def get_url():
     """Verify we can connect to the database,
     and return the database URL in this format:
 
@@ -33,5 +23,6 @@ async def get_url(connection=Depends(get_db)):
 
     The password will be hidden with ***
     """
-    url_without_password = repr(connection.engine.url)
-    return {'database_url': url_without_password}
+
+    url_without_password = repr(database.url)
+    return {"database_url": url_without_password}

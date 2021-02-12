@@ -8,9 +8,9 @@ from pathlib import Path
 import pandas as pd
 from pypika import Query, Table
 import asyncio
-from app.db import get_db
+from app.db import database
 
-conn = get_db()
+# conn = get_db()
 
 
 router = APIRouter()
@@ -50,7 +50,7 @@ def validate_city(
 
 
 @router.post("/api/get_data", response_model=CityData)
-async def get_data(city: City, conn=Depends(get_db)):
+async def get_data(city: City):
     city = validate_city(city)
 
     tasks = await asyncio.gather(
@@ -58,7 +58,7 @@ async def get_data(city: City, conn=Depends(get_db)):
         get_crime(city),
         get_walkability(city),
         get_pollution(city),
-        get_rental_price(city, await get_db()),
+        get_rental_price(city),
         get_livability(city),
     )
 
@@ -85,7 +85,7 @@ async def get_crime(city: City):
 
 
 @router.post("/api/rental_price")
-async def get_rental_price(city: City, conn=Depends(get_db)):
+async def get_rental_price(city: City):
     city = validate_city(city)
     rental_data = Table("rental_data")
     q = (
@@ -94,8 +94,7 @@ async def get_rental_price(city: City, conn=Depends(get_db)):
         .where(rental_data.City == city.city)
         .where(rental_data.State == city.state)
     )
-    with conn as c:
-        rent = conn.execute(str(q)).fetchone()[0]
+    rent = await database.fetch_one(str(q))
     print(rent)
 
     return {"rental_price": rent}

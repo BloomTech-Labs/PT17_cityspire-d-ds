@@ -18,6 +18,8 @@ bs4 = "*"
 lxml = "*"
 pypika = "*"
 pandas = "*"
+asyncpg = "*"
+databases = {extras = ["postgresql"], version = "*"}
 
 [requires]
 python_version = "3"
