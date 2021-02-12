@@ -21,10 +21,7 @@ async def get_db() -> sqlalchemy.engine.base.Connection:
     database_url = os.getenv('DATABASE_URL', default='sqlite:///temporary.db')
     engine = sqlalchemy.create_engine(database_url)
     connection = engine.connect()
-    try:
-        yield connection
-    finally:
-        connection.close()
+    return connection
 
 
 @router.get('/info')
