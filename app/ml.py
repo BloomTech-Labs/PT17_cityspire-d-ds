@@ -152,3 +152,16 @@ async def get_walkscore(city: str, state: str):
 @router.post("/api/livability")
 async def get_livability(city: City):
     return {"livability": 47.0}
+
+@router.post("/api/population")
+async def get_pollution(city: City):
+    city = validate_city(city)
+    data = Table("data")
+    q = (
+        Query.from_(data)
+        .select(data['Population'])
+        .where(data.City == city.city)
+        .where(data.State == city.state)
+    )
+    value = await database.fetch_one(str(q))
+    return {"Population": value[0]}
