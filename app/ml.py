@@ -7,9 +7,11 @@ from app.state_abbr import us_state_abbrev as abbr
 from pathlib import Path
 import pandas as pd
 from pypika import Query, Table
-from app.db import get_db
+import asyncio
+from app.db import database
 
-conn = get_db()
+
+# conn = get_db()
 
 
 router = APIRouter()
@@ -31,7 +33,9 @@ class CityData(BaseModel):
     livability: float
 
 
-def validate_city(city: City, ) -> City:
+def validate_city(
+    city: City,
+) -> City:
     city.city = city.city.title()
 
     try:
@@ -47,61 +51,81 @@ def validate_city(city: City, ) -> City:
 
 
 @router.post("/api/get_data", response_model=CityData)
-async def get_data(city: City, conn = Depends(get_db)):
+async def get_data(city: City):
     city = validate_city(city)
-    data = {
-        "city": city,
-        "latitude": 37.7749,
-        "longitude": -122.4194,
-        "rental_price": 2000,
-        "pollution": "good",
-        "crime": "High",
-        "livability": 49.0,
-    }
 
-    walkscore = await get_walkability(city)
-    rent_price = await get_rental_price(city, conn)
-    data.update({
-        **walkscore, 
-        **rent_price,
-        })
+    tasks = await asyncio.gather(
+        get_coordinates(city),
+        get_crime(city),
+        get_walkability(city),
+        get_pollution(city),
+        get_rental_price(city),
+        get_livability(city),
+    )
+
+    data = {"city": city}
+
+    for t in tasks:
+        data.update(t)
 
     return data
 
 
 @router.post("/api/coordinates")
 async def get_coordinates(city: City):
-    return {"latitude": 37.7749, "longitude": -122.4194}
-
-
-async def get_crime(city: City):
-    return {"crime": "High"}
+    city = validate_city(city)
+    data = Table("data")
+    q = (
+        Query.from_(data)
+        .select(data['lat'], data['lon'])
+        .where(data.City == city.city)
+        .where(data.State == city.state)
+    )
+    value = await database.fetch_one(str(q))
+    return {"latitude": value[0], "longitude": value[1]}
 
 
 @router.post("/api/crime")
 async def get_crime(city: City):
-    return {"crime": "High"}
+    city = validate_city(city)
+    data = Table("data")
+    q = (
+        Query.from_(data)
+        .select(data['Crime Rating'])
+        .where(data.City == city.city)
+        .where(data.State == city.state)
+    )
+    value = await database.fetch_one(str(q))
+    return {"crime": value[0]}
 
 
 @router.post("/api/rental_price")
-async def get_rental_price(city: City, conn = Depends(get_db)):
+async def get_rental_price(city: City):
     city = validate_city(city)
-    rental_data = Table('rental_data')
-    q=(Query
-        .from_(rental_data)
-        .select(rental_data.Rent)
-        .where(rental_data.City == city.city)
-        .where(rental_data.State == city.state))
+    data = Table("data")
+    q = (
+        Query.from_(data)
+        .select(data['Rent'])
+        .where(data.City == city.city)
+        .where(data.State == city.state)
+    )
+    value = await database.fetch_one(str(q))
 
-    rent = conn.execute(str(q)).fetchone()[0]
-    print(rent)
-
-    return {"rental_price": rent}
+    return {"rental_price": value[0]}
 
 
 @router.post("/api/pollution")
 async def get_pollution(city: City):
-    return {"pollution": "Good"}
+    city = validate_city(city)
+    data = Table("data")
+    q = (
+        Query.from_(data)
+        .select(data['Level of Concern'])
+        .where(data.City == city.city)
+        .where(data.State == city.state)
+    )
+    value = await database.fetch_one(str(q))
+    return {"pollution": value[0]}
 
 
 @router.post("/api/walkability")
@@ -118,15 +142,27 @@ async def get_walkability(city: City):
 
 
 async def get_walkscore(city: str, state: str):
-    """ Input: City, 2 letter abbreviation for state
+    """Input: City, 2 letter abbreviation for state
     Returns a list containing WalkScore, BusScore, and BikeScore in that order"""
 
     r = requests.get(f"https://www.walkscore.com/{state}/{city}")
     images = bs(r.text, features="lxml").select(".block-header-badge img")
-    print(images)
     return [int(str(x)[10:12]) for x in images]
 
 
 @router.post("/api/livability")
 async def get_livability(city: City):
     return {"livability": 47.0}
+
+@router.post("/api/population")
+async def get_pollution(city: City):
+    city = validate_city(city)
+    data = Table("data")
+    q = (
+        Query.from_(data)
+        .select(data['Population'])
+        .where(data.City == city.city)
+        .where(data.State == city.state)
+    )
+    value = await database.fetch_one(str(q))
+    return {"Population": value[0]}
