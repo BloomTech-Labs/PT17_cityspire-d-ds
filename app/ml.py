@@ -67,6 +67,8 @@ async def get_data(city: City):
 
     for t in tasks:
         data.update(t)
+    
+    print(data)
 
     return data
 
@@ -155,7 +157,7 @@ async def get_livability(city: City):
     return {"livability": 47.0}
 
 @router.post("/api/population")
-async def get_pollution(city: City):
+async def get_population(city: City):
     city = validate_city(city)
     data = Table("data")
     q = (
