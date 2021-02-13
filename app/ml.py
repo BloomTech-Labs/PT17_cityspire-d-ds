@@ -68,7 +68,6 @@ async def get_data(city: City):
     for t in tasks:
         data.update(t)
     
-    print(data)
 
     return data
 
