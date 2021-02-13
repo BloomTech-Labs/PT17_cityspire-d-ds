@@ -1,4 +1,5 @@
 """Machine learning functions"""
+from pickle import load
 import requests
 from bs4 import BeautifulSoup as bs
 from fastapi import APIRouter, HTTPException, Depends
@@ -67,7 +68,6 @@ async def get_data(city: City):
 
     for t in tasks:
         data.update(t)
-    
 
     return data
 
@@ -78,7 +78,7 @@ async def get_coordinates(city: City):
     data = Table("data")
     q = (
         Query.from_(data)
-        .select(data['lat'], data['lon'])
+        .select(data["lat"], data["lon"])
         .where(data.City == city.city)
         .where(data.State == city.state)
     )
@@ -92,7 +92,7 @@ async def get_crime(city: City):
     data = Table("data")
     q = (
         Query.from_(data)
-        .select(data['Crime Rating'])
+        .select(data["Crime Rating"])
         .where(data.City == city.city)
         .where(data.State == city.state)
     )
@@ -106,7 +106,7 @@ async def get_rental_price(city: City):
     data = Table("data")
     q = (
         Query.from_(data)
-        .select(data['Rent'])
+        .select(data["Rent"])
         .where(data.City == city.city)
         .where(data.State == city.state)
     )
@@ -121,7 +121,7 @@ async def get_pollution(city: City):
     data = Table("data")
     q = (
         Query.from_(data)
-        .select(data['Level of Concern'])
+        .select(data["Level of Concern"])
         .where(data.City == city.city)
         .where(data.State == city.state)
     )
@@ -153,7 +153,28 @@ async def get_walkscore(city: str, state: str):
 
 @router.post("/api/livability")
 async def get_livability(city: City):
-    return {"livability": 47.0}
+    city = validate_city(city)
+    data = Table("data")
+    q = (
+        Query.from_(data)
+        .select("Rent", "Good Days", "Crime Rate per 1000")
+        .where(data.City == city.city)
+        .where(data.State == city.state)
+    )
+    values = await database.fetch_one(str(q))
+    with open("app/livability_scaler.pkl", "rb") as f:
+        s = load(f)
+    v = [[values[0] * -1, values[1], values[2] * -1]]
+    print(v)
+    scaled = s.transform(v)[0]
+    walkscore = await get_walkscore(city.city, city.state)
+
+    rescaled = [walkscore[0]]
+    for score in scaled:
+        rescaled.append(score * 100)
+
+    return {"livability": sum(rescaled) / 4}
+
 
 @router.post("/api/population")
 async def get_population(city: City):
@@ -161,7 +182,7 @@ async def get_population(city: City):
     data = Table("data")
     q = (
         Query.from_(data)
-        .select(data['Population'])
+        .select(data["Population"])
         .where(data.City == city.city)
         .where(data.State == city.state)
     )
