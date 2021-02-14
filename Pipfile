@@ -20,6 +20,7 @@ pypika = "*"
 pandas = "*"
 asyncpg = "*"
 databases = {extras = ["postgresql"], version = "*"}
+sklearn = "*"
 
 [requires]
 python_version = "3"
