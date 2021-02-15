@@ -188,3 +188,18 @@ async def get_population(city: City):
     )
     value = await database.fetch_one(str(q))
     return {"Population": value[0]}
+
+
+@router.post("/api/nearest")
+async def get_recommendations(city: City):
+    city = validate_city(city)
+    data = Table("data")
+    q = (
+        Query.from_(data)
+        .select(data["Nearest"])
+        .where(data.City == city.city)
+        .where(data.State == city.state)
+    )
+    value = await database.fetch_one(str(q))
+    nearest = [data[int(idx)]['Name'] for idx in data['Nearest'].split(',')]
+    return {nearest}
