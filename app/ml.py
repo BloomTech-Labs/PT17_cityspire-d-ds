@@ -29,7 +29,7 @@ class CityData(BaseModel):
     longitude: float
     rental_price: float
     crime: str
-    air_quality_index: str
+    air_quality_index: str 
     walkability: float
     livability: float
 
@@ -201,5 +201,44 @@ async def get_recommendations(city: City):
         .where(data.State == city.state)
     )
     value = await database.fetch_one(str(q))
-    nearest = [data[int(idx)]['Name'] for idx in data['Nearest'].split(',')]
-    return {nearest}
+    test_list = [int(i) for i in value[0].split(',')]
+
+    x1 = (
+        Query.from_(data)
+        .select(data['City'])
+        .select(data['State'])
+        .where(data.index == test_list[0])
+        )
+    x2 = (
+        Query.from_(data)
+        .select(data['City'])
+        .select(data['State'])
+        .where(data.index == test_list[1])
+        )
+    x3 = (
+        Query.from_(data)
+        .select(data['City'])
+        .select(data['State'])
+        .where(data.index == test_list[2])
+        )
+    x4 = (
+        Query.from_(data)
+        .select(data['City'])
+        .select(data['State'])
+        .where(data.index == test_list[3])
+        )
+    x5 = (
+        Query.from_(data)
+        .select(data['City'])
+        .select(data['State'])
+        .where(data.index == test_list[4])
+        )
+    recommendation1 = await database.fetch_one(str(x1))
+    recommendation2 = await database.fetch_one(str(x2))
+    recommendation3 = await database.fetch_one(str(x3))
+    recommendation4 = await database.fetch_one(str(x4))
+    recommendation5 = await database.fetch_one(str(x5))
+
+    list_of_cities = [recommendation1, recommendation2, recommendation3, recommendation4, recommendation5]
+
+    return {"Recommendations": list_of_cities}
