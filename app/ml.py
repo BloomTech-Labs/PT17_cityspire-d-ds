@@ -29,7 +29,7 @@ class CityData(BaseModel):
     longitude: float
     rental_price: float
     crime: str
-    pollution: str
+    air_quality_index: str
     walkability: float
     livability: float
 
@@ -121,12 +121,12 @@ async def get_pollution(city: City):
     data = Table("data")
     q = (
         Query.from_(data)
-        .select(data["Level of Concern"])
+        .select(data["Air Quality Index"])
         .where(data.City == city.city)
         .where(data.State == city.state)
     )
     value = await database.fetch_one(str(q))
-    return {"pollution": value[0]}
+    return {"air_quality_index": value[0]}
 
 
 @router.post("/api/walkability")
