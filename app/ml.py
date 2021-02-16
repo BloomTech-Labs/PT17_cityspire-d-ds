@@ -233,6 +233,7 @@ async def get_recommendations(city: City):
         .select(data['State'])
         .where(data.index == test_list[4])
         )
+
     recommendation1 = await database.fetch_one(str(x1))
     recommendation2 = await database.fetch_one(str(x2))
     recommendation3 = await database.fetch_one(str(x3))
