@@ -10,6 +10,7 @@ import pandas as pd
 from pypika import Query, Table
 import asyncio
 from app.db import database
+from typing import List
 
 
 # conn = get_db()
@@ -23,15 +24,20 @@ class City(BaseModel):
     state: str
 
 
+class CityRecommendations(BaseModel):
+    recommendations: List[City]
+
+
 class CityData(BaseModel):
     city: City
     latitude: float
     longitude: float
     rental_price: float
     crime: str
-    air_quality_index: str 
+    air_quality_index: str
     walkability: float
     livability: float
+    # recommendations: CityRecommendations
 
 
 def validate_city(
@@ -62,6 +68,7 @@ async def get_data(city: City):
         get_pollution(city),
         get_rental_price(city),
         get_livability(city),
+        get_recommendations(city),
     )
 
     data = {"city": city}
@@ -190,56 +197,31 @@ async def get_population(city: City):
     return {"Population": value[0]}
 
 
-@router.post("/api/nearest")
+@router.post("/api/nearest", response_model=CityRecommendations)
 async def get_recommendations(city: City):
     city = validate_city(city)
     data = Table("data")
-    q = (
+    q1 = (
         Query.from_(data)
         .select(data["Nearest"])
         .where(data.City == city.city)
         .where(data.State == city.state)
     )
-    value = await database.fetch_one(str(q))
-    test_list = [int(i) for i in value[0].split(',')]
+    value = await database.fetch_one(str(q1))
+    test_list = value.get("Nearest").split(",")
 
-    x1 = (
+    q2 = (
         Query.from_(data)
-        .select(data['City'])
-        .select(data['State'])
-        .where(data.index == test_list[0])
-        )
-    x2 = (
-        Query.from_(data)
-        .select(data['City'])
-        .select(data['State'])
-        .where(data.index == test_list[1])
-        )
-    x3 = (
-        Query.from_(data)
-        .select(data['City'])
-        .select(data['State'])
-        .where(data.index == test_list[2])
-        )
-    x4 = (
-        Query.from_(data)
-        .select(data['City'])
-        .select(data['State'])
-        .where(data.index == test_list[3])
-        )
-    x5 = (
-        Query.from_(data)
-        .select(data['City'])
-        .select(data['State'])
-        .where(data.index == test_list[4])
-        )
+        .select(data["City"])
+        .select(data["State"])
+        .where(data.index)
+        .isin(test_list)
+    )
 
-    recommendation1 = await database.fetch_one(str(x1))
-    recommendation2 = await database.fetch_one(str(x2))
-    recommendation3 = await database.fetch_one(str(x3))
-    recommendation4 = await database.fetch_one(str(x4))
-    recommendation5 = await database.fetch_one(str(x5))
+    recommendations = await database.fetch_all(str(q2))
 
-    list_of_cities = [recommendation1, recommendation2, recommendation3, recommendation4, recommendation5]
+    recs = [City(city=item["City"], state=item["State"]) for item in recommendations]
 
-    return {"Recommendations": list_of_cities}
+    print(recs)
+
+    return {"recommendations": recs}
