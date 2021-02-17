@@ -20,8 +20,8 @@ router = APIRouter()
 
 
 class City(BaseModel):
-    city: str
-    state: str
+    city: str = 'New York'
+    state: str = 'NY'
 
 
 class CityRecommendations(BaseModel):
