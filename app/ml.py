@@ -222,6 +222,4 @@ async def get_recommendations(city: City):
 
     recs = [City(city=item["City"], state=item["State"]) for item in recommendations]
 
-    print(recs)
-
     return {"recommendations": recs}
