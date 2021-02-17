@@ -9,7 +9,11 @@ from pathlib import Path
 import pandas as pd
 from pypika import Query, Table
 import asyncio
+<<<<<<< HEAD
 from app.db import database, select
+=======
+from app.db import database
+>>>>>>> main
 from typing import List
 
 
@@ -159,10 +163,27 @@ async def get_population(city: City):
 @router.post("/api/nearest", response_model=CityRecommendations)
 async def get_recommendations(city: City):
     city = validate_city(city)
+<<<<<<< HEAD
     value = await select('Nearest', city)
     test_list = value.get("Nearest").split(",")
     
     data = Table('data')
+    q2 = (
+=======
+    data = Table("data")
+    q1 = (
+>>>>>>> main
+        Query.from_(data)
+        .select(data["City"])
+        .select(data["State"])
+        .where(data.index)
+        .isin(test_list)
+    )
+<<<<<<< HEAD
+=======
+    value = await database.fetch_one(str(q1))
+    test_list = value.get("Nearest").split(",")
+
     q2 = (
         Query.from_(data)
         .select(data["City"])
@@ -170,6 +191,7 @@ async def get_recommendations(city: City):
         .where(data.index)
         .isin(test_list)
     )
+>>>>>>> main
 
     recommendations = await database.fetch_all(str(q2))
 
