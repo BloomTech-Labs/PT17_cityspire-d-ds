@@ -9,7 +9,7 @@ from pathlib import Path
 import pandas as pd
 from pypika import Query, Table
 import asyncio
-from app.db import database
+from app.db import database, select
 from typing import List
 
 
@@ -82,14 +82,7 @@ async def get_data(city: City):
 @router.post("/api/coordinates")
 async def get_coordinates(city: City):
     city = validate_city(city)
-    data = Table("data")
-    q = (
-        Query.from_(data)
-        .select(data["lat"], data["lon"])
-        .where(data.City == city.city)
-        .where(data.State == city.state)
-    )
-    value = await database.fetch_one(str(q))
+    value = await select(['lat', 'lon'], city)
     return {"latitude": value[0], "longitude": value[1]}
 
 
@@ -97,27 +90,14 @@ async def get_coordinates(city: City):
 async def get_crime(city: City):
     city = validate_city(city)
     data = Table("data")
-    q = (
-        Query.from_(data)
-        .select(data["Crime Rating"])
-        .where(data.City == city.city)
-        .where(data.State == city.state)
-    )
-    value = await database.fetch_one(str(q))
+    value = await select('Crime Rating', city)
     return {"crime": value[0]}
 
 
 @router.post("/api/rental_price")
 async def get_rental_price(city: City):
     city = validate_city(city)
-    data = Table("data")
-    q = (
-        Query.from_(data)
-        .select(data["Rent"])
-        .where(data.City == city.city)
-        .where(data.State == city.state)
-    )
-    value = await database.fetch_one(str(q))
+    value = await select('Rent', city)
 
     return {"rental_price": value[0]}
 
@@ -125,14 +105,7 @@ async def get_rental_price(city: City):
 @router.post("/api/pollution")
 async def get_pollution(city: City):
     city = validate_city(city)
-    data = Table("data")
-    q = (
-        Query.from_(data)
-        .select(data["Air Quality Index"])
-        .where(data.City == city.city)
-        .where(data.State == city.state)
-    )
-    value = await database.fetch_one(str(q))
+    value = await select('Air Quality Index', city)
     return {"air_quality_index": value[0]}
 
 
@@ -161,14 +134,7 @@ async def get_walkscore(city: str, state: str):
 @router.post("/api/livability")
 async def get_livability(city: City):
     city = validate_city(city)
-    data = Table("data")
-    q = (
-        Query.from_(data)
-        .select("Rent", "Good Days", "Crime Rate per 1000")
-        .where(data.City == city.city)
-        .where(data.State == city.state)
-    )
-    values = await database.fetch_one(str(q))
+    values = await select(["Rent", "Good Days", "Crime Rate per 1000"], city)
     with open("app/livability_scaler.pkl", "rb") as f:
         s = load(f)
     v = [[values[0] * -1, values[1], values[2] * -1]]
@@ -186,30 +152,17 @@ async def get_livability(city: City):
 @router.post("/api/population")
 async def get_population(city: City):
     city = validate_city(city)
-    data = Table("data")
-    q = (
-        Query.from_(data)
-        .select(data["Population"])
-        .where(data.City == city.city)
-        .where(data.State == city.state)
-    )
-    value = await database.fetch_one(str(q))
+    value = await select('Population', city)
     return {"Population": value[0]}
 
 
 @router.post("/api/nearest", response_model=CityRecommendations)
 async def get_recommendations(city: City):
     city = validate_city(city)
-    data = Table("data")
-    q1 = (
-        Query.from_(data)
-        .select(data["Nearest"])
-        .where(data.City == city.city)
-        .where(data.State == city.state)
-    )
-    value = await database.fetch_one(str(q1))
+    value = await select('Nearest', city)
     test_list = value.get("Nearest").split(",")
-
+    
+    data = Table('data')
     q2 = (
         Query.from_(data)
         .select(data["City"])
