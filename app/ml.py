@@ -71,11 +71,10 @@ async def get_data(city: City):
     value = await select_all(city)
 
     full_data = CityDataFull(city=city, **value)
-    livability = await get_livability(city, full_data)
     tasks = await asyncio.gather(
-        get_livability(city, full_data),
+        get_livability_score(city, full_data),
         get_walkability(city),
-        get_recommendations(city, full_data),
+        get_recommendation_cities(city, full_data.nearest_string),
     )
     data = {**full_data.dict()}
 
@@ -138,13 +137,25 @@ async def get_walkscore(city: str, state: str):
 
 
 @router.post("/api/livability")
-async def get_livability(city: City, city_data=Optional[CityDataFull]):
+async def get_livability(city: City):
     city = validate_city(city)
     values = await select(["Rent", "Good Days", "Crime Rate per 1000"], city)
     with open("app/livability_scaler.pkl", "rb") as f:
         s = load(f)
     v = [[values[0] * -1, values[1], values[2] * -1]]
-    print(v)
+    scaled = s.transform(v)[0]
+    walkscore = await get_walkscore(city.city, city.state)
+
+    rescaled = [walkscore[0]]
+    for score in scaled:
+        rescaled.append(score * 100)
+
+    return {"livability": round(sum(rescaled) / 4)}
+
+async def get_livability_score(city: City, city_data:CityDataFull):
+    with open("app/livability_scaler.pkl", "rb") as f:
+        s = load(f)
+    v = [[city_data.rental_price * -1, city_data.good_days, city_data.crime_rate_ppt * -1]]
     scaled = s.transform(v)[0]
     walkscore = await get_walkscore(city.city, city.state)
 
@@ -163,13 +174,17 @@ async def get_population(city: City):
 
 
 @router.post("/api/nearest", response_model=CityRecommendations)
-async def get_recommendations(city: City, city_data=Optional[CityDataFull]):
-    if not city_data:
-        city = validate_city(city)
-        value = await select("Nearest", city)
-        test_list = value.get("Nearest").split(",")
-    else:
-        test_list = str(city_data.nearest_string).split(",")
+async def get_recommendations(city: City):
+
+    city = validate_city(city)
+    value = await select("Nearest", city)
+
+    recommendations = await get_recommendation_cities(city, value.get("Nearest") )
+
+    return recommendations
+
+async def get_recommendation_cities(city: City, nearest_string:str):
+    test_list = nearest_string.split(",")
 
     data = Table("data")
     q2 = (
@@ -181,10 +196,10 @@ async def get_recommendations(city: City, city_data=Optional[CityDataFull]):
     )
 
     recommendations = await database.fetch_all(str(q2))
-
     recs = CityRecommendations(
         recommendations=[
             City(city=item["City"], state=item["State"]) for item in recommendations
         ]
     )
+
     return recs
