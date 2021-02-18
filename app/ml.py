@@ -152,10 +152,17 @@ async def get_livability(city: City):
 
     return {"livability": round(sum(rescaled) / 4)}
 
-async def get_livability_score(city: City, city_data:CityDataFull):
+
+async def get_livability_score(city: City, city_data: CityDataFull):
     with open("app/livability_scaler.pkl", "rb") as f:
         s = load(f)
-    v = [[city_data.rental_price * -1, city_data.good_days, city_data.crime_rate_ppt * -1]]
+    v = [
+        [
+            city_data.rental_price * -1,
+            city_data.good_days,
+            city_data.crime_rate_ppt * -1,
+        ]
+    ]
     scaled = s.transform(v)[0]
     walkscore = await get_walkscore(city.city, city.state)
 
@@ -179,11 +186,12 @@ async def get_recommendations(city: City):
     city = validate_city(city)
     value = await select("Nearest", city)
 
-    recommendations = await get_recommendation_cities(city, value.get("Nearest") )
+    recommendations = await get_recommendation_cities(city, value.get("Nearest"))
 
     return recommendations
 
-async def get_recommendation_cities(city: City, nearest_string:str):
+
+async def get_recommendation_cities(city: City, nearest_string: str):
     test_list = nearest_string.split(",")
 
     data = Table("data")
