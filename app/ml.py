@@ -9,35 +9,42 @@ from pathlib import Path
 import pandas as pd
 from pypika import Query, Table
 import asyncio
-from app.db import database, select
-from typing import List
-
-
-# conn = get_db()
+from app.db import database, select, select_all
+from typing import List, Optional
 
 
 router = APIRouter()
 
 
 class City(BaseModel):
-    city: str = 'New York'
-    state: str = 'NY'
+    city: str = "New York"
+    state: str = "NY"
 
 
 class CityRecommendations(BaseModel):
     recommendations: List[City]
 
 
-class CityData(BaseModel):
+class CityDataBase(BaseModel):
     city: City
     latitude: float
     longitude: float
     rental_price: float
     crime: str
     air_quality_index: str
+    population: int
+
+
+class CityData(CityDataBase):
     walkability: float
     livability: float
-    # recommendations: CityRecommendations
+    recommendations: List[City]
+
+
+class CityDataFull(CityDataBase):
+    good_days: int
+    crime_rate_ppt: float
+    nearest_string: str
 
 
 def validate_city(
@@ -61,20 +68,19 @@ def validate_city(
 async def get_data(city: City):
     city = validate_city(city)
 
+    value = await select_all(city)
+
+    full_data = CityDataFull(city=city, **value)
+    livability = await get_livability(city, full_data)
     tasks = await asyncio.gather(
-        get_coordinates(city),
-        get_crime(city),
+        get_livability(city, full_data),
         get_walkability(city),
-        get_pollution(city),
-        get_rental_price(city),
-        get_livability(city),
-        get_recommendations(city),
+        get_recommendations(city, full_data),
     )
+    data = {**full_data.dict()}
 
-    data = {"city": city}
-
-    for t in tasks:
-        data.update(t)
+    for item in tasks:
+        data.update(item)
 
     return data
 
@@ -82,7 +88,7 @@ async def get_data(city: City):
 @router.post("/api/coordinates")
 async def get_coordinates(city: City):
     city = validate_city(city)
-    value = await select(['lat', 'lon'], city)
+    value = await select(["lat", "lon"], city)
     return {"latitude": value[0], "longitude": value[1]}
 
 
@@ -90,14 +96,14 @@ async def get_coordinates(city: City):
 async def get_crime(city: City):
     city = validate_city(city)
     data = Table("data")
-    value = await select('Crime Rating', city)
+    value = await select("Crime Rating", city)
     return {"crime": value[0]}
 
 
 @router.post("/api/rental_price")
 async def get_rental_price(city: City):
     city = validate_city(city)
-    value = await select('Rent', city)
+    value = await select("Rent", city)
 
     return {"rental_price": value[0]}
 
@@ -105,7 +111,7 @@ async def get_rental_price(city: City):
 @router.post("/api/pollution")
 async def get_pollution(city: City):
     city = validate_city(city)
-    value = await select('Air Quality Index', city)
+    value = await select("Air Quality Index", city)
     return {"air_quality_index": value[0]}
 
 
@@ -132,7 +138,7 @@ async def get_walkscore(city: str, state: str):
 
 
 @router.post("/api/livability")
-async def get_livability(city: City):
+async def get_livability(city: City, city_data=Optional[CityDataFull]):
     city = validate_city(city)
     values = await select(["Rent", "Good Days", "Crime Rate per 1000"], city)
     with open("app/livability_scaler.pkl", "rb") as f:
@@ -146,23 +152,26 @@ async def get_livability(city: City):
     for score in scaled:
         rescaled.append(score * 100)
 
-    return {"livability": sum(rescaled) / 4}
+    return {"livability": round(sum(rescaled) / 4)}
 
 
 @router.post("/api/population")
 async def get_population(city: City):
     city = validate_city(city)
-    value = await select('Population', city)
-    return {"Population": value[0]}
+    value = await select("Population", city)
+    return {"population": value[0]}
 
 
 @router.post("/api/nearest", response_model=CityRecommendations)
-async def get_recommendations(city: City):
-    city = validate_city(city)
-    value = await select('Nearest', city)
-    test_list = value.get("Nearest").split(",")
-    
-    data = Table('data')
+async def get_recommendations(city: City, city_data=Optional[CityDataFull]):
+    if not city_data:
+        city = validate_city(city)
+        value = await select("Nearest", city)
+        test_list = value.get("Nearest").split(",")
+    else:
+        test_list = str(city_data.nearest_string).split(",")
+
+    data = Table("data")
     q2 = (
         Query.from_(data)
         .select(data["City"])
@@ -173,6 +182,9 @@ async def get_recommendations(city: City):
 
     recommendations = await database.fetch_all(str(q2))
 
-    recs = [City(city=item["City"], state=item["State"]) for item in recommendations]
-
-    return {"recommendations": recs}
+    recs = CityRecommendations(
+        recommendations=[
+            City(city=item["City"], state=item["State"]) for item in recommendations
+        ]
+    )
+    return recs
