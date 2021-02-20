@@ -21,6 +21,7 @@ pandas = "*"
 asyncpg = "*"
 databases = {extras = ["postgresql"], version = "*"}
 sklearn = "*"
+plotly = "*"
 
 [requires]
 python_version = "3"
