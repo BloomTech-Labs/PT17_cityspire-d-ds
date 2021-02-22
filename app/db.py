@@ -7,7 +7,8 @@ from dotenv import load_dotenv
 import databases
 import asyncio
 from typing import Union, Iterable
-from pypika import Query, Table
+from pypika import Query, Table, CustomFunction
+from pypika import functions
 from pypika.terms import Field
 
 Field_ = Union[Field, str]
@@ -49,6 +50,7 @@ async def select(columns: Union[Iterable[Field_], Field_], city):
 
 async def select_all(city):
     data = Table("data")
+    di_fn = CustomFunction("ROUND", ["number"])
     columns = (
         # 'lat', 'lon'
         data["lat"].as_("latitude"),
@@ -60,13 +62,15 @@ async def select_all(city):
         data["Nearest"].as_("nearest_string"),
         data["Good Days"].as_("good_days"),
         data["Crime Rate per 1000"].as_("crime_rate_ppt"),
+        # di_fn(data['Diversity Index']).as_('diversity_index')
+        di_fn(data["Diversity Index"] * 100).as_("diversity_index"),
     )
+
     q = (
         Query.from_(data)
         .select(*columns)
         .where(data.City == city.city)
         .where(data.State == city.state)
     )
-
     value = await database.fetch_one(str(q))
     return value

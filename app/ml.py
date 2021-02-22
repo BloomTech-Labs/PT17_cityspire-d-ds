@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from app.state_abbr import us_state_abbrev as abbr
 from pathlib import Path
 import pandas as pd
-from pypika import Query, Table
+from pypika import Query, Table, CustomFunction
 import asyncio
 from app.db import database, select, select_all
 from typing import List, Optional
@@ -33,6 +33,7 @@ class CityDataBase(BaseModel):
     crime: str
     air_quality_index: str
     population: int
+    diversity_index: float
 
 
 class CityData(CityDataBase):
@@ -145,12 +146,14 @@ async def get_livability(city: City):
     v = [[values[0] * -1, values[1], values[2] * -1]]
     scaled = s.transform(v)[0]
     walkscore = await get_walkscore(city.city, city.state)
+    diversity_index = await select("Diversity Index", city)
 
-    rescaled = [walkscore[0]]
+    rescaled = [walkscore[0], round(diversity_index[0]) * 100]
     for score in scaled:
         rescaled.append(score * 100)
+    # breakpoint()
 
-    return {"livability": round(sum(rescaled) / 4)}
+    return {"livability": round(sum(rescaled) / 5)}
 
 
 async def get_livability_score(city: City, city_data: CityDataFull):
@@ -166,11 +169,11 @@ async def get_livability_score(city: City, city_data: CityDataFull):
     scaled = s.transform(v)[0]
     walkscore = await get_walkscore(city.city, city.state)
 
-    rescaled = [walkscore[0]]
+    rescaled = [walkscore[0], city_data.diversity_index]
     for score in scaled:
         rescaled.append(score * 100)
 
-    return {"livability": round(sum(rescaled) / 4)}
+    return {"livability": round(sum(rescaled) / 5)}
 
 
 @router.post("/api/population")
