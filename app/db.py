@@ -8,7 +8,6 @@ import databases
 import asyncio
 from typing import Union, Iterable
 from pypika import Query, Table, CustomFunction
-from pypika import functions
 from pypika.terms import Field
 
 Field_ = Union[Field, str]
@@ -62,7 +61,6 @@ async def select_all(city):
         data["Nearest"].as_("nearest_string"),
         data["Good Days"].as_("good_days"),
         data["Crime Rate per 1000"].as_("crime_rate_ppt"),
-        # di_fn(data['Diversity Index']).as_('diversity_index')
         di_fn(data["Diversity Index"] * 100).as_("diversity_index"),
     )
 
