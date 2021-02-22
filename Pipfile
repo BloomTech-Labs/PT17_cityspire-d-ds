@@ -22,6 +22,8 @@ asyncpg = "*"
 databases = {extras = ["postgresql"], version = "*"}
 sklearn = "*"
 plotly = "*"
+gunicorn = "*"
+typing-extensions = "*"
 
 [requires]
 python_version = "3"
