@@ -148,7 +148,7 @@ async def crime_plot(city):
     fig.add_trace(go.Pie(values = property_crime_melt['total'],
                          labels = property_crime_melt['property crime type']),
                          row = 2, col = 2)
-    fig.update_layout(height=600, width=1000)
+    fig.update_layout(height=700, width=1000)
     fig.show()
     return fig.to_json()
 
