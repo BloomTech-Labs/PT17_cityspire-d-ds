@@ -14,6 +14,14 @@ router = APIRouter()
 MODEL_CSV = 'https://media.githubusercontent.com/media/CityScape-Datasets/Workspace_Datasets/main/Models/nn_model/nn_model.csv'
 
 class CityData():
+    """
+    Locates specific city data
+    - Demographics
+    - Employement -> industry, employment
+    - Crime -> violent crime, property crime
+    - Air Quality Index
+    """
+
     def __init__(self, current_city):
         self.current_city = current_city
         self.dataframe = pd.read_csv(MODEL_CSV)
@@ -46,8 +54,6 @@ class CityData():
     def air_quality_index(self):
         self.air_quality_index = ['Days with AQI', 'Good Days', 'Moderate Days','Unhealthy for Sensitive Groups Days', 'Unhealthy Days','Very Unhealthy Days', 'Hazardous Days', 'Max AQI', '90th Percentile AQI', 'Median AQI', 'Days CO', 'Days NO2', 'Days Ozone', 'Days SO2', 'Days PM2.5', 'Days PM10']
         return self.air_quality_index
-
-
 
 @router.post("/api/demographics_graph")
 async def demographics_plot(current_city:City):
@@ -112,7 +118,10 @@ async def employment_plot(current_city:City):
     fig.add_trace(go.Bar(x =type_melt['employment type'], y =type_melt['percentage'],
                          marker = dict(color = type_melt['percentage'], coloraxis = "coloraxis")),
                          row = 1, col = 2)
-    fig.update_layout(coloraxis=dict(colorscale = 'Bluered_r'), showlegend = False)
+    fig.update_layout(
+        coloraxis=dict(colorscale = 'Bluered_r'),
+        coloraxis_showscale = False,
+        showlegend = False)
     fig.show()
     return fig.to_json()
 
@@ -186,8 +195,12 @@ async def air_quality_plot(current_city:City):
     air_quality_details = city_data.subset[city_data.air_quality_index()]
     air_quality_melt = pd.melt(air_quality_details)
     air_quality_melt.columns = ['air quality indicators', 'days']
-    fig = px.bar(air_quality_melt, x =air_quality_melt['days'], y =air_quality_melt['air quality indicators'], orientation='h')
+    fig = make_subplots(rows = 1, cols = 1)
+    fig.add_trace(go.Bar(x = air_quality_melt['days'], y = air_quality_melt['air quality indicators'],
+                         marker = dict(color = air_quality_melt['days'], coloraxis = "coloraxis"), orientation = 'h'))
     fig.update_layout(
+        coloraxis=dict(colorscale = 'Viridis'), 
+        coloraxis_showscale = False,
         xaxis_range = [0, 360],
         height=600, width=1000,
         title={
