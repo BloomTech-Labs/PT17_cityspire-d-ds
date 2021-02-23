@@ -83,6 +83,7 @@ async def demographics_plot(current_city:City):
             'xanchor': 'center',
             'yanchor': 'top'})
     fig.show()
+    fig.write_html("path/to/file.html")
     return fig.to_json()
 
 @router.post("/api/employment_graph")
@@ -123,6 +124,7 @@ async def employment_plot(current_city:City):
         coloraxis_showscale = False,
         showlegend = False)
     fig.show()
+    fig.write_html("path/to/file.html")
     return fig.to_json()
 
 @router.post("/api/crime_graph")
@@ -175,6 +177,7 @@ async def crime_plot(current_city:City):
                          row = 2, col = 2)
     fig.update_layout(height=700, width=1300)
     fig.show()
+    fig.write_html("path/to/file.html")
     return fig.to_json()
 
 @router.post("/api/aqi_graph")
@@ -210,4 +213,5 @@ async def air_quality_plot(current_city:City):
             'xanchor': 'center',
             'yanchor': 'top'})
     fig.show()
+    fig.write_html("path/to/file.html")
     return fig.to_json()
