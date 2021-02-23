@@ -47,6 +47,13 @@ class CityDataFull(CityDataBase):
     crime_rate_ppt: float
     nearest_string: str
 
+class LivabilityWeights(BaseModel):
+    walkability: float = 1.0
+    low_rent: float = 1.0
+    low_pollution: float = 1.0
+    diversity: float = 1.0
+    low_crime: float = 1.0
+
 
 def validate_city(
     city: City,
@@ -132,13 +139,13 @@ async def get_walkscore(city: str, state: str):
     """Input: City, 2 letter abbreviation for state
     Returns a list containing WalkScore, BusScore, and BikeScore in that order"""
 
-    r = requests.get(f"https://www.walkscore.com/{state}/{city}")
-    images = bs(r.text, features="lxml").select(".block-header-badge img")
+    r_ = requests.get(f"https://www.walkscore.com/{state}/{city}")
+    images = bs(r_.text, features="lxml").select(".block-header-badge img")
     return [int(str(x)[10:12]) for x in images]
 
 
 @router.post("/api/livability")
-async def get_livability(city: City):
+async def get_livability(city: City, weights: LivabilityWeights = None):
     city = validate_city(city)
     values = await select(["Rent", "Good Days", "Crime Rate per 1000"], city)
     with open("app/livability_scaler.pkl", "rb") as f:
@@ -148,12 +155,26 @@ async def get_livability(city: City):
     walkscore = await get_walkscore(city.city, city.state)
     diversity_index = await select("Diversity Index", city)
 
-    rescaled = [walkscore[0], round(diversity_index[0]) * 100]
+    rescaled = [walkscore[0]]
+    rescaled.append(round(diversity_index[0]) * 100)
     for score in scaled:
         rescaled.append(score * 100)
     # breakpoint()
+    if weights is None:
+        return {"livability": round(sum(rescaled) / 5)}
+    else:
+        weighted = [
+            rescaled[0] * weights.walkability,
+            rescaled[1] * weights.diversity,
+            rescaled[2] * weights.low_rent,
+            rescaled[3] * weights.low_pollution,
+            rescaled[4] * weights.low_crime
+        ]
+    
+        sum_ = sum(weighted)
+        divisor = sum(weights.dict().values())
 
-    return {"livability": round(sum(rescaled) / 5)}
+        return {"livability" : round(sum_ / divisor)}
 
 
 async def get_livability_score(city: City, city_data: CityDataFull):
