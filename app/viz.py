@@ -202,10 +202,10 @@ async def air_quality_plot(current_city:City):
     fig.add_trace(go.Bar(x = air_quality_melt['days'], y = air_quality_melt['air quality indicators'],
                          marker = dict(color = air_quality_melt['days'], coloraxis = "coloraxis"), orientation = 'h'))
     fig.update_layout(
-        coloraxis=dict(colorscale = 'Viridis'), 
+        coloraxis=dict(colorscale = 'Viridis'),
         coloraxis_showscale = False,
         xaxis_range = [0, 360],
-        height=600, width=1000,
+        # height=600, width=1000,
         title={
             'text': f'Air Quality in {city}',
             'y':0.95,
