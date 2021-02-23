@@ -175,7 +175,6 @@ async def crime_plot(current_city:City):
     fig.add_trace(go.Pie(values = property_crime_melt['total'],
                          labels = property_crime_melt['property crime type']),
                          row = 2, col = 2)
-    fig.update_layout(height=700, width=1300)
     fig.show()
     # fig.write_html("path/to/file.html")
     return fig.to_json()
@@ -205,7 +204,6 @@ async def air_quality_plot(current_city:City):
         coloraxis=dict(colorscale = 'Viridis'),
         coloraxis_showscale = False,
         xaxis_range = [0, 360],
-        # height=600, width=1000,
         title={
             'text': f'Air Quality in {city}',
             'y':0.95,
