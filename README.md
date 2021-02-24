@@ -225,24 +225,24 @@ D = 1 - ((Σ n(n-1)/ (N(N-1))
 
 
 #### Air Quality
-To determine overall air quality for each city, we used the median value and then created an algorithm that separated it based on https://www.airnow.gov/aqi/aqi-basics/ index. 
-![Air Quality Index]!https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/notebooks/datasets/data/pollution/aqi_index.png)
+To determine overall air quality for each city, we used the median value and then created an algorithm that separated it based on https://www.airnow.gov/aqi/aqi-basics/ index. \
+![Air Quality Index](https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/notebooks/datasets/data/pollution/aqi_index.png)
 
 #### Crime Rate Per 1000
-Crime Rate per 1,000 inhabitants: This represents the number of Index offenses per 1,000 inhabitants.For example: What is the crime rate for a municipality with 513 Index offenses (murder, rape, robbery,aggravated assault, burglary, larceny-theft and motor vehicle theft), with a population of 8,280? 
-513 (Index offenses) ÷ 8,280 (population) = .061957 x 1,000 = 62.0 (crime per 1,000 inhabitants)
+Crime Rate per 1,000 inhabitants: This represents the number of Index offenses per 1,000 inhabitants.For example: What is the crime rate for a municipality with 513 Index offenses (murder, rape, robbery,aggravated assault, burglary, larceny-theft and motor vehicle theft), with a population of 8,280? \ 
+513 (Index offenses) ÷ 8,280 (population) = .061957 x 1,000 = 62.0 (crime per 1,000 inhabitants)\
 https://www.njsp.org/info/ucr2000/pdf/calc_ucr2000.pdf
 
   
 ### Datasets:
-(https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/notebooks/datasets/datasets_to_merge)
+(https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/notebooks/datasets/datasets_to_merge) \
 The first link shows all combined csv that is stored in Postgres.
 
-(https://github.com/Lambda-School-Labs/labspt15-cityspire-g-dsli/tree/main/notebooks/datasets/data)
+(https://github.com/Lambda-School-Labs/labspt15-cityspire-g-dsli/tree/main/notebooks/datasets/data) \
 This link shows all the different datasets we used to compile our data about the different cities.
 
 ### API: 
-https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/app 
+https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/app \
 This is where the code for creating the different endpoints can be located.
 
 ### Packages/Technologies used: 
