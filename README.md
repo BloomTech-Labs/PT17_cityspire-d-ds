@@ -229,7 +229,7 @@ To determine overall air quality for each city, we used the median value and the
 ![Air Quality Index](https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/notebooks/datasets/data/pollution/aqi_index.png)
 
 #### Crime Rate Per 1000
-Crime Rate per 1,000 inhabitants: This represents the number of Index offenses per 1,000 inhabitants.For example: What is the crime rate for a municipality with 513 Index offenses (murder, rape, robbery,aggravated assault, burglary, larceny-theft and motor vehicle theft), with a population of 8,280? \  
+Crime Rate per 1,000 inhabitants: This represents the number of Index offenses per 1,000 inhabitants.For example: What is the crime rate for a municipality with 513 Index offenses (murder, rape, robbery,aggravated assault, burglary, larceny-theft and motor vehicle theft), with a population of 8,280?  
 513 (Index offenses) ÷ 8,280 (population) = .061957 x 1,000 = 62.0 (crime per 1,000 inhabitants)\
 https://www.njsp.org/info/ucr2000/pdf/calc_ucr2000.pdf
 
