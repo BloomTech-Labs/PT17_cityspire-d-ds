@@ -205,45 +205,47 @@ Below are the visualization endpoints that allows users to visualize and get a b
 
 Below are links to resources used to create this project:
 
-    Models:
-    - Calculating Livability Index:
-      https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/notebooks/model/livability
-      This is how we created the livability index for users (livability.pkl)
-    - Nearest Neigbhors Model:
-      https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/notebooks/model/nearest_neighbor
-      This is how we created the recommendations for cities using the nearest neighbors model
+### Models:
+- Calculating Livability Index:
+  https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/notebooks/model/livability
+  This is how we created the livability index for users (livability.pkl)
+  
+- Nearest Neigbhors Model:
+  https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/notebooks/model/nearest_neighbor
+  This is how we created the recommendations for cities using the nearest neighbors model
       
-    Feature Engineering
-    
-    - diversity index
-      The diversity indext was calculated using Simpson's Diversity Index
-      D = 1 - ((Σ n(n-1)/ (N(N-1))
-      * n = numbers of individuals of each ethnicity
-      * N = total number of individuals of all ethnicities
-      * The value of D ranges between 0 and 1
+### Feature Engineering
+
+#### Diversity Index
+The diversity indext was calculated using Simpson's Diversity Index
+D = 1 - ((Σ n(n-1)/ (N(N-1))
+* n = numbers of individuals of each ethnicity
+* N = total number of individuals of all ethnicities
+* The value of D ranges between 0 and 1
 
 
-    - air quality
-      To determine overall air quality for each city, we used the median value and then created an algorithm that separated it based on https://www.airnow.gov/aqi/aqi-basics/ index. 
-      ![Air Quality Index]!https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/notebooks/datasets/data/pollution/aqi_index.png)
+#### Air Quality
+To determine overall air quality for each city, we used the median value and then created an algorithm that separated it based on https://www.airnow.gov/aqi/aqi-basics/ index. 
+![Air Quality Index]!https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/notebooks/datasets/data/pollution/aqi_index.png)
 
-    - crime rate per 1000
-      Crime Rate per 1,000 inhabitants: This represents the number of Index offenses per 1,000 inhabitants.For example: What is the crime rate for a municipality with 513 Index offenses (murder, rape, robbery,aggravated assault, burglary, larceny-theft and motor vehicle theft), with a population of 8,280? 513 (Index offenses) ÷ 8,280 (population) = .061957 x 1,000 = 62.0 (crime per 1,000 inhabitants)
-
+#### Crime Rate Per 1000
+Crime Rate per 1,000 inhabitants: This represents the number of Index offenses per 1,000 inhabitants.For example: What is the crime rate for a municipality with 513 Index offenses (murder, rape, robbery,aggravated assault, burglary, larceny-theft and motor vehicle theft), with a population of 8,280? 
+513 (Index offenses) ÷ 8,280 (population) = .061957 x 1,000 = 62.0 (crime per 1,000 inhabitants)
 https://www.njsp.org/info/ucr2000/pdf/calc_ucr2000.pdf
 
   
-    Datasets:
-    (https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/notebooks/datasets/datasets_to_merge)
-    The first link shows all combined csv that is stored in Postgres.
+### Datasets:
+(https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/notebooks/datasets/datasets_to_merge)
+The first link shows all combined csv that is stored in Postgres.
 
-    (https://github.com/Lambda-School-Labs/labspt15-cityspire-g-dsli/tree/main/notebooks/datasets/data)
-    This link shows all the different datasets we used to compile our data about the different cities.
+(https://github.com/Lambda-School-Labs/labspt15-cityspire-g-dsli/tree/main/notebooks/datasets/data)
+This link shows all the different datasets we used to compile our data about the different cities.
 
-    API: 
-    https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/app 
-    This is where the code for creating the different endpoints can be located.
+### API: 
+https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/tree/main/app 
+This is where the code for creating the different endpoints can be located.
 
-    Packages/Technologies used: https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/Pipfile
+### Packages/Technologies used: 
+https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/Pipfile
 
 
