@@ -224,7 +224,7 @@ D = 1 - ((Σ n(n-1)/ (N(N-1))
 * The value of D ranges between 0 and 1
 
 
-#### Air Quality
+#### Air Quality Index
 To determine overall air quality for each city, we used the median value and then created an algorithm that separated it based on https://www.airnow.gov/aqi/aqi-basics/ index. \
 ![Air Quality Index](https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/notebooks/datasets/data/pollution/aqi_index.png)
 
