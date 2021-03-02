@@ -250,29 +250,11 @@ https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/Pipfile
 
 ## Contributors
 
-|[Jisha Obukwelu](https://github.com/jiobu1)                                                          
-|[Erik Seguinte](https://github.com/ErikSeguinte)                                                        
-|[dataabyss](https://github.com/dataabyss)                                                       
-|[Keino Baird](https://github.com/kbee181756)|
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------: 
-| :-------------------------------------------------------------------------------------------------------------------------------------------: 
-| :-----------------------------------------------------------------------------------------------------------------------------------------: 
-| :-----------------------------------------------------------------------------------------------------------------------------------------: |
-| [<img src="https://avatars.githubusercontent.com/u/32742307?s=460&u=5b16768fa895028ee408b983bf8c71b1c29bda00&v=4" width = "200" />](https://github.com/jiobu1) 
-| [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/ErikSeguinte) 
-| [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/dataabyss) 
-| [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/kbee181756) 
-| [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/) |
-| [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jiobu1)
-| [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ErikSeguinte)                             
-| [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/dataabyss)                           
-| [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/kbee181756)                          
-| [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah) |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jishaobukwelu/)                  
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/erik-seguinte/)                 
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/keino-baird-7a54921b/)                
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+|                                                          [Jisha Obukwelu](https://github.com/jiobu1)                                                          |                                                       [Erik Seguinte](https://github.com/ErikSeguinte)                                                        |                                                      [dataabyss](https://github.com/dataabyss)                                                       |                                                      [Keino Baird](https://github.com/kbee181756)                                                       |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars.githubusercontent.com/u/32742307?s=460&u=5b16768fa895028ee408b983bf8c71b1c29bda00&v=4" width = "200" />](https://github.com/jiobu1) | [<img src="![image](https://user-images.githubusercontent.com/57121314/109588498-d7f9e280-7ad6-11eb-9cf9-4e99ef5dfd78.png)" width = "200" />](https://github.com/ErikSeguinte) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/dataabyss) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/kbee181756) | [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/) |
+|                                      [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jiobu1)                                       |                            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ErikSeguinte)                             |                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/dataabyss)                           |                         [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/kbee181756)                          | [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah) |
+|                  [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jishaobukwelu/)                  |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/erik-seguinte/)                 |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)                |                [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/keino-baird-7a54921b/)                | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
 <br>
 <br>
