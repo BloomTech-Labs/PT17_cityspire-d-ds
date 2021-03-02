@@ -250,11 +250,11 @@ https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/Pipfile
 
 ### Other Links
 **Data Sources:** 
-US Census - https://www.census.gov/
-FBI Crime Data - https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/tables/table-8/table-8-state-cuts/arizona.xls/@@template-layout-view?override-view=data-declaration
-Pollution Data - https://aqs.epa.gov/aqsweb/airdata
-Rental Data - https://www.huduser.gov/
-Walkscore -  https://www.walkscore.com/
+* US Census - https://www.census.gov/
+* FBI Crime Data - https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/tables/table-8/table-8-state-cuts/arizona.xls/@@template-layout-view?override-view=data-declaration
+* Pollution Data - https://aqs.epa.gov/aqsweb/airdata
+* Rental Data - https://www.huduser.gov/
+* Walkscore -  https://www.walkscore.com/
 
 ## Contributors
 
