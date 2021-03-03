@@ -47,6 +47,7 @@ class CityDataFull(CityDataBase):
     crime_rate_ppt: float
     nearest_string: str
 
+
 class LivabilityWeights(BaseModel):
     walkability: float = 1.0
     low_rent: float = 1.0
@@ -58,6 +59,22 @@ class LivabilityWeights(BaseModel):
 def validate_city(
     city: City,
 ) -> City:
+    """Ensure City name and State name are in the right format.
+
+    Ensures that the city name is in Title Case and the State is converted from
+    Full name to All Caps ABBR if needed.
+
+    args:
+        city: The City object to be Validated
+
+    returns:
+        a City object in a proper format to be used elsewhere.
+
+    raises:
+        HTTPException:
+            If the state cannot be converted into an ABBR
+    """
+
     city.city = city.city.title()
 
     try:
@@ -74,6 +91,19 @@ def validate_city(
 
 @router.post("/api/get_data", response_model=CityData)
 async def get_data(city: City):
+    """Retrieve all data for city
+
+    Fetch data from DB, calculate derived stats, scrape Walkscore
+    return data
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+        by fastAPI to a json object.
+    """
+
     city = validate_city(city)
 
     value = await select_all(city)
@@ -94,6 +124,17 @@ async def get_data(city: City):
 
 @router.post("/api/coordinates")
 async def get_coordinates(city: City):
+    """Retrieve coordinates for target city
+
+    Fetch data from DB
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+        by fastAPI to a json object.
+    """
     city = validate_city(city)
     value = await select(["lat", "lon"], city)
     return {"latitude": value[0], "longitude": value[1]}
@@ -101,6 +142,17 @@ async def get_coordinates(city: City):
 
 @router.post("/api/crime")
 async def get_crime(city: City):
+    """Retrieve crime rate for target city
+
+    Fetch data from DB
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+        by fastAPI to a json object.
+    """
     city = validate_city(city)
     data = Table("data")
     value = await select("Crime Rating", city)
@@ -109,6 +161,17 @@ async def get_crime(city: City):
 
 @router.post("/api/rental_price")
 async def get_rental_price(city: City):
+    """Retrieve rental price for target city
+
+    Fetch data from DB
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+        by fastAPI to a json object.
+    """
     city = validate_city(city)
     value = await select("Rent", city)
 
@@ -117,6 +180,17 @@ async def get_rental_price(city: City):
 
 @router.post("/api/pollution")
 async def get_pollution(city: City):
+    """Retrieve pollution rating for target city
+
+    Fetch data from DB
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+        by fastAPI to a json object.
+    """
     city = validate_city(city)
     value = await select("Air Quality Index", city)
     return {"air_quality_index": value[0]}
@@ -124,6 +198,15 @@ async def get_pollution(city: City):
 
 @router.post("/api/walkability")
 async def get_walkability(city: City):
+    """Retrieve walkscore for target city
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+        by fastAPI to a json object.
+    """
     city = validate_city(city)
     try:
         score = (await get_walkscore(**city.dict()))[0]
@@ -136,8 +219,15 @@ async def get_walkability(city: City):
 
 
 async def get_walkscore(city: str, state: str):
-    """Input: City, 2 letter abbreviation for state
-    Returns a list containing WalkScore, BusScore, and BikeScore in that order"""
+    """Scrape Walkscore.
+
+    args:
+        city: The target city
+        state: Target state as an all-caps 2-letter abbr
+
+    returns:
+        List containing WalkScore, BusScore, and BikeScore in that order
+    """
 
     r_ = requests.get(f"https://www.walkscore.com/{state}/{city}")
     images = bs(r_.text, features="lxml").select(".block-header-badge img")
@@ -146,6 +236,19 @@ async def get_walkscore(city: str, state: str):
 
 @router.post("/api/livability")
 async def get_livability(city: City, weights: LivabilityWeights = None):
+    """Calculate livability score
+
+    Fetch data from DB, calculate derived stats, scrape Walkscore
+    return data
+
+    args:
+        city: The target city
+        LivabilityWeights: Weights for the to use for calculation
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+        by fastAPI to a json object.
+    """
     city = validate_city(city)
     values = await select(["Rent", "Good Days", "Crime Rate per 1000"], city)
     with open("app/livability_scaler.pkl", "rb") as f:
@@ -168,16 +271,30 @@ async def get_livability(city: City, weights: LivabilityWeights = None):
             rescaled[1] * weights.diversity,
             rescaled[2] * weights.low_rent,
             rescaled[3] * weights.low_pollution,
-            rescaled[4] * weights.low_crime
+            rescaled[4] * weights.low_crime,
         ]
-    
+
         sum_ = sum(weighted)
         divisor = sum(weights.dict().values())
 
-        return {"livability" : round(sum_ / divisor)}
+        return {"livability": round(sum_ / divisor)}
 
 
 async def get_livability_score(city: City, city_data: CityDataFull):
+    """Calculate livability score
+
+    Fetch data from DB, calculate derived stats, scrape Walkscore
+    return data
+
+    args:
+        city: The target city
+
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+            by fastAPI to a json object.
+    """
+
     with open("app/livability_scaler.pkl", "rb") as f:
         s = load(f)
     v = [
@@ -199,6 +316,18 @@ async def get_livability_score(city: City, city_data: CityDataFull):
 
 @router.post("/api/population")
 async def get_population(city: City):
+    """Retrieve population rating for target city
+
+    Fetch data from DB
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+            by fastAPI to a json object.
+    """
+
     city = validate_city(city)
     value = await select("Population", city)
     return {"population": value[0]}
@@ -206,6 +335,17 @@ async def get_population(city: City):
 
 @router.post("/api/nearest", response_model=CityRecommendations)
 async def get_recommendations(city: City):
+    """Retrieve recommended cities for target city
+
+    Fetch data from DB
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+            by fastAPI to a json object.
+    """
 
     city = validate_city(city)
     value = await select("Nearest", city)
@@ -216,6 +356,18 @@ async def get_recommendations(city: City):
 
 
 async def get_recommendation_cities(city: City, nearest_string: str):
+    """Use the string and transform to City
+
+    Fetch data from DB
+
+    args:
+        nearest_string: String consisting of the index numbers of the recommended cities.
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+            by fastAPI to a json object.
+    """
+
     test_list = nearest_string.split(",")
 
     data = Table("data")
