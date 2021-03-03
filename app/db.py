@@ -48,6 +48,17 @@ async def select(columns: Union[Iterable[Field_], Field_], city):
 
 
 async def select_all(city):
+    """Fetch all data at once
+
+    Fetch data from DB
+
+    args:
+        city: selected city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+            by fastAPI to a json object.
+    """
     data = Table("data")
     di_fn = CustomFunction("ROUND", ["number"])
     columns = (

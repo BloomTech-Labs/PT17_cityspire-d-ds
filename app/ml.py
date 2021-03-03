@@ -236,6 +236,19 @@ async def get_walkscore(city: str, state: str):
 
 @router.post("/api/livability")
 async def get_livability(city: City, weights: LivabilityWeights = None):
+    """Calculate livability score
+
+    Fetch data from DB, calculate derived stats, scrape Walkscore
+    return data
+
+    args:
+        city: The target city
+        LivabilityWeights: Weights for the to use for calculation
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+        by fastAPI to a json object.
+    """
     city = validate_city(city)
     values = await select(["Rent", "Good Days", "Crime Rate per 1000"], city)
     with open("app/livability_scaler.pkl", "rb") as f:
@@ -268,6 +281,20 @@ async def get_livability(city: City, weights: LivabilityWeights = None):
 
 
 async def get_livability_score(city: City, city_data: CityDataFull):
+    """Calculate livability score
+
+    Fetch data from DB, calculate derived stats, scrape Walkscore
+    return data
+
+    args:
+        city: The target city
+
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+            by fastAPI to a json object.
+    """
+
     with open("app/livability_scaler.pkl", "rb") as f:
         s = load(f)
     v = [
@@ -289,6 +316,18 @@ async def get_livability_score(city: City, city_data: CityDataFull):
 
 @router.post("/api/population")
 async def get_population(city: City):
+    """Retrieve population rating for target city
+
+    Fetch data from DB
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+            by fastAPI to a json object.
+    """
+
     city = validate_city(city)
     value = await select("Population", city)
     return {"population": value[0]}
@@ -296,6 +335,17 @@ async def get_population(city: City):
 
 @router.post("/api/nearest", response_model=CityRecommendations)
 async def get_recommendations(city: City):
+    """Retrieve recommended cities for target city
+
+    Fetch data from DB
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+            by fastAPI to a json object.
+    """
 
     city = validate_city(city)
     value = await select("Nearest", city)
@@ -306,6 +356,18 @@ async def get_recommendations(city: City):
 
 
 async def get_recommendation_cities(city: City, nearest_string: str):
+    """Use the string and transform to City
+
+    Fetch data from DB
+
+    args:
+        nearest_string: String consisting of the index numbers of the recommended cities.
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+            by fastAPI to a json object.
+    """
+
     test_list = nearest_string.split(",")
 
     data = Table("data")
