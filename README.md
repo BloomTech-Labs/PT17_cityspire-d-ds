@@ -9,6 +9,16 @@ and economic factors that are important in deciding where someone would like to 
 This app will present such important data in an intuitive and easy to understand interface.
 Use data to find a place right for you to live.
 
+## LOCAL TESTING
+1. Clone repository
+2.  In terminal run the following code to deploy: 
+    - ``pipenv install --dev``
+    - ``pipenv shell``
+    - ``uvicorn app.main:app --reload``
+3. Go to ``localhost:8000`` in your browser, and follow the instructions you see there!
+   - With the visualization endpoints, when checking locally, another tab will pop up displaying an interactive plotly graph.
+
+
 ### DS ENDPOINTS
 http://cityscape-203.eba-ijacxhm2.us-east-1.elasticbeanstalk.com/
 
