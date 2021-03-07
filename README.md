@@ -261,7 +261,7 @@ https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/Pipfile
 **Tech Stacks**
 - Python
 - Scikit
-- AWS RDS Postgres: Relational database service.
+- AWS RDS PostgreSQL: Relational database service.
 - AWS Elastic Beanstalk: Platform as a service, hosts your API.
 - Docker: Containers, for reproducible environments
 - FastAPI: Web framework. Like Flask, but faster, with automatic interactive docs.
