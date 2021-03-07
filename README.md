@@ -259,14 +259,14 @@ This is where the code for creating the different endpoints can be located.
 https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/Pipfile
 
 **Tech Stacks**
-* Python
-* Scikit
-* AWS RDS Postgres: Relational database service.
-* AWS Elastic Beanstalk: Platform as a service, hosts your API.
-* Docker: Containers, for reproducible environments
-* FastAPI: Web framework. Like Flask, but faster, with automatic interactive docs.
-* Plotly: Visualization library, for Python & JavaScript.
-* Pytest: Testing framework, runs your unit tests.
+- Python
+- Scikit
+- AWS RDS Postgres: Relational database service.
+- AWS Elastic Beanstalk: Platform as a service, hosts your API.
+- Docker: Containers, for reproducible environments
+- FastAPI: Web framework. Like Flask, but faster, with automatic interactive docs.
+- Plotly: Visualization library, for Python & JavaScript.
+- Pytest: Testing framework, runs your unit tests.
 
 ### Other Links
 **Data Sources:** 
