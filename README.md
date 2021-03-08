@@ -260,6 +260,7 @@ https://github.com/Lambda-School-Labs/labspt15-cityspire-g-ds/blob/main/Pipfile
 
 **Tech Stacks**
 - Python
+- SQL
 - Scikit
 - AWS RDS PostgreSQL: Relational database service.
 - AWS Elastic Beanstalk: Platform as a service, hosts your API.
