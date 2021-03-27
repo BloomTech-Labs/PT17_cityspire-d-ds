@@ -24,6 +24,7 @@ sklearn = "*"
 plotly = "*"
 gunicorn = "*"
 typing-extensions = "*"
+walkscore-api-binding = "*"
 
 [requires]
 python_version = "3"

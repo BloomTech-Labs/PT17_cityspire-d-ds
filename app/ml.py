@@ -218,6 +218,49 @@ async def get_walkability(city: City):
     return {"walkability": score}
 
 
+@router.post("/api/busability")
+async def get_busability(city: City):
+    """Retrieve BusScore for target city
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the Bus Score, which is converted
+        by fastAPI to a json object.
+    """
+    city = validate_city(city)
+    try:
+        score = (await get_walkscore(**city.dict()))[1]
+    except IndexError:
+        raise HTTPException(
+            status_code=422, detail=f"BusScore not found for {city.city}, {city.state}"
+        )
+
+    return {"busability": score}
+
+    
+@router.post("/api/bikeability")
+async def get_bikeability(city: City):
+    """Retrieve bikeScore for target city
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the BikeScore, which is converted
+        by fastAPI to a json object.
+    """
+    city = validate_city(city)
+    try:
+        score = (await get_walkscore(**city.dict()))[2]
+    except IndexError:
+        raise HTTPException(
+            status_code=422, detail=f"BikeScore not found for {city.city}, {city.state}"
+        )
+
+    return {"bikeability": score}
+
 async def get_walkscore(city: str, state: str):
     """Scrape Walkscore.
 
