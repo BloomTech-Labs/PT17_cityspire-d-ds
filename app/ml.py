@@ -38,6 +38,8 @@ class CityDataBase(BaseModel):
 
 class CityData(CityDataBase):
     walkability: float
+    busability: float
+    bikeability: float
     livability: float
     recommendations: List[City]
 
@@ -112,6 +114,8 @@ async def get_data(city: City):
     tasks = await asyncio.gather(
         get_livability_score(city, full_data),
         get_walkability(city),
+        get_busability(city),
+        get_bikeability(city),
         get_recommendation_cities(city, full_data.nearest_string),
     )
     data = {**full_data.dict()}
@@ -262,7 +266,7 @@ async def get_bikeability(city: City):
     return {"bikeability": score}
 
 async def get_walkscore(city: str, state: str):
-    """Scrape Walkscore.
+    """Scrape Walkscore, BusScore, and BikeScore.
 
     args:
         city: The target city
