@@ -1,4 +1,4 @@
-,city,rank,avg_congestion,am_rh,pm_rh,wdoty
+,city,world_rank,avg_congestion,am_peak,pm_peak,worst_day
 0,houston,224,24,42,60,9/19/19
 1,chicago,148,28,40,57,1/28/19
 2,los-angeles,31,42,64,81,10/31/19
