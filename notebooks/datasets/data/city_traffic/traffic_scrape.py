@@ -6,7 +6,8 @@ import requests
 
 # final.csv to dataframe for use of city column 
 df = pd.read_csv('notebooks/datasets/datasets_to_merge/updated/final.csv')
-df.sort_values(by = 'TotalPop', ascending=False, inplace=True)
+# sorting df by total population
+df = df.sort_values(by = 'TotalPop', ascending=False, inplace=True)
 
 # list of cities to search through 
 cities_by_population = df[['City', 'TotalPop']]
