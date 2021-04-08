@@ -5,35 +5,39 @@ import requests
 """This is a script used to scrape data off of the TomTom Traffic Index"""
 
 # final.csv to dataframe for use of city column 
-df = pd.read_csv('notebooks/datasets/datasets_to_merge/updated/final.csv')
+init_df = pd.read_csv('notebooks/datasets/datasets_to_merge/updated/final.csv')
+
 # sorting df by total population
-df = df.sort_values(by = 'TotalPop', ascending=False, inplace=True)
+# 
+init_df.sort_values(by = 'TotalPop', ascending=False, inplace=True)
 
 # list of cities to search through 
-cities_by_population = df[['City', 'TotalPop']]
+cities_by_population = init_df[['City','State', 'TotalPop']]
 
 # keylist for generated dataframe column names
 
 
-for c in cities_by_population['City']:
-    # add a hyphen to city names that are two words
-        c = '-'.join(c.split())
-        c = "".join(c).lower()
-
+for index, row in cities_by_population.iterrows():
+    # add a hyphen to city names that are two words to scrape from the TomTom Index
+        c = '-'.join(row[0].split())
+        # The city names are also lowercase
+        c = ''.join(c).lower()
+        print(c)
         # keylist for generated dataframe column names
-        keylist = ['city', 'world_rank',  
+        keylist = ['city','state', 'world_rank',  
             'avg_congestion',
             'am_peak',  
             'pm_peak',
             'worst_day']
 
         city_data = {}
-
+        # create dictionary
         for i in keylist:
             city_data[i] = None 
-
+        
         base_url = f"https://www.tomtom.com/en_gb/traffic-index/page-data/{c}-traffic/page-data.json"
 
+        # open the url as a json and read it
         with urllib.request.urlopen(base_url) as scrape:
             try:
                 data = json.loads(scrape.read().decode())
@@ -46,8 +50,10 @@ for c in cities_by_population['City']:
                 # base path to 2019 data
                 stats2019 = data['result']['data']['citiesJson']['stats2019']
                 
-                # city name
-                city_data['city'] = c
+                # city name, replacing the hyphen with a space and capitalizing each word
+                city_data['city'] = c.replace('-', ' ').title()
+                # State
+                city_data['state'] = row[1]
                 # world rank 2017
                 city_data['world_rank'] = stats2019['rank']
                 # average congestion of 2017
@@ -79,5 +85,5 @@ for c in cities_by_population['City']:
                     continue
 # Dataframe to csv for saving
 city_df = city_df.drop_duplicates()
-city_df.to_csv(r'notebooks/datasets/data/city_traffic/city_traffic.csv')
+city_df.to_csv(r'app/city_traffic.csv', index = False)
 
