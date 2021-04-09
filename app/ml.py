@@ -7,6 +7,7 @@ from pydantic import BaseModel
 from app.state_abbr import us_state_abbrev as abbr
 from pathlib import Path
 import pandas as pd
+import numpy as np
 from pypika import Query, Table, CustomFunction
 import asyncio
 from app.db import database, select, select_all
@@ -401,6 +402,41 @@ async def get_recommendations(city: City):
 
     return recommendations
 
+
+@router.post("/api/traffic_data")
+async def get_traffic(city: City):
+    """Retrieve recommended cities for target city
+
+    Fetch data from dataframe
+
+    args:
+        city: The target city
+
+    returns:
+        Dictionary that contains the requested data, which is converted
+            by fastAPI to a json object.
+    """
+
+    
+    # reading traffic dataframe into function 
+    df = pd.read_csv("app\city_traffic.csv")
+    
+    # locate the exact row by city and state
+    value = df.loc[((df["city"] == city.city) & (df["state"] == city.state))]
+    # transform data row to numpy array 
+    value = value.to_numpy()
+    # if the values are out of index then they dont exist
+    try: 
+        response = {"city" : value[0][0], "state" : value[0][1], "world_rank" : value[0][2], "avg_congestion" : value[0][3], 
+                    "am_peak": value[0][4], "pm_peak": value[0][5],   "worst_day" : value[0][6]}
+    # if it doesnt exist, raise exception
+    except IndexError:
+        raise HTTPException(
+            status_code=422, detail=f"Traffic data not found for {city.city}, {city.state}"
+            )
+    # otherwise return response
+    return response
+    
 
 async def get_recommendation_cities(city: City, nearest_string: str):
     """Use the string and transform to City
