@@ -16,17 +16,17 @@ from typing import List, Optional
 router = APIRouter()
 
 
-class City(BaseModel): #Class definition for City objects
+class City(BaseModel):
     city: str = "New York"
-    state: str = "NY" #Values used as defaults in the FastAPI interface
+    state: str = "NY"
 
 
 class CityRecommendations(BaseModel):
     recommendations: List[City]
 
 
-class CityDataBase(BaseModel): #Parent Class definition for 
-    city: City # Class object that contains city.city and city.state for each location (city/state pair)
+class CityDataBase(BaseModel):
+    city: City
     latitude: float
     longitude: float
     rental_price: float
@@ -36,27 +36,28 @@ class CityDataBase(BaseModel): #Parent Class definition for
     diversity_index: float
 
 
-class CityData(CityDataBase): # Child class with additional data to be added to the main city data
-    walkability: float  # Live scraped from WalkScore.com
-    busability: float   # Live scraped from WalkScore.com
-    bikeability: float   # Live scraped from WalkScore.com
-    livability: float   # calculated from livability model 
-    recommendations: List[City] # calculated from Nearest Neighbors model and 
-                                # stored in the df "notebooks/datasets/datasets_to_merge/updated/final.csv"
+class CityData(CityDataBase):
+    walkability: float
+    busability: float
+    bikeability: float
+    livability: float
+    recommendations: List[City]
 
 
-class CityDataFull(CityDataBase):  # Child class with additional data to be added to the main city data
+class CityDataFull(CityDataBase):
     good_days: int
     crime_rate_ppt: float
     nearest_string: str
 
 
-class LivabilityWeights(BaseModel): # Default weights for livability model
+class LivabilityWeights(BaseModel):
     walkability: float = 1.0
     low_rent: float = 1.0
     low_pollution: float = 1.0
     diversity: float = 1.0
     low_crime: float = 1.0
+    low_poverty: float = 1.0
+    high_income: float = 1.0
 
 
 def validate_city(
@@ -87,7 +88,7 @@ def validate_city(
         else:
             city.state = city.state.upper()
     except KeyError:
-        raise HTTPException(status_code=422, detail=f"Unknown Location: '{city.state}'")
+        raise HTTPException(status_code=422, detail=f"Unknown state: '{city.state}'")
 
     return city
 
@@ -298,10 +299,10 @@ async def get_livability(city: City, weights: LivabilityWeights = None):
         by fastAPI to a json object.
     """
     city = validate_city(city)
-    values = await select(["Rent", "Good Days", "Crime Rate per 1000"], city)
-    with open("app/livability_scaler.pkl", "rb") as f:
+    values = await select(["Rent", "Good Days", "Crime Rate per 1000","Poverty", "IncomePerCap"], city)
+    with open("app/livability_scaler2.pkl", "rb") as f:
         s = load(f)
-    v = [[values[0] * -1, values[1], values[2] * -1]]
+    v = [[values[0] * -1, values[1], values[2] * -1], values[3] * -1, values[4]]
     scaled = s.transform(v)[0]
     walkscore = await get_walkscore(city.city, city.state)
     diversity_index = await select("Diversity Index", city)
@@ -312,7 +313,7 @@ async def get_livability(city: City, weights: LivabilityWeights = None):
         rescaled.append(score * 100)
     # breakpoint()
     if weights is None:
-        return {"livability": round(sum(rescaled) / 5)}
+        return {"livability": round(sum(rescaled) / 7)}
     else:
         weighted = [
             rescaled[0] * weights.walkability,
@@ -320,6 +321,8 @@ async def get_livability(city: City, weights: LivabilityWeights = None):
             rescaled[2] * weights.low_rent,
             rescaled[3] * weights.low_pollution,
             rescaled[4] * weights.low_crime,
+            rescaled[5] * weights.low_poverty,
+            rescaled[6] * weights.high_income
         ]
 
         sum_ = sum(weighted)
