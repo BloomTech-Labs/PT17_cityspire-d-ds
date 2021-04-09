@@ -11,10 +11,11 @@ from dotenv import dotenv_values, load_dotenv
 router = APIRouter()
 load_dotenv()
 
-# This approach was origianllly developed by https://github.com/israel-dryer/Indeed-Job-Scraper/
+# This approach was origianllly developed by https://github.com/israel-dryer/Indeed-Job-Scraper/blob/master/indeed-tutorial.ipynb
 # Also credit https://github.com/jiobu1 for help finding approaches to turning this into an API end point
 # https://www.youtube.com/watch?v=eN_3d4JrL_w
 # https://medium.com/@hannah15198/convert-csv-to-json-with-python-b8899c722f6d
+
 @router.post('/api/job_opportunities')
 async def job_opportunities(position, city:City):
     """Returns jobs opportunities from indeed.com
@@ -62,7 +63,8 @@ async def job_opportunities(position, city:City):
     return {"Search Results":jobs, "Top 10 Listings": records}
 
 def get_record(card):
-    """Extract job date from a single record"""
+    # credit to https://github.com/jiobu1 
+    """Extract job data from a single record"""
     atag = card.h2.a
     job_title = atag.get('title')
     company = card.find('span', 'company').text.strip()
