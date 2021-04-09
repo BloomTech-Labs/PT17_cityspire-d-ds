@@ -25,6 +25,7 @@ plotly = "*"
 gunicorn = "*"
 typing-extensions = "*"
 walkscore-api-binding = "*"
+numpy = "*"
 
 [requires]
 python_version = "3"

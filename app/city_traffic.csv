@@ -1,0 +1,77 @@
+city,state,world_rank,avg_congestion,am_peak,pm_peak,worst_day
+Houston,TX,224,24,42,60,9/19/19
+Chicago,IL,148,28,40,57,1/28/19
+Los Angeles,CA,31,42,64,81,10/31/19
+Miami,FL,113,31,52,63,11/14/19
+San Antonio,TX,318,19,37,52,12/20/19
+New York,NY,52,37,53,70,10/3/19
+Las Vegas,NV,280,21,25,40,2/14/19
+Phoenix,AZ,328,18,34,39,10/31/19
+San Diego,CA,182,26,45,60,10/31/19
+Minneapolis,MN,352,17,29,42,2/5/19
+Denver,CO,238,23,37,50,2/6/19
+Austin,TX,162,27,45,68,11/14/19
+San Jose,CA,84,33,59,76,10/31/19
+Orlando,FL,254,22,32,52,12/12/19
+Seattle,WA,110,31,53,65,2/8/19
+Portland,OR,189,26,36,58,12/19/19
+Charlotte,NC,307,19,33,53,10/30/19
+San Francisco,CA,59,36,57,69,12/11/19
+Tucson,AZ,316,19,27,34,2/14/19
+Jacksonville,FL,343,17,31,43,10/7/19
+Columbus,OH,356,16,24,43,2/1/19
+Milwaukee,WI,400,13,21,29,11/11/19
+Sacramento,CA,206,25,42,55,12/4/19
+El Paso,TX,363,16,20,33,12/9/19
+Cleveland,OH,404,12,20,26,11/12/19
+Tampa,FL,226,24,39,54,2/27/19
+Oklahoma City,OK,389,14,21,36,2/27/19
+Washington,DC,141,29,47,61,11/7/19
+Detroit,MI,361,16,25,38,11/11/19
+Albuquerque,NM,344,17,28,38,11/21/19
+Baltimore,MD,293,20,34,48,10/22/19
+Colorado Springs,CO,341,17,24,33,11/26/19
+Buffalo,NY,380,15,22,35,2/27/19
+Bakersfield,CA,283,21,26,38,11/1/19
+Raleigh,NC,327,18,31,50,12/13/19
+Dayton,OH,412,10,12,23,1/12/19
+Rochester,NY,392,14,21,31,2/27/19
+Nashville,TN,192,26,46,64,2/6/19
+Salt Lake City,UT,321,19,26,44,2/6/19
+Tulsa,OK,403,13,15,29,10/24/19
+New Orleans,LA,262,22,31,47,3/1/19
+Honolulu,HI,156,28,54,62,10/31/19
+Richmond,VA,407,12,19,28,12/17/19
+Knoxville,TN,405,12,18,31,10/16/19
+Baton Rouge,LA,180,26,34,67,3/26/19
+Grand Rapids,MI,366,16,25,36,1/29/19
+Riverside,CA,193,26,41,53,12/6/19
+Columbia,SC,399,13,20,34,9/3/19
+Naples,FL,92,32,53,62,12/23/19
+Akron,OH,414,10,14,18,2/20/19
+Syracuse,NY,413,10,12,17,2/27/19
+Greenville,SC,326,18,31,42,3/29/19
+Little Rock,AR,409,11,21,26,6/6/19
+Charleston,SC,260,22,36,52,9/30/19
+Worcester,MA,377,15,20,30,2/12/19
+Allentown,PA,373,15,21,33,12/18/19
+Odessa,TX,18,47,74,84,12/24/19
+Albany,NY,367,16,20,38,2/12/19
+Columbia,MO,399,13,20,34,9/3/19
+Melbourne,FL,123,30,54,57,11/29/19
+Boston,MA,184,26,45,54,2/12/19
+New Haven,CT,360,16,20,37,12/18/19
+Rochester,MN,392,14,21,31,2/27/19
+Hartford,CT,349,17,28,43,11/7/19
+Greenville,NC,326,18,31,42,3/29/19
+Manchester,NH,88,33,61,76,11/7/19
+Albany,GA,367,16,20,38,2/12/19
+Florence,SC,210,25,49,48,12/20/19
+Lima,OH,7,57,81,101,5/24/19
+Columbus,IN,356,16,24,43,2/1/19
+Portland,ME,189,26,36,58,12/19/19
+Albany,OR,367,16,20,38,2/12/19
+Rome,NY,43,38,79,69,11/11/19
+Bristol,TN,83,33,61,67,6/14/19
+Athens,OH,30,43,76,69,11/13/19
+Washington,NC,141,29,47,61,11/7/19
