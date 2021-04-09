@@ -11,6 +11,8 @@ from dotenv import dotenv_values, load_dotenv
 router = APIRouter()
 load_dotenv()
 
+# This approach was origianllly developed by https://github.com/israel-dryer/Indeed-Job-Scraper/
+# Also credit https://github.com/jiobu1 for help finding approaches to turning this into an API end point
 # https://www.youtube.com/watch?v=eN_3d4JrL_w
 # https://medium.com/@hannah15198/convert-csv-to-json-with-python-b8899c722f6d
 @router.post('/api/job_opportunities')
