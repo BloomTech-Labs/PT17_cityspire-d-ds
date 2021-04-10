@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from app import db, ml, viz, external
+from app import db, ml, viz
 
 description = """
 MISSION: Be a one-stop resource for users to receive the most accurate city information.
@@ -26,7 +26,6 @@ app = FastAPI(
 app.include_router(db.router, tags=["Database"])
 app.include_router(ml.router, tags=["Machine Learning"])
 app.include_router(viz.router, tags=["Visualization"])
-app.include_router(external.router, tags=["External"])
 
 
 app.add_middleware(
