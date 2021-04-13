@@ -14,6 +14,7 @@ from app.db import database, select, select_all
 from typing import List, Optional
 import json
 from dotenv import dotenv_values, load_dotenv
+import os
 
 
 router = APIRouter()
@@ -479,35 +480,39 @@ load_dotenv()
 API_KEY = os.getenv('PROJECT_API_KEY')
 
 
-@router.get('/api/get_current_temp')
+@router.post('/api/get_current_temp')
 async def get_current_temp(city: City):
 
-    temp_weather = json.loads(get_coordinates(city))
-    
-    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (temp_weather['lat'], temp_weather['lon'], API_KEY)
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
     response = requests.get(url)
     data = json.loads(response.text)
 
     return data["main"]["temp"]
     pass
 
-@router.get('/api/get_feels_like')
-async def get_feels_like_temp(lat,lon):
+@router.post('/api/get_feels_like')
+async def get_feels_like_temp(city: City):
 
-    temp_weather = json.loads(get_coordinates(city))
-    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (temp_weather['lat'], temp_weather['lon'], API_KEY)
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
     response = requests.get(url)
     data = json.loads(response.text)
-
    
     return data["main"]["feels_like"]
     pass
 
-@router.get('/api/get_temp_min')
-async def get_min_temp(lat,lon):
+@router.post('/api/get_temp_min')
+async def get_min_temp(city: City):
 
-    temp_weather = json.loads(get_coordinates(city))
-    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (temp_weather['lat'], temp_weather['lon'], API_KEY)
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
     response = requests.get(url)
     data = json.loads(response.text)
 
@@ -515,33 +520,39 @@ async def get_min_temp(lat,lon):
     return data["main"]["temp_min"]
     pass
 
-@router.get('/api/get_temp_max')
-async def get_max_temp(lat,lon):
+@router.post('/api/get_temp_max')
+async def get_max_temp(city: City):
 
-    temp_weather = json.loads(get_coordinates(city))
-    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (temp_weather['lat'], temp_weather['lon'], API_KEY)
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
     response = requests.get(url)
     data = json.loads(response.text)
 
     return data["main"]["temp_max"]
     pass
 
-@router.get('/api/get_humidity')
-async def get_humidity(lat,lon):
+@router.post('/api/get_humidity')
+async def get_humidity(city: City):
 
-    temp_weather = json.loads(get_coordinates(city))
-    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (temp_weather['lat'], temp_weather['lon'], API_KEY)
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
     response = requests.get(url)
     data = json.loads(response.text)
 
     return data["main"]["humidity"]
     pass
 
-@router.get('/api/get_weather_all')
-async def get_weather_all(lat,lon):
+@router.post('/api/get_weather_all')
+async def get_weather_all(city: City):
 
-    temp_weather = json.loads(get_coordinates(city))
-    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (temp_weather['lat'], temp_weather['lon'], API_KEY)
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
     response = requests.get(url)
     data = json.loads(response.text)
 
