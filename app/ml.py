@@ -1,10 +1,13 @@
 """Machine learning functions"""
 from pickle import load
 import requests
+import os
+import datetime
 from bs4 import BeautifulSoup as bs
 from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from app.state_abbr import us_state_abbrev as abbr
+from dotenv import dotenv_values, load_dotenv
 from pathlib import Path
 import pandas as pd
 import numpy as np
@@ -16,9 +19,8 @@ import json
 from dotenv import dotenv_values, load_dotenv
 import os
 
-
 router = APIRouter()
-
+load_dotenv()
 
 class City(BaseModel):
     city: str = "New York"
