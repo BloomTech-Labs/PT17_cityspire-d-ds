@@ -15,6 +15,9 @@ from pypika import Query, Table, CustomFunction
 import asyncio
 from app.db import database, select, select_all
 from typing import List, Optional
+import json
+from dotenv import dotenv_values, load_dotenv
+import os
 
 router = APIRouter()
 load_dotenv()
@@ -472,6 +475,90 @@ async def get_recommendation_cities(city: City, nearest_string: str):
     )
 
     return recs
+
+# weather API routes
+
+load_dotenv()
+API_KEY = os.getenv('PROJECT_API_KEY')
+
+
+@router.post('/api/get_current_temp')
+async def get_current_temp(city: City):
+
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+    #temp_weather = json.loads(get_coordinates(city))
+    
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
+    response = requests.get(url)
+    data = json.loads(response.text)
+
+    return data["main"]["temp"]
+    pass
+
+@router.post('/api/get_feels_like')
+async def get_feels_like_temp(city: City):
+
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+    
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
+    response = requests.get(url)
+    data = json.loads(response.text)
+   
+    return data["main"]["feels_like"]
+    pass
+
+@router.post('/api/get_temp_min')
+async def get_min_temp(city: City):
+
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+    
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
+    response = requests.get(url)
+    data = json.loads(response.text)
+    return data["main"]["temp_min"]
+    pass
+
+@router.post('/api/get_temp_max')
+async def get_max_temp(city: City):
+
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+    
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
+    response = requests.get(url)
+    data = json.loads(response.text)
+
+    return data["main"]["temp_max"]
+    pass
+
+@router.post('/api/get_humidity')
+async def get_humidity(city: City):
+
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+    
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
+    response = requests.get(url)
+    data = json.loads(response.text)
+
+    return data["main"]["humidity"]
+    pass
+
+@router.post('/api/get_weather_all')
+async def get_weather_all(city: City):
+
+    city = validate_city(city)
+    value = await select(["lat", "lon"], city)
+    
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s&units=imperial" % (value[0], value[1], API_KEY)
+    response = requests.get(url)
+    data = json.loads(response.text)
+
+    return data
+    pass
 
 # This approach was origianllly developed by https://github.com/israel-dryer/Indeed-Job-Scraper/blob/master/indeed-tutorial.ipynb
 # Also credit https://github.com/jiobu1 for help finding approaches to turning this into an API end point
