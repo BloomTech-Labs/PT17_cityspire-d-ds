@@ -22,17 +22,17 @@ import os
 router = APIRouter()
 load_dotenv()
 
-class City(BaseModel):
+class City(BaseModel): #Class definition for City objects
     city: str = "New York"
-    state: str = "NY"
+    state: str = "NY" #Values used as defaults in the FastAPI interface
 
 
 class CityRecommendations(BaseModel):
     recommendations: List[City]
 
 
-class CityDataBase(BaseModel):
-    city: City
+class CityDataBase(BaseModel): #Parent Class definition for 
+    city: City # Class object that contains city.city and city.state for each location (city/state pair)
     latitude: float
     longitude: float
     rental_price: float
@@ -42,21 +42,22 @@ class CityDataBase(BaseModel):
     diversity_index: float
 
 
-class CityData(CityDataBase):
-    walkability: float
-    busability: float
-    bikeability: float
-    livability: float
-    recommendations: List[City]
+class CityData(CityDataBase): # Child class with additional data to be added to the main city data
+    walkability: float  # Live scraped from WalkScore.com
+    busability: float   # Live scraped from WalkScore.com
+    bikeability: float   # Live scraped from WalkScore.com
+    livability: float   # calculated from livability model 
+    recommendations: List[City] # calculated from Nearest Neighbors model and 
+                                # stored in the df "notebooks/datasets/datasets_to_merge/updated/final.csv"
 
 
-class CityDataFull(CityDataBase):
+class CityDataFull(CityDataBase):  # Child class with additional data to be added to the main city data
     good_days: int
     crime_rate_ppt: float
     nearest_string: str
 
 
-class LivabilityWeights(BaseModel):
+class LivabilityWeights(BaseModel): # Default weights for livability model
     walkability: float = 1.0
     low_rent: float = 1.0
     low_pollution: float = 1.0
@@ -92,7 +93,7 @@ def validate_city(
         else:
             city.state = city.state.upper()
     except KeyError:
-        raise HTTPException(status_code=422, detail=f"Unknown state: '{city.state}'")
+        raise HTTPException(status_code=422, detail=f"Unknown Location: '{city.state}'")
 
     return city
 
