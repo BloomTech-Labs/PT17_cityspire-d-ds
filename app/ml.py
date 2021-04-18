@@ -593,53 +593,53 @@ async def job_opportunities(position, city:City):
     url = get_url(position, location) 
 
     return print(url)
-#     response = requests.get(url)
-#     soup = bs(response.text, 'html.parser')
-#     cards = soup.find_all('div', 'jobsearch-SerpJobCard')
+    response = requests.get(url)
+    soup = bs(response.text, 'html.parser')
+    cards = soup.find_all('div', 'jobsearch-SerpJobCard')
 
-#     for card in cards:
-#         record = get_record(card)
-#         records.append(record)
+    for card in cards:
+        record = get_record(card)
+        records.append(record)
 
-#     #return total number of jobs by queary and city, state
-#     try:
-#         total_jobs = soup.find('div', id='searchCountPages').text.strip()
-#         total = total_jobs.split()[-2:]
-#         jobs = ' '.join(total)
-#     except AttributeError:
-#         total_jobs = ''
-#         jobs = ''
+    #return total number of jobs by queary and city, state
+    try:
+        total_jobs = soup.find('div', id='searchCountPages').text.strip()
+        total = total_jobs.split()[-2:]
+        jobs = ' '.join(total)
+    except AttributeError:
+        total_jobs = ''
+        jobs = ''
 
-#     return {"Search Results":jobs, "Top 10 Listings": records}
+    return {"Search Results":jobs, "Top 10 Listings": records}
 
-# def get_record(card):
-#     # credit to https://github.com/jiobu1 
-#     """Extract job data from a single record"""
-#     atag = card.h2.a
-#     job_title = atag.get('title')
-#     company = card.find('span', 'company').text.strip()
-#     job_location = card.find('div', 'recJobLoc').get('data-rc-loc')
-#     job_summary = card.find('div', 'summary').text.strip()
-#     post_date = card.find('span', 'date').text.strip()
+def get_record(card):
+    # credit to https://github.com/jiobu1 
+    """Extract job data from a single record"""
+    atag = card.h2.a
+    job_title = atag.get('title')
+    company = card.find('span', 'company').text.strip()
+    job_location = card.find('div', 'recJobLoc').get('data-rc-loc')
+    job_summary = card.find('div', 'summary').text.strip()
+    post_date = card.find('span', 'date').text.strip()
 
-#     try:
-#         salary = card.find('span', 'salarytext').text.strip()
-#     except AttributeError:
-#         salary = ''
+    try:
+        salary = card.find('span', 'salarytext').text.strip()
+    except AttributeError:
+        salary = ''
 
-#     extract_date = datetime.datetime.today().strftime('%Y-%m-%d')
-#     job_url = 'https://www.indeed.com' + atag.get('href')
+    extract_date = datetime.datetime.today().strftime('%Y-%m-%d')
+    job_url = 'https://www.indeed.com' + atag.get('href')
 
-#     record = {'Job Title': job_title,
-#               'Company': company,
-#               'Location': job_location,
-#               'Date Posted': post_date,
-#               'Extract Date': extract_date,
-#               'Description': job_summary,
-#               'Salary': salary,
-#               'Job Url': job_url}
+    record = {'Job Title': job_title,
+              'Company': company,
+              'Location': job_location,
+              'Date Posted': post_date,
+              'Extract Date': extract_date,
+              'Description': job_summary,
+              'Salary': salary,
+              'Job Url': job_url}
 
-#     return record
+    return record
 
 def get_url(position, location):
     "Generate a url based on position and location"
