@@ -641,9 +641,9 @@ async def job_opportunities(position, city:City):
 
 #     return record
 
-# def get_url(position, location):
-#     "Generate a url based on position and location"
+def get_url(position, location):
+    "Generate a url based on position and location"
 
-#     template = "https://www.indeed.com/jobs?q={}&l={}"
-#     url = template.format(position, location)
-#     return url
+    template = "https://www.indeed.com/jobs?q={}&l={}"
+    url = template.format(position, location)
+    return url
