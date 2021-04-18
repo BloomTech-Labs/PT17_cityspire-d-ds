@@ -592,7 +592,6 @@ async def job_opportunities(position, city:City):
     location = city_name.city + ' ' + city_name.state
     url = get_url(position, location) 
 
-    return print(url)
     response = requests.get(url)
     soup = bs(response.text, 'html.parser')
     cards = soup.find_all('div', 'jobsearch-SerpJobCard')
