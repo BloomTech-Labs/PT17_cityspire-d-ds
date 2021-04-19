@@ -424,7 +424,7 @@ async def get_traffic(city: City):
 
     
     # reading traffic dataframe into function 
-    df = pd.read_csv("app\city_traffic.csv")
+    df = pd.read_csv("https://raw.githubusercontent.com/Lambda-School-Labs/PT17_cityspire-d-ds/main/app/city_traffic.csv")
     
     # locate the exact row by city and state
     value = df.loc[((df["city"] == city.city) & (df["state"] == city.state))]
