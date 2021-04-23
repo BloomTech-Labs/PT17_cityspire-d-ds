@@ -573,7 +573,7 @@ async def get_weather_all(city: City):
 async def job_opportunities(position, city:City):
     """Returns jobs opportunities from indeed.com
 
-    Fetch first 10 job opportunities
+    Fetch first 15 job opportunities
     - Job title,
     - Company,
     - Job location
@@ -614,7 +614,7 @@ async def job_opportunities(position, city:City):
         total_jobs = ''
         jobs = ''
 
-    return {"Search Results":jobs, "Top 10 Listings": records}
+    return {"Search Results":jobs, "Top 15 Listings": records}
 
 def get_record(card):
     # credit to https://github.com/jiobu1 
