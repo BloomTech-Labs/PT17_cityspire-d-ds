@@ -25,6 +25,7 @@ load_dotenv()
 class City(BaseModel): #Class definition for City objects
     city: str = "New York"
     state: str = "NY" #Values used as defaults in the FastAPI interface
+    position: str = "Data Scientist"
 
 
 class CityRecommendations(BaseModel):
@@ -565,6 +566,9 @@ async def get_weather_all(city: City):
 # Also credit https://github.com/jiobu1 for help finding approaches to turning this into an API end point
 # https://www.youtube.com/watch?v=eN_3d4JrL_w
 # https://medium.com/@hannah15198/convert-csv-to-json-with-python-b8899c722f6d
+
+
+
 @router.post('/api/job_opportunities')
 async def job_opportunities(position, city:City):
     """Returns jobs opportunities from indeed.com
