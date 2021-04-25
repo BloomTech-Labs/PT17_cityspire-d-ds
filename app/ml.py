@@ -26,6 +26,9 @@ class City(BaseModel): #Class definition for City objects
     city: str = "New York"
     state: str = "NY" #Values used as defaults in the FastAPI interface
 
+class CityJobs(BaseModel): 
+    city: City
+    position: str = "Data Scientist"
 
 class CityRecommendations(BaseModel):
     recommendations: List[City]
@@ -566,7 +569,7 @@ async def get_weather_all(city: City):
 # https://www.youtube.com/watch?v=eN_3d4JrL_w
 # https://medium.com/@hannah15198/convert-csv-to-json-with-python-b8899c722f6d
 @router.post('/api/job_opportunities')
-async def job_opportunities(position, city:City):
+async def job_opportunities(cityjobs:CityJobs):
     """Returns jobs opportunities from indeed.com
 
     Fetch first 10 job opportunities
@@ -589,7 +592,8 @@ async def job_opportunities(position, city:City):
 
     records = []  
 
-    city_name = validate_city(city)
+    city_name = validate_city(cityjobs.city)
+    position = cityjobs.position
     location = city_name.city + ' ' + city_name.state
     url = get_url(position, location) 
 
@@ -610,7 +614,7 @@ async def job_opportunities(position, city:City):
         total_jobs = ''
         jobs = ''
 
-    return {"Search Results":jobs, "Top 10 Listings": records}
+    return {"Search Results":jobs, "Top 15 Listings": records}
 
 def get_record(card):
     # credit to https://github.com/jiobu1 
